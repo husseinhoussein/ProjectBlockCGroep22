@@ -1,0 +1,17 @@
+c:\users\haagse hogeschool\documents\visual studio 2010\Projects\MvcAppWeek4\MvcAppWeek4\bin\MvcAppWeek4.dll
+c:\users\haagse hogeschool\documents\visual studio 2010\Projects\MvcAppWeek4\MvcAppWeek4\bin\MvcAppWeek4.pdb
+c:\users\haagse hogeschool\documents\visual studio 2010\Projects\MvcAppWeek4\MvcAppWeek4\bin\EntityFramework.dll
+c:\users\haagse hogeschool\documents\visual studio 2010\Projects\MvcAppWeek4\MvcAppWeek4\bin\EntityFramework.xml
+c:\users\haagse hogeschool\documents\visual studio 2010\Projects\MvcAppWeek4\MvcAppWeek4\obj\Debug\MvcAppWeek4.dll
+c:\users\haagse hogeschool\documents\visual studio 2010\Projects\MvcAppWeek4\MvcAppWeek4\obj\Debug\MvcAppWeek4.pdb
+c:\users\haagse hogeschool\documents\visual studio 2010\Projects\MvcAppWeek4\MvcAppWeek4\bin\MySql.Data.dll
+c:\users\haagse hogeschool\documents\visual studio 2010\Projects\MvcAppWeek4\MvcAppWeek4\obj\Debug\MvcAppWeek4.csprojResolveAssemblyReference.cache
+D:\Programming\MvcAppWeek4\MvcAppWeek4\bin\MvcAppWeek4.dll.config
+D:\Programming\MvcAppWeek4\MvcAppWeek4\bin\MvcAppWeek4.dll
+D:\Programming\MvcAppWeek4\MvcAppWeek4\bin\MvcAppWeek4.pdb
+D:\Programming\MvcAppWeek4\MvcAppWeek4\bin\EntityFramework.dll
+D:\Programming\MvcAppWeek4\MvcAppWeek4\bin\MySql.Data.dll
+D:\Programming\MvcAppWeek4\MvcAppWeek4\bin\EntityFramework.xml
+D:\Programming\MvcAppWeek4\MvcAppWeek4\obj\Debug\MvcAppWeek4.csprojResolveAssemblyReference.cache
+D:\Programming\MvcAppWeek4\MvcAppWeek4\obj\Debug\MvcAppWeek4.dll
+D:\Programming\MvcAppWeek4\MvcAppWeek4\obj\Debug\MvcAppWeek4.pdb
