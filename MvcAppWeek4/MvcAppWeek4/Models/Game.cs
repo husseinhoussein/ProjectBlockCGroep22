@@ -21,8 +21,9 @@ namespace MvcAppWeek4.Models
 
         public override string ToString()
         {
-            return String.Format("{0} (id = {1}) {2}", Naam, ID, Genre);
+            return String.Format("{0} (id = {1}) {2}", Naam, ID, Genre);////test
         }
+    
     }
 }
 
