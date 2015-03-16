@@ -10,7 +10,7 @@ namespace MvcAppWeek4.Controllers
 {
     public class HomeController : Controller
     {
-        //
+        // tralala
         // GET: /Home/
 
         public ActionResult Index()
