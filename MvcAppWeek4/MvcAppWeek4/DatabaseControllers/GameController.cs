@@ -10,7 +10,7 @@ namespace MvcAppWeek4.DatabaseControllers
 {
     class GameController : DatabaseController
     {
-
+        //dazvidanya
         //CRUD functionaliteiten voor Game
 
         public GameController() { }
