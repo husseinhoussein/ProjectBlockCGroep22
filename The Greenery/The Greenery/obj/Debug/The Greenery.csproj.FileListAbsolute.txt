@@ -15,12 +15,9 @@ C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\b
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\Newtonsoft.Json.dll
-C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Net.Http.Formatting.dll
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Spatial.dll
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Helpers.dll
-C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Http.dll
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Http.OData.dll
-C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Http.WebHost.dll
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Mvc.dll
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Optimization.dll
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Razor.dll
@@ -32,10 +29,7 @@ C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\b
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\WebMatrix.WebData.dll
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\EntityFramework.xml
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\Newtonsoft.Json.xml
-C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Net.Http.Formatting.xml
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Helpers.xml
-C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Http.xml
-C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Http.WebHost.xml
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Mvc.xml
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.Razor.xml
 C:\Users\Alois\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\System.Web.WebPages.xml
