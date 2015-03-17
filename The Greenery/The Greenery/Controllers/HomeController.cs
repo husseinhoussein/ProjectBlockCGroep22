@@ -29,7 +29,7 @@ namespace The_Greenery.Controllers
             return View();
         }
 
-        public ActionResult OverTheGreenery()
+        public ActionResult AlgemeneVoorwaarden()
         {
             return View();
         }
