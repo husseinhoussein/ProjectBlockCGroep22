@@ -162,8 +162,6 @@ C:\Users\Hussein\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Gree
 C:\Users\Hussein\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\obj\Debug\The_Greenery.pdb
 >>>>>>> origin/master
 C:\Users\Andrius\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\bin\MySql.Data.dll
-<<<<<<< HEAD
-<<<<<<< HEAD
 C:\Users\Hussein\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\The_Greenery.dll.config
 C:\Users\Hussein\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\The_Greenery.dll
 C:\Users\Hussein\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\The_Greenery.pdb
@@ -244,7 +242,6 @@ C:\Users\Hussein\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery
 C:\Users\Hussein\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\obj\Debug\The_Greenery.csprojResolveAssemblyReference.cache
 C:\Users\Hussein\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\obj\Debug\The_Greenery.dll
 C:\Users\Hussein\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\obj\Debug\The_Greenery.pdb
-=======
 C:\Users\ML\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\bin\The_Greenery.dll.config
 C:\Users\ML\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\bin\The_Greenery.dll
 C:\Users\ML\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\bin\The_Greenery.pdb
@@ -326,7 +323,6 @@ C:\Users\ML\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\
 C:\Users\ML\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\obj\Debug\The_Greenery.dll
 C:\Users\ML\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\obj\Debug\The_Greenery.pdb
 >>>>>>> 74a59d889893708bc811bec63f55fe033ccde176
-=======
 C:\Users\Userz\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\The_Greenery.dll.config
 C:\Users\Userz\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\The_Greenery.dll
 C:\Users\Userz\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\The_Greenery.pdb
@@ -407,4 +403,3 @@ C:\Users\Userz\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\b
 C:\Users\Userz\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\obj\Debug\The_Greenery.csprojResolveAssemblyReference.cache
 C:\Users\Userz\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\obj\Debug\The_Greenery.dll
 C:\Users\Userz\Documents\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\obj\Debug\The_Greenery.pdb
->>>>>>> origin/master
