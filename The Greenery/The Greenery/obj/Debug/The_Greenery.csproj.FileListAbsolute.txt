@@ -161,3 +161,4 @@ C:\Users\Hussein\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Gree
 C:\Users\Hussein\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\obj\Debug\The_Greenery.dll
 C:\Users\Hussein\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\obj\Debug\The_Greenery.pdb
 >>>>>>> origin/master
+C:\Users\Andrius\Documents\GitHub\ProjectBlockC---Groep-22\The Greenery\The Greenery\bin\MySql.Data.dll
