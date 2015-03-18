@@ -10,6 +10,8 @@ namespace The_Greenery.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Message = "Oprecht en eerlijk en daarom gegarandeerd het EKO-keurmerk.";
+
             return View();
         }
 
@@ -20,10 +22,21 @@ namespace The_Greenery.Controllers
 
         public ActionResult Contact()
         {
+            ViewBag.Message = "Your contact page.";
+
             return View();
         }
 
         public ActionResult AlgemeneVoorwaarden()
+        {
+            return View();
+        }
+
+        public ActionResult Privacypolicy()
+        {
+            return View();
+        }
+        public ActionResult Registreer()
         {
             return View();
         }
