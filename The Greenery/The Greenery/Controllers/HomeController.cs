@@ -36,5 +36,9 @@ namespace The_Greenery.Controllers
         {
             return View();
         }
+        public ActionResult Registreer()
+        {
+            return View();
+        }
     }
 }
