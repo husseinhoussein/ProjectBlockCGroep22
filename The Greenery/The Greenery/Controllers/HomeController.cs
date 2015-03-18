@@ -40,5 +40,14 @@ namespace The_Greenery.Controllers
         {
             return View();
         }
+        public ActionResult geregistreerd()
+        {
+            return View();
+        }
+
+        public ActionResult Veelgesteldevragen()
+        {
+            return View();
+        }
     }
 }
