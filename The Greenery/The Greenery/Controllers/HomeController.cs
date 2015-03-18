@@ -17,8 +17,6 @@ namespace The_Greenery.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
-
             return View();
         }
 
@@ -29,7 +27,7 @@ namespace The_Greenery.Controllers
             return View();
         }
 
-        public ActionResult OverTheGreenery()
+        public ActionResult AlgemeneVoorwaarden()
         {
             return View();
         }
