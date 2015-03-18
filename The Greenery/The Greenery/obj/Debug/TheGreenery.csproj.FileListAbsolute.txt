@@ -77,3 +77,4 @@ C:\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\zh-Hans\System.Spat
 C:\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\bin\zh-Hant\System.Spatial.resources.dll
 C:\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\obj\Debug\The_Greenery.dll
 C:\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\obj\Debug\The_Greenery.pdb
+C:\GitHub\ProjectBlockCGroep22\The Greenery\The Greenery\obj\Debug\TheGreenery.csprojResolveAssemblyReference.cache
