@@ -22,7 +22,6 @@
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("Over Ons", "About", "Home")</li>
-                            <li>@Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         </ul>
                     </nav>
@@ -38,8 +37,10 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application 
+                    @Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home")
+                    @Html.ActionLink("Privacypolicy", "Privacypolicy", "Home")
+</div>
             </div>
         </footer>
 
