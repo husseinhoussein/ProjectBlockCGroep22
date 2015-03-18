@@ -311,6 +311,7 @@
     <Content Include="Views\Home\Privacypolicy.cshtml" />
     <Content Include="Views\Home\Registreer.cshtml" />
     <Content Include="Views\Home\geregistreerd.cshtml" />
+    <Content Include="Views\Home\Veelgesteldevragen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
