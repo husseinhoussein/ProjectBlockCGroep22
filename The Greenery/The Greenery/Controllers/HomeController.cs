@@ -10,7 +10,7 @@ namespace The_Greenery.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Oprecht en eerlijk en daarom gegarandeerd het EKO-keurmerk.";
 
             return View();
         }
