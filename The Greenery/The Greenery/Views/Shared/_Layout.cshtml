@@ -8,18 +8,23 @@
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
     </head>
-    <body>
+
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                   <img border="0" alt="Greenery" src="~/Images/logo.jpg">
+                  <a href="@Url.Action("/Index")"> <img border="0" alt="Greenery" src="~/Images/logo.jpg"><img/></a>
                 </div>
+             
                 <div class="float-right">
                     <section id="login">
+
                         @Html.Partial("_LoginPartial")
                     </section>
                     <nav>
+                       
                         <ul id="menu">
+                            
+
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("Over Ons", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -29,23 +34,41 @@
                             <input class="search1" type="submit" name="submition" value="Search" style=" padding-
                             bottom:20px; left: 691px; top: 153px; height: 15" />
                             <input class="search2" type="hidden" name="sitesearch" value="default.html" />
-
+                            
+                                     <ol>
+                                    <div style="float: left">  <a href="@Url.Action("/LentePage") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_lente.png" /> </a></div>
+                                    <div style="float: left">  <a href="@Url.Action("/ZomerPage" ) "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_zomer.png" /></a></div>
+                                    <div style="float: left">  <a href="@Url.Action("/HerfstPage" ) "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_herfst.png" /> </a></div>
+                                    <div style="float: left">  <a href="@Url.Action("/WinterPage" ) "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>
+                                    </ol>
+                           
+                           
                         </ul>
                     </nav>
                 </div>
+
             </div>
         </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
+
+
+
+
+
+
+            </div>
+
+        @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
+             
                 @RenderBody()
             </section>
         </div>
+      
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
                     <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application 
-                    @Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home") &nbsp; &nbsp; @Html.ActionLink("Privacypolicy", "Privacypolicy", "Home") &nbsp; &nbsp; @Html.ActionLink("FAQ", "FAQ", "Home")
+                    @Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home") &nbsp; &nbsp; @Html.ActionLink("Privacypolicy", "Privacypolicy", "Home")
 </div>
             </div>
         </footer>
