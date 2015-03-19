@@ -59,5 +59,22 @@ namespace The_Greenery.Controllers
         
             return View();
         }
+
+        public ActionResult ZomerPage()
+        {
+
+            return View();
+        }
+
+        public ActionResult HerfstPage()
+        {
+
+            return View();
+        }
+        public ActionResult WinterPage()
+        {
+
+            return View();
+        }
     }
 }
