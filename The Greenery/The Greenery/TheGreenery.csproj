@@ -314,6 +314,10 @@
     <Content Include="Views\Home\Zoekresultaten.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\Winkelwagen.cshtml" />
+    <Content Include="Views\Home\HerfstPage.cshtml" />
+    <Content Include="Views\Home\LentePage.cshtml" />
+    <Content Include="Views\Home\WinterPage.cshtml" />
+    <Content Include="Views\Home\ZomerPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
