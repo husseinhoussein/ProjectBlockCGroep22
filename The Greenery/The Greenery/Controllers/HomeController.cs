@@ -10,7 +10,7 @@ namespace The_Greenery.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Oprecht en eerlijk en daarom gegarandeerd het EKO-keurmerk.";
+            //ViewBag.Message = "Oprecht en eerlijk en daarom gegarandeerd het EKO-keurmerk.";
 
             return View();
         }
@@ -46,6 +46,17 @@ namespace The_Greenery.Controllers
         }
         public ActionResult Zoekresultaten()
         {
+            return View();
+        }
+
+        public ActionResult FAQ()
+        {
+            return View();
+        
+        }
+        public ActionResult LentePage()
+        { 
+        
             return View();
         }
     }
