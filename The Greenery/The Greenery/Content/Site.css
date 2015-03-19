@@ -4,6 +4,14 @@
     padding: 0;
 }
 
+.winkelwagen {
+    background: url(../Images/winkelwagen.png) no-repeat top left;
+     display: block;
+     width: 150px;
+     height: 150px;
+     text-indent: -9999px; /* hides the link text */
+}
+
 body {
     background-color: #fff;
     border-top: solid 10px #000;
@@ -153,7 +161,7 @@ footer {
 }
 
     #login a {
-        background-color: #d3dce0;
+        background-color: none;
         margin-left: 10px;
         margin-right: 3px;
         padding: 2px 3px;

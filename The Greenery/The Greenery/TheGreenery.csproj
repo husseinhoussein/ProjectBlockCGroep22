@@ -313,6 +313,7 @@
     <Content Include="Views\Home\geregistreerd.cshtml" />
     <Content Include="Views\Home\Zoekresultaten.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\Winkelwagen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
