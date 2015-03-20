@@ -13,10 +13,11 @@ else
     
 
     <ul>
-      
+      <li>
         <a href='@Url.Action( "Winkelwagen", "Home")'>
             <img src='@Url.Content("/Images/winkelwagen.png")' />
         </a>
+        </li>
         <li>@Html.ActionLink("registreer", "registreer", "Home", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>

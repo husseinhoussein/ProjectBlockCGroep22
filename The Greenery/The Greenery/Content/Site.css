@@ -1,5 +1,5 @@
 ﻿html {
-    background-color: #e2e2e2;
+    background-color: rgba(161, 110, 18, 0.52);
     margin: 0;
     padding: 0;
 }
@@ -13,8 +13,10 @@
 }
 
 body {
-    background-color: #fff;
-    border-top: solid 10px #000;
+    background-color: #649705;
+    background-image:url(../Images/dirt.jpeg);
+    border-top: solid 10px rgba(73, 56, 0, 0.91);
+    border-bottom: solid 10px rgba(73, 56, 0, 0.91);
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
@@ -37,11 +39,14 @@ a {
 
     a:hover {
         background-color: #c7d1d6;
+        
     }
 
 header, footer, hgroup,
 nav, section {
     display: block;
+    background-color:#649705;
+
 }
 
 mark {
@@ -112,15 +117,15 @@ h5, h6 {
     padding-bottom: 35px;
 }
 
-    .main-content {
-        background: url("../Images/accent.png") no-repeat;
+    /*.main-content {
+        background: url("../images/accent.png") no-repeat;
         padding-left: 10px;
         padding-top: 30px;
-    }
+    }*/
 
-    .featured + .main-content {
+    /*.featured + .main-content {
         background: url("../Images/heroAccent.png") no-repeat;
-    }
+    }*/
 
 header .content-wrapper {
     padding-top: 20px; 
@@ -128,9 +133,9 @@ header .content-wrapper {
 
 footer {
     clear: both;
-    background-color: #e2e2e2;
+   background-color:#649705;
     font-size: .8em;
-    height: 100px;
+    height: auto;
 }
 
 
@@ -203,12 +208,12 @@ ul#menu {
 
         ul#menu li a {
             background: none;
-            color: #999;
+            color: #000;
             text-decoration: none;
         }
 
         ul#menu li a:hover {
-            color: #333;
+            color: #000;
             text-decoration: none;
         }
 
