@@ -261,8 +261,13 @@
     <Content Include="Views\Home\Zoekresultaten.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\Winkelwagen.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Home\LentePage.cshtml" />
+    <Content Include="Views\Home\HerfstPage.cshtml" />
+=======
     <Content Include="Views\Home\HerfstPage.cshtml" />
     <Content Include="Views\Home\LentePage.cshtml" />
+>>>>>>> origin/master
     <Content Include="Views\Home\WinterPage.cshtml" />
     <Content Include="Views\Home\ZomerPage.cshtml" />
   </ItemGroup>
