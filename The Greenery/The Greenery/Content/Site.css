@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: #649705;
+    background-color: #9BCD9B;
     background-image:url(../Images/dirt.jpeg);
     border-top: solid 10px rgba(73, 56, 0, 0.91);
     border-bottom: solid 10px rgba(73, 56, 0, 0.91);
@@ -45,7 +45,7 @@ a {
 header, footer, hgroup,
 nav, section {
     display: block;
-    background-color:#649705;
+    background-color:#9BCD9B;
 
 }
 
@@ -133,7 +133,7 @@ header .content-wrapper {
 
 footer {
     clear: both;
-   background-color:#649705;
+   background-color:#9BCD9B;
     font-size: .8em;
     height: auto;
 }
