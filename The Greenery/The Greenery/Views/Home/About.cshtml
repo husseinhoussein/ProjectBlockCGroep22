@@ -3,12 +3,11 @@
 }
 @section featured {
     <section class="featured">
-        <div class="content-wrapper">
+        @*<div class="content-wrapper">*@
             <hgroup class="title">
                 <h1>@ViewBag.Title.</h1>
                 <h2>@ViewBag.Message</h2>
             </hgroup>
-        </div>
     </section>
 }
 <html>
@@ -57,11 +56,12 @@
                 display: inline;
             }
         </style>
+        @*           Dit was niet zo nuttig, maar ik verwijder het niet ~hussein
         <ul id="menu">
-            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-            <li>@Html.ActionLink("About", "About", "Home")</li>
-            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-            <li>@Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home")</li>
-        </ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        <li>@Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home")</li>
+    </ul>*@
 </body>
 </html>
