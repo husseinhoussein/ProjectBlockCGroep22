@@ -199,12 +199,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
-<<<<<<< HEAD
     <Content Include="Images\logo.png" />
-=======
-    <Content Include="Images\logo.jpg" />
     <Content Include="Images\winkelwagen.png" />
->>>>>>> origin/master
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -265,13 +261,10 @@
     <Content Include="Views\Home\Zoekresultaten.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\Winkelwagen.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Home\LentePage.cshtml" />
     <Content Include="Views\Home\HerfstPage.cshtml" />
-=======
     <Content Include="Views\Home\HerfstPage.cshtml" />
     <Content Include="Views\Home\LentePage.cshtml" />
->>>>>>> origin/master
     <Content Include="Views\Home\WinterPage.cshtml" />
     <Content Include="Views\Home\ZomerPage.cshtml" />
   </ItemGroup>
