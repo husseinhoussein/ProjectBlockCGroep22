@@ -1,0 +1,61 @@
+﻿@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section featured {
+    <section class="featured">
+        @*<div class="content-wrapper">*@
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+    </section>
+}
+
+<html>
+<head>
+    <title> Registreren </title>
+
+</head>
+
+    <body>
+        <div style="float:left" id="textabout">
+            <h1>
+                Voer hieronder uw gegevens in.
+            </h1>
+            <div>
+
+                <div>  
+                    <label> Voornaam: <br> </label><input type="text"></div>
+                <div>  
+                    <label> Achternaam: <br> </label><input type="text"></div>
+                <div>
+                    <label> Woonplaats: <br> </label><input type="text">
+                </div>
+                <div>
+                    <label> Adres: <br> </label><input type="text">
+                </div>
+                <div>
+                    <label> Postcode: <br> </label><input type="text">
+                </div>
+                <div>
+                    <label> Telefoonnummer: <br> </label><input type="text">
+                </div>
+                <div>
+                    <label> E-mail (inlognaam): <br> </label><input type="text">
+                </div>
+                <div>
+                    <label> Wachtwoord: <br> </label><input type="text">
+                </div>
+                <div>
+                    <label> Wachtwoord (herhalen): <br> </label><input type="text">
+                </div>
+            </div>
+            <form method="put" action="http://localhost:49640/home/geregistreerd?"></form>
+
+            <form method="put" action="~/Home/geregistreerd">
+                <input type="submit" value=" Registreer" />
+            </form>
+        </div>
+    </body>
+</html>

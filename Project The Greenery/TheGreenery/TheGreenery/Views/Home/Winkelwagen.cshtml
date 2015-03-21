@@ -1,0 +1,45 @@
+﻿@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <section class="featured">
+        @*<div class="content-wrapper">*@
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+    </section>
+}
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    
+    <div class="round">
+        <div class="one">
+            <div></div>
+        </div>
+
+        <div class="two">
+            <div style="float:left">
+                <h1>Winkelwagen:</h1>
+              
+                <li><a href="url">Appels</a> <br /></li>
+                <li><a href="url">Peren</a> <br /></li>
+                <li><a href="url">Etc</a> <br /></li>
+            </div>
+        </div>
+        <div class="three">
+
+        </div>
+    </div>
+</body>
+</html>
