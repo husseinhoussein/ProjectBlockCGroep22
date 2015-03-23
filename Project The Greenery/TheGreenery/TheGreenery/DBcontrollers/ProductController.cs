@@ -16,10 +16,9 @@ namespace TheGreenery.DBcontrollers
             MySqlTransaction trans = null;
             List<Product> producten = new List<Product>();
 
-<<<<<<< HEAD
+
        
         //BLOB oplsaan, naam ook, header
-=======
             //conn.Open();
             try
             {
@@ -27,7 +26,7 @@ namespace TheGreenery.DBcontrollers
                 trans = conn.BeginTransaction();
 
                 string selectQuery = @"select * from the_greenery.product where naam like @naam";
->>>>>>> origin/master
+
 
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
