@@ -165,6 +165,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\aardbei.jpg" />
     <Content Include="Images\aubergines.jpg" />
+    <Content Include="Images\bio-banner1.jpg" />
     <Content Include="Images\button_aanbiedingen.png" />
     <Content Include="Images\button_herfst.png" />
     <Content Include="Images\button_lente.png" />
