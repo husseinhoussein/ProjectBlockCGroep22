@@ -7,5 +7,13 @@ namespace TheGreenery.Models
 {
     public class Product
     {
+        public int idproduct;
+        public String naam;
+        public String soort;
+        public int seizoen;
+        public double prijs;
+        public int voorraad;
+        public String image;
+
     }
 }

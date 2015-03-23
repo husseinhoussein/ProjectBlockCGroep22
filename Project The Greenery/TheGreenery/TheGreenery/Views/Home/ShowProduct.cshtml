@@ -1,0 +1,47 @@
+﻿@using TheGreenery.Models;
+@model List<Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section featured {
+    <section class="featured">
+        @*<div class="content-wrapper">*@
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </section>
+}
+
+@{
+    ViewBag.Title = "ShowProduct";
+}
+
+<h2>ShowProduct</h2>
+<html>
+<body>
+    <div>
+        @{ if ((@Model == null) || (Model.Count == 0))
+         {
+            <div>geen producten gevonden</div>
+         }
+         else
+         {
+            <div>de producten zijn gevonden</div><br>
+             foreach (Product pro in Model)
+             {
+                <div>idproduct:     @pro.idproduct</div>
+                <div>naam:          @pro.naam</div>
+                <div>soort:         @pro.soort</div>
+                <div>seizoen:       @pro.seizoen</div>
+                <div>prijs:         @pro.prijs</div>
+                <div>voorraad:      @pro.voorraad</div>
+                @*<div>image:         @pro.image</div>*@
+                @*<div><img width="256" height="256" src="@pro.image" alt="Loading" /></div>*@
+             }
+         }
+        }
+    </div>
+</body>
+</html>

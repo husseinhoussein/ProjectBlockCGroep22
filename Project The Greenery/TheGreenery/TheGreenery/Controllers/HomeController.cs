@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheGreenery.DBcontrollers;
+using TheGreenery.Models;
 
 namespace TheGreenery.Controllers
 {
@@ -10,6 +12,13 @@ namespace TheGreenery.Controllers
     {
         //
         // GET: /Home/
+
+        public ActionResult ShowProduct(String naam)
+        {
+            ProductController sc = new ProductController();
+            List<Product> producten = sc.getAllProductenByNaam(naam);
+            return View(producten);
+        }
 
         public ActionResult Index()
         {
@@ -43,10 +52,7 @@ namespace TheGreenery.Controllers
         {
             return View();
         }
-        public ActionResult Zoekresultaten()
-        {
-            return View();
-        }
+        
 
         public ActionResult FAQ()
         {
