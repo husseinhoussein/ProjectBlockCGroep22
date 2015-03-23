@@ -15,7 +15,7 @@ namespace TheGreenery.DBcontrollers
         // GET: /Product/
 
        
-
+        //BLOB oplsaan, naam ook, header
 
     }
 }
