@@ -16,18 +16,18 @@ namespace TheGreenery.DBcontrollers
             MySqlTransaction trans = null;
             List<Product> producten = new List<Product>();
 
-<<<<<<< HEAD
+
        
         //BLOB oplsaan, naam ook, header
-=======
+
             //conn.Open();
             try
             {
                 conn.Open();
                 trans = conn.BeginTransaction();
 
-                string selectQuery = @"select * from the_greenery.product where naam like @naam";
->>>>>>> origin/master
+                string selectQuery = @"select * from 14062984.Product where naam like @naam";
+
 
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
@@ -41,12 +41,17 @@ namespace TheGreenery.DBcontrollers
                 while (dataReader.Read())
                 {
                     Product product = new Product();
-                    product.idproduct = dataReader.GetInt32("idproduct");
+                    product.productnr = dataReader.GetInt32("productnr");
                     product.naam = dataReader.GetString("naam");
-                    product.soort = dataReader.GetString("soort");
-                    product.seizoen = dataReader.GetInt32("seizoen");
-                    product.prijs = dataReader.GetDouble("prijs");
-                    product.voorraad = dataReader.GetInt32("voorraad");
+                    product.type = dataReader.GetString("type");
+                    product.lente = dataReader.GetBoolean("lente");
+                    product.zomer = dataReader.GetBoolean("zomer");
+                    product.herfst = dataReader.GetBoolean("herfst");
+                    product.winter = dataReader.GetBoolean("winter");
+                    product.prijsPerEeenheid = dataReader.GetDouble("prijs");
+                    product.eenheid = dataReader.GetString("eenheid");
+                    product.omschrijving = dataReader.GetString("omschrijving");
+                    product.voorraadPerEenheid = dataReader.GetInt32("voorraadPerEenheid");
                     //product.image = dataReader.GetString("image");
 
                     producten.Add(product);
@@ -67,54 +72,54 @@ namespace TheGreenery.DBcontrollers
             return producten;
         }
 
-        public void InsertProduct(Product product)
-        {
-            MySqlTransaction trans = null;
-            try
-            {
-                conn.Open();
-                trans = conn.BeginTransaction();
-                string insertString = @"insert into the_greenery.product (idproduct, naam, soort, seizoen, prijs, voorraad) 
-                                               values (@idproduct, @naam, @soort, @seizoen, prijs, voorraad)";
-                MySqlCommand cmd = new MySqlCommand(insertString, conn);
-                MySqlParameter idproductParam = new MySqlParameter("@idproduct", MySqlDbType.Int32);
-                MySqlParameter naamParam = new MySqlParameter("@naam", MySqlDbType.VarChar);
-                MySqlParameter soortParam = new MySqlParameter("@soort", MySqlDbType.VarChar);
-                MySqlParameter seizoenParam = new MySqlParameter("@seizoen", MySqlDbType.Int32);
-                MySqlParameter prijsParam = new MySqlParameter("@prijs", MySqlDbType.Double);
-                MySqlParameter voorraadParam = new MySqlParameter("@voorraad", MySqlDbType.Int32);
+//        public void InsertProduct(Product product)
+//        {
+//            MySqlTransaction trans = null;
+//            try
+//            {
+//                conn.Open();
+//                trans = conn.BeginTransaction();
+//                string insertString = @"insert into the_greenery.product (idproduct, naam, soort, seizoen, prijs, voorraad) 
+//                                               values (@idproduct, @naam, @soort, @seizoen, prijs, voorraad)";
+//                MySqlCommand cmd = new MySqlCommand(insertString, conn);
+//                MySqlParameter idproductParam = new MySqlParameter("@idproduct", MySqlDbType.Int32);
+//                MySqlParameter naamParam = new MySqlParameter("@naam", MySqlDbType.VarChar);
+//                MySqlParameter soortParam = new MySqlParameter("@soort", MySqlDbType.VarChar);
+//                MySqlParameter seizoenParam = new MySqlParameter("@seizoen", MySqlDbType.Int32);
+//                MySqlParameter prijsParam = new MySqlParameter("@prijs", MySqlDbType.Double);
+//                MySqlParameter voorraadParam = new MySqlParameter("@voorraad", MySqlDbType.Int32);
 
-                idproductParam.Value = product.idproduct;
-                naamParam.Value = product.naam;
-                soortParam.Value = product.soort;
-                seizoenParam.Value = product.seizoen;
-                prijsParam.Value = product.prijs;
-                voorraadParam.Value = product.voorraad;
+//                idproductParam.Value = product.productnr;
+//                naamParam.Value = product.naam;
+//                soortParam.Value = product.type;
+//                seizoenParam.Value = product.seizoen;
+//                prijsParam.Value = product.prijs;
+//                voorraadParam.Value = product.voorraad;
 
-                cmd.Parameters.Add(idproductParam);
-                cmd.Parameters.Add(naamParam);
-                cmd.Parameters.Add(soortParam);
-                cmd.Parameters.Add(seizoenParam);
-                cmd.Parameters.Add(prijsParam);
-                cmd.Parameters.Add(voorraadParam);
+//                cmd.Parameters.Add(idproductParam);
+//                cmd.Parameters.Add(naamParam);
+//                cmd.Parameters.Add(soortParam);
+//                cmd.Parameters.Add(seizoenParam);
+//                cmd.Parameters.Add(prijsParam);
+//                cmd.Parameters.Add(voorraadParam);
 
-                cmd.Prepare();
+//                cmd.Prepare();
 
-                cmd.ExecuteNonQuery();
+//                cmd.ExecuteNonQuery();
 
-                trans.Commit();
+//                trans.Commit();
 
-            }
-            catch (Exception e)
-            {
-                trans.Rollback();
-                Console.Write("Product niet toegevoegd: " + e);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
+//            }
+//            catch (Exception e)
+//            {
+//                trans.Rollback();
+//                Console.Write("Product niet toegevoegd: " + e);
+//            }
+//            finally
+//            {
+//                conn.Close();
+//            }
+//        }
 
         public void DeleteAllProducts()
         {

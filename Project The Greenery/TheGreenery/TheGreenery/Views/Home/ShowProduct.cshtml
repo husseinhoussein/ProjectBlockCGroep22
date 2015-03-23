@@ -14,9 +14,7 @@
     </section>
 }
 
-@{
-    ViewBag.Title = "ShowProduct";
-}
+
 
 <h2>ShowProduct</h2>
 <html>
@@ -31,13 +29,18 @@
             <div>de producten zijn gevonden</div><br>
              foreach (Product pro in Model)
              {
-                <div>idproduct:     @pro.idproduct</div>
+                <div>productnr:     @pro.productnr</div>
                 <div>naam:          @pro.naam</div>
-                <div>soort:         @pro.soort</div>
-                <div>seizoen:       @pro.seizoen</div>
-                <div>prijs:         @pro.prijs</div>
-                <div>voorraad:      @pro.voorraad</div>
-                @*<div>image:         @pro.image</div>*@
+                <div>type:          @pro.type</div>
+                <div>seizoen:       @pro.lente</div>
+                <div>               @pro.zomer</div>
+                <div>               @pro.herfst</div>
+                <div>               @pro.winter</div>
+                <div>prijs:         @pro.prijsPerEeenheid</div>
+                <div>voorraad:      @pro.voorraadPerEenheid</div>
+                <div>omschrijving:  @pro.omschrijving</div>
+                <div>eenheid:       @pro.eenheid</div>
+                @*<div>image:       @pro.image</div>*@
                 @*<div><img width="256" height="256" src="@pro.image" alt="Loading" /></div>*@
              }
          }

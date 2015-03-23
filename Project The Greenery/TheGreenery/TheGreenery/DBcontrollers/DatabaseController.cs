@@ -14,7 +14,7 @@ namespace TheGreenery.DBcontrollers
         public DatabaseController()
         {
             //Vul hier de juiste gegevens in!!
-            conn = new MySqlConnection("Server=localhost;Database=the_greenery;Uid=root;Pwd=root;");
+            conn = new MySqlConnection("Server=meru.hhs.nl;Database=14062984;Uid=14062984;Pwd=fuxaejeiSe;");
         }
     }
 
