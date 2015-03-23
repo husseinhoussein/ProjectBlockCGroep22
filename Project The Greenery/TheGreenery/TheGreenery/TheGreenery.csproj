@@ -165,12 +165,14 @@
     <Content Include="Global.asax" />
     <Content Include="Images\aardbei.jpg" />
     <Content Include="Images\aubergines.jpg" />
+    <Content Include="Images\bio-banner1.jpg" />
     <Content Include="Images\button_aanbiedingen.png" />
     <Content Include="Images\button_herfst.png" />
     <Content Include="Images\button_lente.png" />
     <Content Include="Images\button_winter.png" />
     <Content Include="Images\button_zomer.png" />
     <Content Include="Images\kaart.bmp" />
+    <Content Include="Images\kankommers.jpg" />
     <Content Include="Images\komkommer.jpg" />
     <Content Include="Images\lettuce.jpg" />
     <Content Include="Images\logo.png" />
