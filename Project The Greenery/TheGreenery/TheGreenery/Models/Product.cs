@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -21,15 +19,8 @@ namespace TheGreenery.Models
         public String omschrijving;
         public int voorraadPerEenheid;
         public String imageNaam;
+        public Boolean aanbieding;
      
 
     }
-    
-
-    public enum Type
-    {
-       Fruit,
-       Groente
-    }
-
 }
