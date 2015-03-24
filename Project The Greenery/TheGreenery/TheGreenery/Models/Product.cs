@@ -9,15 +9,17 @@ namespace TheGreenery.Models
     {
         public int productnr;
         public String naam;
-        public String type;
+        public int type;
         public Boolean lente;
         public Boolean zomer;
         public Boolean herfst;
         public Boolean winter;
-        public double prijsPerEeenheid;
+        public double prijsPerEenheid;
         public String eenheid;
         public String omschrijving;
         public int voorraadPerEenheid;
+        public String imageNaam;
+        public Boolean aanbieding;
      
 
     }

@@ -25,11 +25,7 @@ namespace TheGreenery.DBcontrollers
             {
                 conn.Open();
                 trans = conn.BeginTransaction();
-
-                string selectQuery = @"select * from the_greenery.product where naam like @naam";
-
-
-
+                string selectQuery = @"select * from Product where naam like @naam";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 MySqlParameter naamParam = new MySqlParameter("@naam", MySqlDbType.VarChar);
@@ -44,16 +40,17 @@ namespace TheGreenery.DBcontrollers
                     Product product = new Product();
                     product.productnr = dataReader.GetInt32("productnr");
                     product.naam = dataReader.GetString("naam");
-                    product.type = dataReader.GetString("type");
+                    product.type = dataReader.GetInt32("type");
                     product.lente = dataReader.GetBoolean("lente");
                     product.zomer = dataReader.GetBoolean("zomer");
                     product.herfst = dataReader.GetBoolean("herfst");
                     product.winter = dataReader.GetBoolean("winter");
-                    product.prijsPerEeenheid = dataReader.GetDouble("prijs");
+                    product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
-                    product.voorraadPerEenheid = dataReader.GetInt32("voorraadPerEenheid");
-                    //product.image = dataReader.GetString("image");
+                    product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
+                    product.imageNaam = dataReader.GetString("imageNaam");
+                    product.aanbieding = dataReader.GetBoolean("aanbieding");
 
                     producten.Add(product);
                     Console.Write(product.naam);
