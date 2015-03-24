@@ -26,19 +26,8 @@ namespace TheGreenery.DBcontrollers
                 conn.Open();
                 trans = conn.BeginTransaction();
 
-<<<<<<< HEAD
+
                 string selectQuery = @"select * from Product where naam like @naam";
-=======
-<<<<<<< HEAD
-                string selectQuery = @"select * from Product where naam like @naam";
-=======
-                string selectQuery = @"select * from the_greenery.product where naam like @naam";
-
->>>>>>> origin/master
->>>>>>> origin/master
-
-
-
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 MySqlParameter naamParam = new MySqlParameter("@naam", MySqlDbType.VarChar);
                 naamParam.Value = "%" + naam + "%";
@@ -57,11 +46,8 @@ namespace TheGreenery.DBcontrollers
                     product.zomer = dataReader.GetBoolean("zomer");
                     product.herfst = dataReader.GetBoolean("herfst");
                     product.winter = dataReader.GetBoolean("winter");
-<<<<<<< HEAD
                     product.prijsPerEenheid = dataReader.GetDouble("prijs");
-=======
                     product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
->>>>>>> origin/master
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
