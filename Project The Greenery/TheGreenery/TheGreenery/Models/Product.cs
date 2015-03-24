@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -14,11 +16,19 @@ namespace TheGreenery.Models
         public Boolean zomer;
         public Boolean herfst;
         public Boolean winter;
-        public double prijsPerEeenheid;
+        public double prijsPerEenheid;
         public String eenheid;
         public String omschrijving;
         public int voorraadPerEenheid;
      
 
     }
+    
+
+    public enum Type
+    {
+       Fruit,
+       Groente
+    }
+
 }
