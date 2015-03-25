@@ -149,6 +149,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DBcontrollers\AanbiedingController.cs" />
     <Compile Include="DBcontrollers\DatabaseController.cs" />
     <Compile Include="DBcontrollers\ProductController.cs" />
     <Compile Include="Global.asax.cs">

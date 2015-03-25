@@ -15,14 +15,17 @@ namespace TheGreenery.Controllers
 
         public ActionResult ShowProduct(String naam)
         {
-            ProductController sc = new ProductController();
+            ProduchtController sc = new ProduchtController();
             List<Product> producten = sc.getAllProductenByNaam(naam);
             return View(producten);
         }
 
-        public ActionResult Index()
+        public ActionResult Index(String aanbieding)
         {
-            return View();
+            
+            AanbiedingController sc = new AanbiedingController();
+            List<Product> producten = sc.getAllProductenByAanbieding(aanbieding);
+            return View(producten);
         }
         public ActionResult About()
         {

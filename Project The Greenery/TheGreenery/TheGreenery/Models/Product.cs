@@ -19,7 +19,7 @@ namespace TheGreenery.Models
         public String omschrijving;
         public int voorraadPerEenheid;
         public String imageNaam;
-        public Boolean aanbieding;
+        public String aanbieding;
      
 
     }
