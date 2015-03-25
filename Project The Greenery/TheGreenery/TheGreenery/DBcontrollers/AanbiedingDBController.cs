@@ -9,7 +9,7 @@ using TheGreenery.Models;
 
 namespace TheGreenery.DBcontrollers
 {
-    public class AanbiedingController : DatabaseController
+    public class AanbiedingDBController : DatabaseController
     {
         public List<Product> getAllProductenByAanbieding(String aanbieding)
         {
@@ -28,11 +28,6 @@ namespace TheGreenery.DBcontrollers
                 string selectQuery = @"select * from Product where aanbieding = 'ja' ";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
-                
-                
-                //MySqlParameter aanbiedingParam = new MySqlParameter("@aanbieding", MySqlDbType.VarChar);
-                //aanbiedingParam.Value = "%ja%";
-                //cmd.Parameters.Add(aanbiedingParam);
                 cmd.Prepare();
 
 
@@ -41,18 +36,13 @@ namespace TheGreenery.DBcontrollers
                 {
                     Product product = new Product();
                     product.productnr = dataReader.GetInt32("productnr");
-                    product.naam = dataReader.GetString("naam");
-                    //product.type = dataReader.GetInt32("type");
-                    //product.lente = dataReader.GetBoolean("lente");
-                    //product.zomer = dataReader.GetBoolean("zomer");
-                    //product.herfst = dataReader.GetBoolean("herfst");
-                    //product.winter = dataReader.GetBoolean("winter");
+                    product.naam = dataReader.GetString("naam");                   
                     product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
                     product.imageNaam = dataReader.GetString("imageNaam");
-                    //product.aanbieding = dataReader.GetString("aanbieding");
+
 
                     producten.Add(product);
                     Console.Write(product.naam);

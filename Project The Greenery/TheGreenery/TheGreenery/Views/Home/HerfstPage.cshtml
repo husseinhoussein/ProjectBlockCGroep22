@@ -1,4 +1,6 @@
-﻿@{
+﻿@using TheGreenery.Models;
+@model List<Product>
+@{
     //ViewBag.Title = "YAY LENTE";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -31,14 +33,32 @@
         </div>
 
         <div class="two">
-            <div id="produce" style="float: left" class="row">
+            <div id="producetop" class="row">
+                @{ if ((@Model == null) || (Model.Count == 0))
+                 {
+                    <div>geen producten gevonden</div>
+                 }
+                 else
+                 {
+                    <div><h1>Oranje herfst selectie!</h1></div><br>
+                     foreach (Product pro in Model)
+                     {
+                        <div id="produce" style="float: left">
 
-                <div><h3>Oranje herfstselectie:</h3></div>
-                <div style="float: left"><img width="200" height="150" border="0" alt="Greenery" src="~/Images/redApple.jpg"><br />Appels €0,80  </div>
-                <div style="float: left"><img width="200" height="150" border="0" alt="Greenery" src="~/Images/pastinaak.jpg"><br />Pastinaak €0,80  </div>
-                <div style="float: left"><img width="200" height="150" border="0" alt="Greenery" src="~/Images/pears.jpg"><br />Peren €0,80  </div>
-                <div style="float: left"><img width="200" height="150" border="0" alt="Greenery" src="~/Images/paprika.jpg"><br />Paprika's €1,80  </div>
-                <div style="float: left"><img width="200" height="150" border="0" alt="Greenery" src="~/Images/lettuce.jpg"><br />Bergsla €0,80  </div>
+                            <div>                       <h3>@pro.naam</h3></div>
+                            <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                            <div>productnr:             @pro.productnr</div>
+                            <div>Prijs:€                @pro.prijsPerEenheid</div>
+                            <div>Voorraad:              @pro.voorraadPerEenheid</div>
+                            <div>Omschrijving:<br />    @pro.omschrijving</div>
+                            <div>Eenheid:       @pro.eenheid</div>
+
+                        </div>
+
+
+                     }
+                 }
+                }
             </div>
         </div>
 
