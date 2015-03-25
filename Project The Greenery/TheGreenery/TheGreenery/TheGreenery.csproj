@@ -157,12 +157,14 @@
     <Compile Include="DBcontrollers\ProductDBController.cs" />
     <Compile Include="DBcontrollers\RegistrerenDBController.cs" />
     <Compile Include="DBcontrollers\WinterDBController.cs" />
+    <Compile Include="DBcontrollers\ZoekDBController.cs" />
     <Compile Include="DBcontrollers\ZomerDBController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Klant.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Zoek.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
