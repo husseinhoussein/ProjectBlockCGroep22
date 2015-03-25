@@ -47,8 +47,28 @@ namespace TheGreenery.Controllers
         {
             return View();
         }
-        public ActionResult Registreer()
+        [HttpPost]
+        public ActionResult Registreer(FormCollection formcolletion)
         {
+            foreach (String key in formcolletion.AllKeys)
+            {
+                Klant klant = new Klant();
+                klant.voorletters = formcolletion["voorletters"];
+                klant.tussenvoegsel = formcolletion["tussenvoegsel"];
+                klant.achternaam = formcolletion["achternaam"];
+                klant.adres = formcolletion["adres"];
+                klant.postcode = formcolletion["postcode"];
+                klant.woonplaats = formcolletion["woonplaats"];
+                klant.telefoonnummer = formcolletion["telefoonnummer"];
+                klant.email = formcolletion["email"];
+                klant.wachtwoord = formcolletion["wachtwoord"];
+                klant.wachtwoord_herhalen = formcolletion["wachtwoord_herhalen"];
+
+                RegistrerenDBController registrerencontroller = new RegistrerenDBController();
+                registrerencontroller.InsertRegistratie(klant);
+
+
+            }
             return View();
         }
         public ActionResult geregistreerd()

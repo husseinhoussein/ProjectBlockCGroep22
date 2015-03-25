@@ -1,61 +1,105 @@
-﻿@{
-    
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-@section featured {
-    <section class="featured">
-        @*<div class="content-wrapper">*@
-            <hgroup class="title">
-                <h1>@ViewBag.Title</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-    </section>
+﻿@model TheGreenery.Models.Klant
+
+@{
+    ViewBag.Title = "Registreer";
 }
 
-<html>
-<head>
-    <title> Registreren </title>
+<h2>Registreer</h2>
 
-</head>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-    <body>
-        <div style="float:left" id="textabout">
-            <h1>
-                Voer hieronder uw gegevens in.
-            </h1>
-            <div>
+    <fieldset>
+        <legend>Klant</legend>
 
-                <div>  
-                    <label> Voornaam: <br> </label><input type="text"></div>
-                <div>  
-                    <label> Achternaam: <br> </label><input type="text"></div>
-                <div>
-                    <label> Woonplaats: <br> </label><input type="text">
-                </div>
-                <div>
-                    <label> Adres: <br> </label><input type="text">
-                </div>
-                <div>
-                    <label> Postcode: <br> </label><input type="text">
-                </div>
-                <div>
-                    <label> Telefoonnummer: <br> </label><input type="text">
-                </div>
-                <div>
-                    <label> E-mail (inlognaam): <br> </label><input type="text">
-                </div>
-                <div>
-                    <label> Wachtwoord: <br> </label><input type="text">
-                </div>
-                <div>
-                    <label> Wachtwoord (herhalen): <br> </label><input type="text">
-                </div>
-            </div>
-            <form method="put" action="http://localhost:49640/home/geregistreerd?"></form>
-
-            <form method="put" action="~/Home/geregistreerd">
-                <input type="submit" value=" Registreer" />
-            </form>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.voorletters)
         </div>
-    </body>
-</html>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.voorletters)
+            @Html.ValidationMessageFor(model => model.voorletters)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tussenvoegsel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tussenvoegsel)
+            @Html.ValidationMessageFor(model => model.tussenvoegsel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.achternaam)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.achternaam)
+            @Html.ValidationMessageFor(model => model.achternaam)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.adres)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.adres)
+            @Html.ValidationMessageFor(model => model.adres)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.postcode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.postcode)
+            @Html.ValidationMessageFor(model => model.postcode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.woonplaats)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.woonplaats)
+            @Html.ValidationMessageFor(model => model.woonplaats)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telefoonnummer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefoonnummer)
+            @Html.ValidationMessageFor(model => model.telefoonnummer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.wachtwoord)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.wachtwoord)
+            @Html.ValidationMessageFor(model => model.wachtwoord)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.wachtwoord_herhalen)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.wachtwoord_herhalen)
+            @Html.ValidationMessageFor(model => model.wachtwoord_herhalen)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
