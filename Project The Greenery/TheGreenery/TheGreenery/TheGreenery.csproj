@@ -222,7 +222,7 @@
     <Content Include="Views\Home\ShowProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Pakketten\Pakketten.cshtml" />
+    <Content Include="Views\Pakketten\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
