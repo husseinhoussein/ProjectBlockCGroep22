@@ -149,6 +149,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PakkettenController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
     <Compile Include="DBcontrollers\DatabaseController.cs" />
     <Compile Include="DBcontrollers\HerfstDBController.cs" />
@@ -182,6 +183,7 @@
     <Content Include="Images\komkommer.jpg" />
     <Content Include="Images\lettuce.jpg" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\over ons.jpg" />
     <Content Include="Images\paprika.jpg" />
     <Content Include="Images\pastinaak.jpg" />
     <Content Include="Images\pears.jpg" />
@@ -223,6 +225,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\ShowProduct.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pakketten\Pakketten.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
