@@ -9,7 +9,7 @@ using TheGreenery.Models;
 
 namespace TheGreenery.DBcontrollers
 {
-    public class ProductController : DatabaseController
+    public class ProduchtController : DatabaseController
     {
         public List<Product> getAllProductenByNaam(String naam)
         {
@@ -50,7 +50,7 @@ namespace TheGreenery.DBcontrollers
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
                     product.imageNaam = dataReader.GetString("imageNaam");
-                    product.aanbieding = dataReader.GetBoolean("aanbieding");
+                    product.aanbieding = dataReader.GetString("aanbieding");
 
                     producten.Add(product);
                     Console.Write(product.naam);
