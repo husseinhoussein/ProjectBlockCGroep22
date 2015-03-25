@@ -24,6 +24,13 @@ a {
     text-decoration: underline;
 }
 
+#overOns2{
+    
+    top: 300px;
+    right: 500px;
+    color: red;
+}
+
 
 #textabout
 {
@@ -39,6 +46,7 @@ a {
             display: block;
     
 }
+
 #FAQtxt
 {               
     width: 75em;
