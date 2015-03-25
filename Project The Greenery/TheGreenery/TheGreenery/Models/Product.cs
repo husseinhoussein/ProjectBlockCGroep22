@@ -10,10 +10,10 @@ namespace TheGreenery.Models
         public int productnr;
         public String naam;
         public int type;
-        public Boolean lente;
-        public Boolean zomer;
-        public Boolean herfst;
-        public Boolean winter;
+        public String lente;
+        public String zomer;
+        public String herfst;
+        public String winter;
         public double prijsPerEenheid;
         public String eenheid;
         public String omschrijving;

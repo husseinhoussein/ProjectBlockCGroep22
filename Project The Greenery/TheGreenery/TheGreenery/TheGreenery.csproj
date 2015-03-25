@@ -150,8 +150,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PakkettenController.cs" />
+    <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
     <Compile Include="DBcontrollers\DatabaseController.cs" />
-    <Compile Include="DBcontrollers\ProductController.cs" />
+    <Compile Include="DBcontrollers\HerfstDBController.cs" />
+    <Compile Include="DBcontrollers\LenteDBController.cs" />
+    <Compile Include="DBcontrollers\ProductDBController.cs" />
+    <Compile Include="DBcontrollers\WinterDBController.cs" />
+    <Compile Include="DBcontrollers\ZomerDBController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

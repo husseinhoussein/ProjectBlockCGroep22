@@ -15,7 +15,7 @@ namespace TheGreenery.Controllers
 
         public ActionResult ShowProduct(String naam)
         {
-            ProduchtController sc = new ProduchtController();
+            ProduchtDBController sc = new ProduchtDBController();
             List<Product> producten = sc.getAllProductenByNaam(naam);
             return View(producten);
         }
@@ -23,7 +23,7 @@ namespace TheGreenery.Controllers
         public ActionResult Index(String aanbieding)
         {
             
-            AanbiedingController sc = new AanbiedingController();
+            AanbiedingDBController sc = new AanbiedingDBController();
             List<Product> producten = sc.getAllProductenByAanbieding(aanbieding);
             return View(producten);
         }
@@ -62,27 +62,35 @@ namespace TheGreenery.Controllers
             return View();
 
         }
-        public ActionResult LentePage()
+        public ActionResult LentePage(String lente)
         {
 
-            return View();
+            LenteDBController sc = new LenteDBController();
+            List<Product> producten = sc.getAllProductenBylente(lente);
+            return View(producten);
         }
 
-        public ActionResult ZomerPage()
+        public ActionResult ZomerPage(String zomer)
         {
 
-            return View();
+            ZomerDBController sc = new ZomerDBController();
+            List<Product> producten = sc.getAllProductenBylente(zomer);
+            return View(producten);
         }
 
-        public ActionResult HerfstPage()
+        public ActionResult HerfstPage(String herfst)
         {
 
-            return View();
+            HerfstDBController sc = new HerfstDBController();
+            List<Product> producten = sc.getAllProductenBylente(herfst);
+            return View(producten);
         }
-        public ActionResult WinterPage()
+        public ActionResult WinterPage(String winter)
         {
 
-            return View();
+            WinterDBController sc = new WinterDBController();
+            List<Product> producten = sc.getAllProductenBylente(winter);
+            return View(producten);
         }
 
         public ActionResult Winkelwagen()

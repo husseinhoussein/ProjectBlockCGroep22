@@ -9,7 +9,7 @@ using TheGreenery.Models;
 
 namespace TheGreenery.DBcontrollers
 {
-    public class ProduchtController : DatabaseController
+    public class ProduchtDBController : DatabaseController
     {
         public List<Product> getAllProductenByNaam(String naam)
         {
@@ -41,10 +41,10 @@ namespace TheGreenery.DBcontrollers
                     product.productnr = dataReader.GetInt32("productnr");
                     product.naam = dataReader.GetString("naam");
                     product.type = dataReader.GetInt32("type");
-                    product.lente = dataReader.GetBoolean("lente");
-                    product.zomer = dataReader.GetBoolean("zomer");
-                    product.herfst = dataReader.GetBoolean("herfst");
-                    product.winter = dataReader.GetBoolean("winter");
+                    product.lente = dataReader.GetString("lente");
+                    product.zomer = dataReader.GetString("zomer");
+                    product.herfst = dataReader.GetString("herfst");
+                    product.winter = dataReader.GetString("winter");
                     product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
