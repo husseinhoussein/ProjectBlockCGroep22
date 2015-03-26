@@ -149,7 +149,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PakkettenController.cs" />
+    <Compile Include="DBcontrollers\PakkettenController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
     <Compile Include="DBcontrollers\DatabaseController.cs" />
     <Compile Include="DBcontrollers\HerfstDBController.cs" />
@@ -172,14 +172,16 @@
     <Content Include="Images\aardbei.jpg" />
     <Content Include="Images\aubergines.jpg" />
     <Content Include="Images\bio-banner1.jpg" />
+    <Content Include="Images\boskoop-glory.jpg" />
     <Content Include="Images\button_aanbiedingen.png" />
     <Content Include="Images\button_herfst.png" />
     <Content Include="Images\button_lente.png" />
     <Content Include="Images\button_winter.png" />
     <Content Include="Images\button_zomer.png" />
     <Content Include="Images\Conference_pear.jpg" />
+    <Content Include="Images\fruitandvegbox.png" />
     <Content Include="Images\kaart.bmp" />
-    <Content Include="Images\kankommers.jpg" />
+    <Content Include="Images\komkommers.jpg" />
     <Content Include="Images\komkommer.jpg" />
     <Content Include="Images\lettuce.jpg" />
     <Content Include="Images\logo.png" />
@@ -227,7 +229,7 @@
     <Content Include="Views\Home\ShowProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Pakketten\Index.cshtml" />
+    <Content Include="Views\Home\Pakketten.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
