@@ -3,19 +3,24 @@
 @{
     //ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
 
 }
 @section featured {
     <section class="featured">
         @*<div class="content-wrapper">*@
         <hgroup class="title">
-            @*<h1>@ViewBag.Message</h1>*@
+           
         </hgroup>
-
+        
+        <p> <h1>@ViewBag.Title "Alleen deze week!!!"</h1></p><br />
+       
     </section>
 }
 <!DOCTYPE html>
+
 <html>
+
 <head>
     <title></title>
     <meta charset="utf-8" />
@@ -24,46 +29,59 @@
     <meta name="viewport" content="width=device-width" />
     @*@Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
+    
 </head>
+
+
 <body>
+    
     <div class="round">
         <div class="one">
+          
             <div></div>
         </div>
-
+        
         <div class="two">
-            <div id="producetop" class="row">
-                @{ if ((@Model == null) || (Model.Count == 0))
-                 {
-                    <div>geen producten gevonden</div>
-                 }
-                 else
-                 {
-                    <div><h1>Alleen deze week!!!</h1></div><br>
-                     foreach (Product pro in Model)
+          
+            <div class="two">
+                <div id="producetop" class="row">
+
+                    @{ if ((@Model == null) || (Model.Count == 0))
                      {
-                        <div id="produce" style="float: left">
-                            
-                            <div>                       <h3>@pro.naam</h3></div>
-                            <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
-                            <div>productnr:             @pro.productnr</div>    
-                            <div>Prijs:€                @pro.prijsPerEenheid</div>
-                            <div>Voorraad:              @pro.voorraadPerEenheid</div>
-                            <div>Omschrijving:<br />    @pro.omschrijving</div>
-                            <div>Eenheid:       @pro.eenheid</div>
-                            
-                        </div>
-
-
+                        <div>geen producten gevonden</div>
                      }
-                 }
-}
+                     else
+                     {
+                        <div></div><br>
+                         foreach (Product pro in Model)
+                         {
+                            <div id="produce" style="float: left inherit">
+
+                                <div>                       <h3>@pro.naam</h3></div>
+                                <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                                <div>productnr:             @pro.productnr</div>
+                                <div>Prijs:€                @pro.prijsPerEenheid</div>
+                                <div>Voorraad:              @pro.voorraadPerEenheid</div>
+                                <div>Omschrijving:<br />    @pro.omschrijving</div>
+                                <div>Eenheid:       @pro.eenheid</div>
+
+                            </div>
+
+
+                         }
+                     }
+                    }
+                </div>
+            </div>
+          
+               
+
             </div>
         </div>
 
         <div class="three">
 
         </div>
-    </div>
+  
 </body>
 </html>
