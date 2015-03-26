@@ -2,12 +2,12 @@
 
 @{
     ViewBag.Title = "Registreer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Registreer</h2>
 
-@using (Html.BeginForm())
-{
+@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -63,19 +63,19 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.telefoonnummer)
+            @Html.LabelFor(model => model.telefoonnr)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.telefoonnummer)
-            @Html.ValidationMessageFor(model => model.telefoonnummer)
+            @Html.EditorFor(model => model.telefoonnr)
+            @Html.ValidationMessageFor(model => model.telefoonnr)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.email)
+            @Html.LabelFor(model => model.mail)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.email)
-            @Html.ValidationMessageFor(model => model.email)
+            @Html.EditorFor(model => model.mail)
+            @Html.ValidationMessageFor(model => model.mail)
         </div>
 
         <div class="editor-label">

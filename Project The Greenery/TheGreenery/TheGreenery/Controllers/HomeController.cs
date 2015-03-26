@@ -47,28 +47,50 @@ namespace TheGreenery.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult Registreer(FormCollection formcolletion)
+
+        [HttpGet]
+        public ActionResult Registreer()
         {
-            foreach (String key in formcolletion.AllKeys)
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Registreer
+            //(FormCollection formCollection)
+            
+            
+            (String voorletters, String tussenvoegsel, String achternaam, String adres, String postcode, String woonplaats, String telefoonnr, String mail, String wachtwoord, String wachtwoord_herhalen )
             {
-                Klant klant = new Klant();
-                klant.voorletters = formcolletion["voorletters"];
-                klant.tussenvoegsel = formcolletion["tussenvoegsel"];
-                klant.achternaam = formcolletion["achternaam"];
-                klant.adres = formcolletion["adres"];
-                klant.postcode = formcolletion["postcode"];
-                klant.woonplaats = formcolletion["woonplaats"];
-                klant.telefoonnummer = formcolletion["telefoonnummer"];
-                klant.email = formcolletion["email"];
-                klant.wachtwoord = formcolletion["wachtwoord"];
-                klant.wachtwoord_herhalen = formcolletion["wachtwoord_herhalen"];
+            
+            Klant klant = new Klant();
+            klant.voorletters = voorletters;
+            klant.tussenvoegsel = tussenvoegsel;
+            klant.achternaam = achternaam;
+            klant.adres = adres;
+            klant.postcode = postcode;
+            klant.woonplaats = woonplaats;
+            klant.telefoonnr = telefoonnr;
+            klant.mail = mail;
+            klant.wachtwoord = wachtwoord;
+            klant.wachtwoord_herhalen = wachtwoord_herhalen;
+            //klant.voorletters = formCollection["@voorletters"];
+            //klant.tussenvoegsel = formCollection["@tussenvoegsel"];
+            //klant.achternaam = formCollection["@achternaam"];
+            //klant.adres =  formCollection["@adres"];
+            //klant.postcode =  formCollection["@postcode"];
+            //klant.woonplaats =  formCollection["@woonplaats"];
+            //klant.telefoonnr =  formCollection["@telefoonnr"];
+            //klant.mail =  formCollection["@mail"];
+            //klant.wachtwoord =  formCollection["@wachtwoord"];
+            //klant.wachtwoord_herhalen =  formCollection["wachtwoord_herhalen"];
 
-                RegistrerenDBController registrerencontroller = new RegistrerenDBController();
-                registrerencontroller.InsertRegistratie(klant);
+            RegistrerenDBController registrerenController = new RegistrerenDBController();
+            registrerenController.InsertRegistratie(klant);
+           
 
 
-            }
+
+
             return View();
         }
         public ActionResult geregistreerd()
