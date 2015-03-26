@@ -140,6 +140,7 @@ namespace TheGreenery.Controllers
             return View();
         }
 
+<<<<<<< HEAD
 
         public ActionResult MijnGegevens(int klantnr)
         {
@@ -147,5 +148,12 @@ namespace TheGreenery.Controllers
             List<Bestelling> bestellingen = sc.getAllBestellingenByDate(klantnr);
             return View(bestellingen);
         }
+=======
+        public ActionResult Pakketten()
+        {
+            return View();
+        }
+
+>>>>>>> origin/master
     }
 }

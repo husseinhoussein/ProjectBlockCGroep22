@@ -1,6 +1,4 @@
-﻿@using TheGreenery.Models;
-@model List<Product>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -41,6 +39,8 @@
                 
 
                 </div>
+
+               
                 
                 <nav>
                     
@@ -54,39 +54,12 @@
                 </nav> 
                 
             </div>
-            
-            @*<div class="two">
-            <div id="producetop" class="row">
+           
+                @*<div id="pakket"><a href="@Url.Action("/Pakketten") "><img src="~/Images/fruitandvegbox.png" width="300" height="182" border="1"></div>*@
 
-                @{ if ((@Model == null) || (Model.Count == 0))
-                 {
-                    <div>geen producten gevonden</div>
-                 }
-                 else
-                 {
-                    <div></div><br>
-                     foreach (Product pro in Model)
-                     {
-                        <div id="produce" style="float: left inherit">
+          
 
-                            <div>                       <h3>@pro.naam</h3></div>
-                            <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
-                            <div>productnr:             @pro.productnr</div>
-                            <div>Prijs:€                @pro.prijsPerEenheid</div>
-                            <div>Voorraad:              @pro.voorraadPerEenheid</div>
-                            <div>Omschrijving:<br />    @pro.omschrijving</div>
-                            <div>Eenheid:       @pro.eenheid</div>
-
-                        </div>
-
-
-                     }
-                 }
-                }
-            </div>
         </div>
-
-    </div>*@
     </header>
 
     @RenderSection("featured", required: false)
