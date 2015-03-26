@@ -18,7 +18,7 @@ namespace TheGreenery.DBcontrollers
 
        
        
-        //BLOB oplsaan, naam ook, header
+       
 
             //conn.Open();
             try

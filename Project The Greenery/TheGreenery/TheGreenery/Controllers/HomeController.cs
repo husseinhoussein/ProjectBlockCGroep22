@@ -140,5 +140,12 @@ namespace TheGreenery.Controllers
             return View();
         }
 
+
+        public ActionResult MijnGegevens(int klantnr)
+        {
+            MijnGegevensDBController sc = new MijnGegevensDBController();
+            List<Bestelling> bestellingen = sc.getAllBestellingenByDate(klantnr);
+            return View(bestellingen);
+        }
     }
 }

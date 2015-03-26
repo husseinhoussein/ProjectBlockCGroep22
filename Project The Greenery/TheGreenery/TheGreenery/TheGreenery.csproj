@@ -154,6 +154,7 @@
     <Compile Include="DBcontrollers\DatabaseController.cs" />
     <Compile Include="DBcontrollers\HerfstDBController.cs" />
     <Compile Include="DBcontrollers\LenteDBController.cs" />
+    <Compile Include="DBcontrollers\MijnGegevensDBController.cs" />
     <Compile Include="DBcontrollers\ProductDBController.cs" />
     <Compile Include="DBcontrollers\RegistrerenDBController.cs" />
     <Compile Include="DBcontrollers\WinterDBController.cs" />
@@ -162,6 +163,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bestelling.cs" />
     <Compile Include="Models\Klant.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Zoek.cs" />
@@ -234,6 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Registreer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\MijnGegevens.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
