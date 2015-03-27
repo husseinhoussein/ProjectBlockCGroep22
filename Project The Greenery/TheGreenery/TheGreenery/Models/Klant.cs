@@ -7,7 +7,7 @@ namespace TheGreenery.Models
 {
     public class Klant
     {
-        public object persoonID { get; set; }
+        //public int persoonID { get; set; }
         public String voorletters { get; set; }
         public String tussenvoegsel { get; set; }
         public String achternaam { get; set; }

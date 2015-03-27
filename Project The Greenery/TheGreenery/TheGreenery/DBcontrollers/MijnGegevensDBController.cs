@@ -10,7 +10,7 @@ namespace TheGreenery.DBcontrollers
 {
     public class MijnGegevensDBController : DatabaseController
     {
-       public List<Bestelling> getAllBestellingenByDate(int klantnr)
+       public List<Bestelling> getAllBestellingenByDate(int? bestellingnr)
         {
             MySqlTransaction trans = null;
             List<Bestelling> bestellingen = new List<Bestelling>();
@@ -23,10 +23,10 @@ namespace TheGreenery.DBcontrollers
             {
                 conn.Open();
                 trans = conn.BeginTransaction();
-                string selectQuery = @"select * from Bestelling where klantnr = 1";
+                string selectQuery = @"select * from Bestelling;";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
-                MySqlParameter klantnrParam = new MySqlParameter("@klantr", MySqlDbType.Int32);
+                MySqlParameter klantnrParam = new MySqlParameter("@bestellingnr", MySqlDbType.Int32);
                 //klantnrParam.Value = "%" + klantnr + "%";
                 cmd.Parameters.Add(klantnrParam);
                 cmd.Prepare();
@@ -43,7 +43,7 @@ namespace TheGreenery.DBcontrollers
                    
 
                     bestellingen.Add(bestelling);
-                    Console.Write(bestelling.klantnr);
+                    Console.Write(bestelling.bestellingnr);
                 }
             }
 
