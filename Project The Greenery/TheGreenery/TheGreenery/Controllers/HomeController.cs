@@ -50,8 +50,8 @@ namespace TheGreenery.Controllers
         }
         
         
-       //[HttpGet]
-        public ActionResult Registreer(Klant klant)
+      // [HttpGet]
+        public ActionResult Registreer()
         {
             //RegistrerenDBController registrerenController = new RegistrerenDBController();
             //registrerenController.InsertRegistratie(klant);
@@ -60,7 +60,7 @@ namespace TheGreenery.Controllers
        
            
 
-      
+     // [HttpPost]
         public ActionResult geregistreerd(Klant klant)
         {
             RegistrerenDBController registrerenController = new RegistrerenDBController();

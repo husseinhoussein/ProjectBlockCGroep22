@@ -1,5 +1,6 @@
 ﻿@model TheGreenery.Models.Klant
 
+
 @{
     ViewBag.Title = "Registreer";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,13 +8,40 @@
 
 <h2>Registreer</h2>
 
-@using (Html.BeginForm("geregistreerd","home", FormMethod.Post)) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-   
-        <fieldset>
+@*@using (Html.BeginForm(@*"geregistreerd","home", FormMethod.Post)) {*@
+    @*@Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)*@
+
+
+    <fieldset>
+    <form name="inlogForm" action="/Home/geregistreerd" method="post" >
+        <label for="voorletters">Voorletters:</label><br />
+        <input type="text" name="voorletters" value="" id="voorlettersText"/><br />
+        <label for="tussenvoegsel">Tussenvoegsel:</label><br />
+        <input type="text" name="tussenvoegsel" value="" /><br />
+        <label for="achternaam">Achternaam:</label><br />
+        <input type="text" name="achternaam" value="" /><br />
+        <label for="adres">Adres:</label><br />
+        <input type="text" name="adres" value="" /><br />
+        <label for="postcode">Postcode:</label><br />
+        <input type="text" name="postcode" value="" /><br />
+        <label for="woonplaats">Woonplaats:</label><br />
+        <input type="text" name="woonplaats" value="" /><br />
+        <label for="telefoonnr">Telefoon:</label><br />
+        <input type="text" name="telefoonnr" value="" /><br />
+        <label for="mail">E-mail:</label><br />
+        <input type="text" name="mail" value="" /><br />
+        <label for="wachtwoord">Wachtwoord:</label><br />
+        <input type="text" name="wachtwoord" value="" /><br />
+        <label for="wachtwoord_herhalen">Wachtwoord Herhalen:</label><br />
+        <input type="text" name="wachtwoord_herhalen" value="" /><br />
+        <br />
+        <input type="submit" value="Registreren" />
+    </form>
+
+        @*<fieldset>
             <legend>Klant</legend>
-            @*<form action="~/DBcontrollers/InsertRegistratie">*@
+            @*<form action="~/DBcontrollers/InsertRegistratie">
                 
 
                 <div class="editor-label">
@@ -99,10 +127,10 @@
                 <p>
                     <input type="submit" value="Create" />
                 </p>
-            @*</form>*@
-</fieldset>
-    
-}
+            @*</form>
+</fieldset>*@
+    </fieldset>
+@*}*@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
