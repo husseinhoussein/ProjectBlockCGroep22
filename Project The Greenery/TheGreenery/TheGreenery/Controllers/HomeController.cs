@@ -61,10 +61,24 @@ namespace TheGreenery.Controllers
            
 
      // [HttpPost]
-        public ActionResult geregistreerd(Klant klant)
+        public ActionResult geregistreerd(Klant klant/*, String voorletters, String tussenvoegsel, String achternaam, String postcode, String woonplaats, String telefoonnr, String mail, String wachtwoord, String wachtwoord_herhalen*/)
         {
+            //klant.voorletters = voorletters;
+            //klant.tussenvoegsel = tussenvoegsel;
+            //klant.achternaam = achternaam;
+            //klant.postcode = postcode;
+            //klant.woonplaats = woonplaats;
+            //klant.telefoonnr = telefoonnr;
+            //klant.mail = mail;
+            //klant.wachtwoord = wachtwoord;
+            //klant.wachtwoord_herhalen = wachtwoord_herhalen;
+
+
             RegistrerenDBController registrerenController = new RegistrerenDBController();
             registrerenController.InsertRegistratie(klant);
+
+            
+            
             
             return View();
         }
