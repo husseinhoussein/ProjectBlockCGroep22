@@ -16,7 +16,7 @@ namespace TheGreenery.DBcontrollers
         //
         // GET: /Registeren/
 
-        public void InsertRegistratie(Klant klant1)
+        public void InsertRegistratie(Klant klant)
         {
             MySqlTransaction trans = null;
             conn.Open();
@@ -57,7 +57,7 @@ namespace TheGreenery.DBcontrollers
                 
 
 
-                Klant klant = new Klant();
+              //  Klant klant = new Klant();
                 ////persoonIDParam.Value = klant1.persoonID;
                 voorlettersParam.Value = klant.voorletters;
                 tussenvoegselParam.Value = klant.tussenvoegsel;

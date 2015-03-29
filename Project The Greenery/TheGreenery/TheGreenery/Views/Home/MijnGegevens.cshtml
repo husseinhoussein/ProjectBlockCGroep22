@@ -1,9 +1,10 @@
 ﻿@using TheGreenery.Models;
 @model List<Bestelling>
+@using System.Web.Mvc
 
 
 @{
-    
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section featured {
@@ -11,44 +12,79 @@
         @*<div class="content-wrapper">*@
         <hgroup class="title"></hgroup>
 
-        <p> <h1>@ViewBag.Title "mah thingy"</h1></p><br />
+        <p> <h1>@ViewBag.Title "Bestellingen"</h1></p><br />
 
     </section>
 
 }
 
-<div class="two">
 
-    <div class="two">
-        <div id="producetop" class="row">
-         
-            @{ if ((@Model == null) || (Model.Count == 0))
+
+@*<div class="two">*@
+    @*<div id="producetop" class="row">*@
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+    }
+
+
+
+
+    @{ if ((@Model == null) || (Model.Count == 0))
+     {
+        <div>geen producten gevonden</div>
+     }
+
+     else
+     {
+        <div></div><br>
+
+
+         foreach (Bestelling pro in Model)
+         {
+            @Html.BeginForm(pro);
              {
-                <div>geen producten gevonden</div>
-             }
-             else
-             {
-                <div></div><br>
-                 foreach (Bestelling pro in Model)
-                 {
+                <fieldset>
+                    <legend>Bestelling:</legend>
                     <div id="produce" style="float: left inherit">
-                        
-                      
+
+
                         <div>Bestellingnr:          @pro.bestellingnr</div>
                         <div>Klantnr:               @pro.klantnr</div>
                         <div>Totaalbedrag:€         @pro.totaalbedrag</div>
-                        
+
 
                     </div>
 
+                    <p>
+                        <input type="submit" value="Details" />
+                    </p>
+                </fieldset>
 
-                 }
+
              }
-            }
-        </div>
-    </div>
+@*</div>*@
+                @*</div>*@
 
 
 
-</div>
-  
+
+
+
+         }
+
+
+         }
+
+        }
+
+
+
+
+
+
+        
+

@@ -53,50 +53,19 @@ namespace TheGreenery.Controllers
        //[HttpGet]
         public ActionResult Registreer(Klant klant)
         {
-            RegistrerenDBController registrerenController = new RegistrerenDBController();
-            registrerenController.InsertRegistratie(klant);
+            //RegistrerenDBController registrerenController = new RegistrerenDBController();
+            //registrerenController.InsertRegistratie(klant);
             return View();
         }
+       
+           
 
-        //[HttpPost]
-        //public ActionResult Registreer(String voorletters, String tussenvoegsel, String achternaam,
-        //    String adres, String postcode, String woonplaats, String telefoonnr, String mail,
-        //    String wachtwoord, String wachtwoord_herhalen)
-
-        // //   (FormCollection formCollection)
-        //{
-
-        //    Klant klant = new Klant();
-        //    klant.voorletters = voorletters;
-        //    klant.tussenvoegsel = tussenvoegsel;
-        //    klant.achternaam = achternaam;
-        //    klant.adres = adres;
-        //    klant.postcode = postcode;
-        //    klant.woonplaats = woonplaats;
-        //    klant.telefoonnr = telefoonnr;
-        //    klant.mail = mail;
-        //    klant.wachtwoord = wachtwoord;
-        //    klant.wachtwoord_herhalen = wachtwoord_herhalen;
-        //    //klant.voorletters = formCollection["@voorletters"];
-        //    //klant.tussenvoegsel = formCollection["@tussenvoegsel"];
-        //    //klant.achternaam = formCollection["@achternaam"];
-        //    //klant.adres =  formCollection["@adres"];
-        //    //klant.postcode =  formCollection["@postcode"];
-        //    //klant.woonplaats =  formCollection["@woonplaats"];
-        //    //klant.telefoonnr =  formCollection["@telefoonnr"];
-        //    //klant.mail =  formCollection["@mail"];
-        //    //klant.wachtwoord =  formCollection["@wachtwoord"];
-        //    //klant.wachtwoord_herhalen =  formCollection["wachtwoord_herhalen"];
-
-        //    //@voorletters, @tussenvoegsel, @achternaam, @adres, @postcode, @woonplaats, @telefoonnr, @mail, @wachtwoord, @wachtwoord_herhalen
-
-        //    RegistrerenDBController registrerenController = new RegistrerenDBController();
-        //    registrerenController.InsertRegistratie(klant);
-
-        //    return View();
-        //}
-        public ActionResult geregistreerd()
+      
+        public ActionResult geregistreerd(Klant klant)
         {
+            RegistrerenDBController registrerenController = new RegistrerenDBController();
+            registrerenController.InsertRegistratie(klant);
+            
             return View();
         }
         
