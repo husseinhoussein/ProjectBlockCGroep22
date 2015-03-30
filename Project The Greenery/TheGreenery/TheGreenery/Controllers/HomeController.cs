@@ -61,36 +61,26 @@ namespace TheGreenery.Controllers
            
 
      // [HttpPost]
-        public ActionResult geregistreerd( String voorletters, String tussenvoegsel ,  String achternaam, String adres , String postcode, String woonplaats, String telefoonnr, String mail, String wachtwoord, String wachtwoord_herhalen)
+        public ActionResult geregistreerd(Klant klant/*, String voorletters, String tussenvoegsel, String achternaam, String postcode, String woonplaats, String telefoonnr, String mail, String wachtwoord, String wachtwoord_herhalen*/)
         {
-            //Klant klant = null;
-            //if(mail != null && !mail.Equals("")){
-            
-                Klant klant = new Klant();
-            
-                klant.setVoorletters(voorletters);
-                klant.setTussenvoegsel(tussenvoegsel);
-                klant.setAdres(adres);
-                klant.setAchternaam(achternaam);
-                klant.setPostocde(postcode);
-                klant.setWoonplaats(woonplaats);
-                klant.setTelefoonnr(telefoonnr);
-                klant.setMail(mail);
-                klant.setWachtwoord(wachtwoord);
-                klant.setWachtwoordHerhalen(wachtwoord_herhalen);
+            //klant.voorletters = voorletters;
+            //klant.tussenvoegsel = tussenvoegsel;
+            //klant.achternaam = achternaam;
+            //klant.postcode = postcode;
+            //klant.woonplaats = woonplaats;
+            //klant.telefoonnr = telefoonnr;
+            //klant.mail = mail;
+            //klant.wachtwoord = wachtwoord;
+            //klant.wachtwoord_herhalen = wachtwoord_herhalen;
 
-            //}
-            //else { ViewBag.errorMessage = "babababababab"; }
-            
-           
-            if (mail != null && !mail.Equals(""))
-            {
-                RegistrerenDBController registrerenController = new RegistrerenDBController();
-                registrerenController.InsertRegistratie(klant);
 
-            }
+            RegistrerenDBController registrerenController = new RegistrerenDBController();
+            registrerenController.InsertRegistratie(klant);
+
+            
+            
+            
             return View();
-            
         }
         
 
