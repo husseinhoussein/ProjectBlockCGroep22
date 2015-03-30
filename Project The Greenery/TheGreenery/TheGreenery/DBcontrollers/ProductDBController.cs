@@ -59,7 +59,7 @@ namespace TheGreenery.DBcontrollers
 
             catch (Exception e)
             {
-                Console.WriteLine("Studenten niet opgehaald: " + e);
+                Console.WriteLine("Producten niet opgehaald: " + e);
             }
 
             finally
