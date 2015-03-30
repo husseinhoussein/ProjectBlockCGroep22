@@ -44,12 +44,14 @@
                 
                 <nav>
                     
+                    @using (Html.BeginForm()) {
                     <div id="menubalk" style="float:left">  <a href="@Url.Action("/Index") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_aanbiedingen.png" /> </a></div>
                     <div id="menubalk" style="float:left">  <a href="@Url.Action("/LentePage") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_lente.png" /> </a></div>
                     <div id="menubalk" style="float:left">  <a href="@Url.Action("/ZomerPage") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_zomer.png" /></a></div>
                     <div id="menubalk" style="float:left">  <a href="@Url.Action("/HerfstPage") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_herfst.png" /> </a></div>
                     <div id="menubalk" style="float:left">  <a href="@Url.Action("/WinterPage" ) "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>
-
+                    
+                    }
 
                 </nav> 
                 
@@ -76,9 +78,8 @@
                     @Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home") &nbsp; &nbsp; @Html.ActionLink("Privacypolicy", "Privacypolicy", "Home") &nbsp; &nbsp; @Html.ActionLink("FAQ", "FAQ", "Home")
             </div>
         </div>
+       <div style="float:right"> <img border="0" alt="Greenery" src="~/Images/ekokeurmerk.jpg"><img /></div>
     </footer>
 
-    @*@Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)*@
 </body>
 </html>

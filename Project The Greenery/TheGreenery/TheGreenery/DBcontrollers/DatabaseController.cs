@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace TheGreenery.DBcontrollers
 {
-    public abstract class DatabaseController
+    public abstract class DatabaseController : Controller
     {
         protected MySqlConnection conn;
 

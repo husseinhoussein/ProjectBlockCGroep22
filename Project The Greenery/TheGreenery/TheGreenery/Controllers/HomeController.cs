@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using TheGreenery.DBcontrollers;
 using TheGreenery.Models;
+using MySql.Data.MySqlClient;
 
 namespace TheGreenery.Controllers
 {
@@ -48,54 +49,48 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-        [HttpGet]
+        
+      // [HttpGet]
         public ActionResult Registreer()
         {
+            //RegistrerenDBController registrerenController = new RegistrerenDBController();
+            //registrerenController.InsertRegistratie(klant);
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Registreer
-            //(FormCollection formCollection)
             
             
-            (String voorletters, String tussenvoegsel, String achternaam, String adres, String postcode, String woonplaats, String telefoonnr, String mail, String wachtwoord, String wachtwoord_herhalen )
+     // [HttpPost]
+        public ActionResult geregistreerd( String voorletters, String tussenvoegsel ,  String achternaam, String adres , String postcode, String woonplaats, String telefoonnr, String mail, String wachtwoord, String wachtwoord_herhalen)
             {
+            //Klant klant = null;
+            //if(mail != null && !mail.Equals("")){
             
             Klant klant = new Klant();
-            klant.voorletters = voorletters;
-            klant.tussenvoegsel = tussenvoegsel;
-            klant.achternaam = achternaam;
-            klant.adres = adres;
-            klant.postcode = postcode;
-            klant.woonplaats = woonplaats;
-            klant.telefoonnr = telefoonnr;
-            klant.mail = mail;
-            klant.wachtwoord = wachtwoord;
-            klant.wachtwoord_herhalen = wachtwoord_herhalen;
-            //klant.voorletters = formCollection["@voorletters"];
-            //klant.tussenvoegsel = formCollection["@tussenvoegsel"];
-            //klant.achternaam = formCollection["@achternaam"];
-            //klant.adres =  formCollection["@adres"];
-            //klant.postcode =  formCollection["@postcode"];
-            //klant.woonplaats =  formCollection["@woonplaats"];
-            //klant.telefoonnr =  formCollection["@telefoonnr"];
-            //klant.mail =  formCollection["@mail"];
-            //klant.wachtwoord =  formCollection["@wachtwoord"];
-            //klant.wachtwoord_herhalen =  formCollection["wachtwoord_herhalen"];
 
-            RegistrerenDBController registrerenController = new RegistrerenDBController();
-            registrerenController.InsertRegistratie(klant);
-           
+                klant.setVoorletters(voorletters);
+                klant.setTussenvoegsel(tussenvoegsel);
+                klant.setAdres(adres);
+                klant.setAchternaam(achternaam);
+                klant.setPostocde(postcode);
+                klant.setWoonplaats(woonplaats);
+                klant.setTelefoonnr(telefoonnr);
+                klant.setMail(mail);
+                klant.setWachtwoord(wachtwoord);
+                klant.setWachtwoordHerhalen(wachtwoord_herhalen);
+
+            //}
+            //else { ViewBag.errorMessage = "babababababab"; }
 
 
+            if (mail != null && !mail.Equals(""))
+            {
+                RegistrerenDBController registrerenController = new RegistrerenDBController();
+                registrerenController.InsertRegistratie(klant);
 
-
-            return View();
         }
-        public ActionResult geregistreerd()
-        {
             return View();
+            
         }
         
 
@@ -142,17 +137,22 @@ namespace TheGreenery.Controllers
 
 
 
-        public ActionResult MijnGegevens(int klantnr)
+        public ActionResult MijnGegevens(int? bestellingnr)
         {
             MijnGegevensDBController sc = new MijnGegevensDBController();
-            List<Bestelling> bestellingen = sc.getAllBestellingenByDate(klantnr);
+            List<Bestelling> bestellingen = sc.getAllBestellingenByDate(bestellingnr);
             return View(bestellingen);
+
+
+
         }
+
 
         public ActionResult Pakketten()
         {
             return View();
         }
+
 
     }
 }
