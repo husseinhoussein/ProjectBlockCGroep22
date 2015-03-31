@@ -46,7 +46,7 @@ namespace TheGreenery.Controllers
                         //if (gUser.mail.Equals(""))
                         //{
                         Session["LoggedIn"] = true;
-                        String url = "/Klant/klant";
+                        String url = "/Home/Mijngegevens";
                         return Redirect(url);
                         //}
                     }
