@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <title>@ViewBag.Title - The Greenery</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @System.Web.Optimization.Styles.Render("~/Content/Site.css")
     @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
+    @if (Request.IsAuthenticated)
+    {
+        <strong>@Html.Encode(User.Identity.Name)</strong>
+        @Html.ActionLink("Log Out", "Logout", "User")
+    }
+    else
+    {
+        @Html.ActionLink("Register", "Registration", "User")
+        <span> | </span>
+        @Html.ActionLink("Log In", "Login", "User")
+    }
 
     <header>
         <div class="content-wrapper">
@@ -16,7 +27,7 @@
                 <a href="@Url.Action("/Index")"> <img border="0" alt="Greenery" src="~/Images/logo.png"><img /></a>  
             </div>
                 <div id="menubalk" style="float:right">  <a href="@Url.Action("/MijnGegevens") "><u>Mijn Gegevens</u></a></div>
-                <div id="menubalk" style="float:right">  <a href="@Url.Action("/Registreer") "><u>Registreer</u></a></div>
+                @*<div id="menubalk" style="float:right">  <a href="@Url.Action("/Registreer") "><u>Registreer</u></a></div>*@
                 <div id="menubalk" style="float:right">  <a href="@Url.Action("/Login") "></a><u>Log in</u></div>
             
 

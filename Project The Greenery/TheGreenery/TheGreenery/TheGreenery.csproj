@@ -149,6 +149,8 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DBcontrollers\LoginDBController.cs" />
     <Compile Include="DBcontrollers\PakkettenController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
     <Compile Include="DBcontrollers\DatabaseController.cs" />
@@ -242,6 +244,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\MijnGegevens.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\LogIn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\LoginResult.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
