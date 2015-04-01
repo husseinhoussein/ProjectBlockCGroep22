@@ -149,7 +149,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DBcontrollers\PakkettenController.cs" />
+    <Compile Include="DBcontrollers\BeheerderDBController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
     <Compile Include="DBcontrollers\DatabaseController.cs" />
     <Compile Include="DBcontrollers\HerfstDBController.cs" />
@@ -182,6 +182,9 @@
     <Content Include="Images\button_aanbiedingen.png" />
     <Content Include="Images\button_herfst.png" />
     <Content Include="Images\button_lente.png" />
+    <Content Include="Images\button_PersoneelToevoegen.png" />
+    <Content Include="Images\button_productToevoegen.png" />
+    <Content Include="Images\button_productWijzigen.png" />
     <Content Include="Images\button_winter.png" />
     <Content Include="Images\button_zomer.png" />
     <Content Include="Images\Conference_pear.jpg" />
@@ -235,13 +238,19 @@
     <Content Include="Views\Home\ShowProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Pakketten.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Home\Registreer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\MijnGegevens.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout_Beheerder.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BeheerderDB\Ingelogd.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BeheerderDB\ProductenToevoegen.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

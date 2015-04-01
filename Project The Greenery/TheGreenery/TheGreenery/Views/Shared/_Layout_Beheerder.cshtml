@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @System.Web.Optimization.Styles.Render("~/Content/Site.css")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <a href="@Url.Action("/Index")"> <img border="0" alt="Greenery" src="~/Images/logo.png"><img /></a>  
+            </div>
+                <div id="menubalk" style="float:right">  <a href="@Url.Action("/MijnGegevens") "><u>Mijn Gegevens</u></a></div>
+                <div id="menubalk" style="float:right">  <a href="@Url.Action("/Registreer") "><u>Registreer</u></a></div>
+                <div id="menubalk" style="float:right">  <a href="@Url.Action("/Login") "></a><u>Log in</u></div>
+            
+
+            <div class="float-right">
+
+                <section id="login">
+                    <div style="float:right">
+                        <form naam="input" action="/Home/ShowProduct" method="post">
+                            <input type=text name="naam" placeholder="zoekproduct" />
+                            <input type="submit" value="zoeken" />
+                        </form>
+                    </div>
+                </section>
+                <div style="float:right" id="menu">
+
+                    <div style="float:left"><a href="@Url.Action("/Winkelwagen") "> <img border="0" alt="Greenery" src="~/Images/winkelwagen.png" /></a></div>
+                    <div style="float:left">@Html.ActionLink("Home", "Index", "Home")</div>
+                    <div style="float:left">@Html.ActionLink("  Over Ons", "About", "Home")</div>
+                    <div style="float:left">@Html.ActionLink("  Contact", "Contact", "Home")</div>
+                
+
+                </div>
+
+               
+                
+                <nav>
+                    
+                    @using (Html.BeginForm()) {
+                    <div id="menubalk" style="float:left">  <a href="@Url.Action("/ProductenToevoegen") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productToevoegen.png" /> </a></div>
+                    <div id="menubalk" style="float:left">  <a href="@Url.Action("/ProductenBewerken") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productWijzigen.png" /> </a></div>
+                    <div id="menubalk" style="float:left">  <a href="@Url.Action("/PersoneelToevoegen") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelToevoegen.png" /> </a></div>
+
+                    }
+
+                </nav> 
+                
+            </div>
+           
+                @*<div id="pakket"><a href="@Url.Action("/Pakketten") "><img src="~/Images/fruitandvegbox.png" width="300" height="182" border="1"></div>*@
+
+          
+
+        </div>
+    </header>
+
+    @RenderSection("featured", required: false)
+    <section class="content-wrapper main-content clear-fix">
+
+        @RenderBody()
+    </section>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>
+                    &copy; @DateTime.Now.Year - The Greenery
+                    @Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home") &nbsp; &nbsp; @Html.ActionLink("Privacypolicy", "Privacypolicy", "Home") &nbsp; &nbsp; @Html.ActionLink("FAQ", "FAQ", "Home")
+            </div>
+        </div>
+       <div style="float:right"> <img border="0" alt="Greenery" src="~/Images/ekokeurmerk.jpg"><img /></div>
+    </footer>
+
+</body>
+</html>

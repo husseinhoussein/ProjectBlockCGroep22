@@ -148,10 +148,12 @@ namespace TheGreenery.Controllers
         }
 
 
-        public ActionResult Pakketten()
+        public ActionResult Beheerder()
         {
             return View();
         }
+
+
 
 
     }
