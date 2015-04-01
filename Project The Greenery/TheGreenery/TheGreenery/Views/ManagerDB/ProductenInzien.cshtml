@@ -1,10 +1,53 @@
 ﻿@using TheGreenery.Controllers;
-@{
-    ViewBag.Title = "ProductenInzien";
-}
-
+@using TheGreenery.Models;
+@model List<Product>
 @{
 
     Layout = "~/Views/Shared/_Layout_Manager.cshtml";
 }
+
+@section featured {
+    <section class="zoek">
+        @*<div class="content-wrapper">*@
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </section>
+}
+
+<h2>Overzicht Producten</h2>
+<html>
+<body>
+    <fieldset>
+        <div>
+            @{ if ((@Model == null) || (Model.Count == 0))
+             {
+                <div>geen producten gevonden</div>
+             }
+             else
+             {
+                <div>de volgende producten zijn gevonden</div><br>
+                 foreach (Product pro in Model)
+                 {
+                    <div>productnr:     @pro.productnr</div>
+                    <div>naam:          @pro.naam</div>
+                    <div>type:          @pro.type</div>
+                    <div>seizoen:       @pro.lente</div>
+                    <div>               @pro.zomer</div>
+                    <div>               @pro.herfst</div>
+                    <div>               @pro.winter</div>
+                    <div>Prijs:€        @pro.prijsPerEenheid</div>
+                    <div>voorraad:      @pro.voorraadPerEenheid</div>
+                    <div>omschrijving:  @pro.omschrijving</div>
+                    <div>eenheid:       @pro.eenheid</div>
+                    <div>aanbieding:    @pro.aanbieding</div>
+                    <div><img src="~/Images/@pro.imageNaam" /></div>
+                 }
+             }
+            }
+        </div>
+    </fieldset>
+</body>
+</html>
 

@@ -160,6 +160,7 @@
     <Compile Include="DBcontrollers\ManagerDBController.cs" />
     <Compile Include="DBcontrollers\MijnBestellingenDBController.cs" />
     <Compile Include="DBcontrollers\MijnGegevensDBController.cs" />
+    <Compile Include="DBcontrollers\PersoneelDBController.cs" />
     <Compile Include="DBcontrollers\ProductDBController.cs" />
     <Compile Include="DBcontrollers\RegistrerenDBController.cs" />
     <Compile Include="DBcontrollers\WinterDBController.cs" />
@@ -170,6 +171,7 @@
     </Compile>
     <Compile Include="Models\Bestelling.cs" />
     <Compile Include="Models\Klant.cs" />
+    <Compile Include="Models\Personeel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Zoek.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

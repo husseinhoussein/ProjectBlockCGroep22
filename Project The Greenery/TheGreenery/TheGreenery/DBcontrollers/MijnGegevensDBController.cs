@@ -10,24 +10,20 @@ namespace TheGreenery.DBcontrollers
 {
     public class MijnGegevensDBController : DatabaseController
     {
-       public List<Bestelling> getAllBestellingenByDate(int? bestellingnr)
+        public List<Bestelling> getAllBestellingenByDate(int? bestellingnr)
         {
             MySqlTransaction trans = null;
             List<Bestelling> bestellingen = new List<Bestelling>();
 
+            conn.Open();
 
-
-
-            //conn.Open();
             try
-            {
-                conn.Open();
+            {                
                 trans = conn.BeginTransaction();
                 string selectQuery = @"select * from Bestelling;";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 MySqlParameter klantnrParam = new MySqlParameter("@bestellingnr", MySqlDbType.Int32);
-                //klantnrParam.Value = "%" + klantnr + "%";
                 cmd.Parameters.Add(klantnrParam);
                 cmd.Prepare();
 
@@ -36,11 +32,10 @@ namespace TheGreenery.DBcontrollers
                 while (dataReader.Read())
                 {
                     Bestelling bestelling = new Bestelling();
-                   
                     bestelling.bestellingnr = dataReader.GetInt32("bestellingnr");
                     bestelling.klantnr = dataReader.GetInt32("klantnr");
                     bestelling.totaalbedrag = dataReader.GetDouble("totaalbedrag");
-                   
+
 
                     bestellingen.Add(bestelling);
                     Console.Write(bestelling.bestellingnr);
@@ -49,7 +44,7 @@ namespace TheGreenery.DBcontrollers
 
             catch (Exception e)
             {
-                Console.WriteLine(" === niet opgehaald: " + e);
+                throw new Exception(" Mijn gegevens niet opgehaald: " + e);
             }
 
             finally
@@ -61,6 +56,6 @@ namespace TheGreenery.DBcontrollers
         }
 
 
-       
+
     }
 }
