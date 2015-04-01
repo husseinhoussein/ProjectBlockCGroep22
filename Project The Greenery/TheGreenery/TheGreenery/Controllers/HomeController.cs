@@ -24,7 +24,7 @@ namespace TheGreenery.Controllers
 
         public ActionResult Index(String aanbieding)
         {
-            
+
             AanbiedingDBController sc = new AanbiedingDBController();
             List<Product> producten = sc.getAllProductenByAanbieding(aanbieding);
             return View(producten);
@@ -50,41 +50,41 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-        
-      
+
+
         public ActionResult Registreer()
         {
             return View();
         }
 
-        
+
         public ActionResult Login()
         {
             return View();
         }
 
-        
-        
-            
-     
-        public ActionResult geregistreerd( String voorletters, String tussenvoegsel ,  String achternaam, String adres , String postcode, String woonplaats, String telefoonnr, String mail, String wachtwoord, String wachtwoord_herhalen)
-            {
-            
-            
+
+
+
+
+        public ActionResult geregistreerd(String voorletters, String tussenvoegsel, String achternaam, String adres, String postcode, String woonplaats, String telefoonnr, String mail, String wachtwoord, String wachtwoord_herhalen)
+        {
+
+
             Klant klant = new Klant();
 
-                klant.setVoorletters(voorletters);
-                klant.setTussenvoegsel(tussenvoegsel);
-                klant.setAdres(adres);
-                klant.setAchternaam(achternaam);
-                klant.setPostocde(postcode);
-                klant.setWoonplaats(woonplaats);
-                klant.setTelefoonnr(telefoonnr);
-                klant.setMail(mail);
-                klant.setWachtwoord(wachtwoord);
-                klant.setWachtwoordHerhalen(wachtwoord_herhalen);
+            klant.setVoorletters(voorletters);
+            klant.setTussenvoegsel(tussenvoegsel);
+            klant.setAdres(adres);
+            klant.setAchternaam(achternaam);
+            klant.setPostocde(postcode);
+            klant.setWoonplaats(woonplaats);
+            klant.setTelefoonnr(telefoonnr);
+            klant.setMail(mail);
+            klant.setWachtwoord(wachtwoord);
+            klant.setWachtwoordHerhalen(wachtwoord_herhalen);
 
-         
+
 
 
             if (mail != null && !mail.Equals(""))
@@ -92,11 +92,11 @@ namespace TheGreenery.Controllers
                 RegistrerenDBController registrerenController = new RegistrerenDBController();
                 registrerenController.InsertRegistratie(klant);
 
-        }
+            }
             return View();
-            
+
         }
-        
+
 
         public ActionResult FAQ()
         {
@@ -140,12 +140,34 @@ namespace TheGreenery.Controllers
         }
 
 
+        public ActionResult GegevensGewijzigd(String voorletters, String tussenvoegsel, String achternaam, String adres, String postcode, String woonplaats, String telefoonnr, String mail)
+        {
+            Klant klant = new Klant();
 
-        public ActionResult MijnGegevens(int? bestellingnr)
+            klant.setVoorletters(voorletters);
+            klant.setTussenvoegsel(tussenvoegsel);
+            klant.setAdres(adres);
+            klant.setAchternaam(achternaam);
+            klant.setPostocde(postcode);
+            klant.setWoonplaats(woonplaats);
+            klant.setTelefoonnr(telefoonnr);
+            klant.setMail(mail);
+
+            //if (klantnr == 1 && !klantnr.Equals(@klantnr))
+            //{
+            MijnGegevensDBController MijnGegevens = new MijnGegevensDBController();
+            MijnGegevens.GegevensAanpassen(klant);
+
+            //}
+            return View();
+
+        }
+
+        public ActionResult MijnGegevens(int? klantr)
         {
             MijnGegevensDBController sc = new MijnGegevensDBController();
-            List<Bestelling> bestellingen = sc.getAllBestellingenByDate(bestellingnr);
-            return View(bestellingen);
+            List<Klant> klant = sc.getKlantbyID(klantr);
+            return View(klant);
 
 
 

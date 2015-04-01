@@ -34,7 +34,7 @@ namespace TheGreenery.DBcontrollers
                     Personeel personeel = new Personeel();
                     personeel.personeelnr = dataReader.GetInt32("personeelnr");
                     personeel.persoonID = dataReader.GetInt32("persoonID");
-                    personeel.voorletters = dataReader.GetString("voorletters");
+                   // personeel.voorletters = dataReader.GetString("voorletters");
                     personeel.tussenvoegsel = dataReader.GetString("tussenvoegsel");
                     personeel.achternaam = dataReader.GetString("achternaam");
 
