@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -8,6 +10,7 @@ namespace TheGreenery.Models
     public class Klant
     {
         //public int persoonID { get; set; }
+        public int klantnr;
         public String voorletters;// { get; set; }
         public String tussenvoegsel;// { get; set; }
         public String achternaam;// { get; set; }
@@ -18,6 +21,12 @@ namespace TheGreenery.Models
         public String mail;// { get; set; }
         public String wachtwoord;// { get; set; }
         public String wachtwoord_herhalen;// { get; set; }
+
+        public int getKlantnr()
+        { return klantnr; }
+
+        public void setVoorletters(int input)
+        { klantnr = input; }
 
         public string getVoorletters()
         { return voorletters; }
@@ -36,48 +45,48 @@ namespace TheGreenery.Models
 
         public void setAchternaam(String input)
         { achternaam = input; }
-        
+
         public string getAdres()
         { return adres; }
 
         public void setAdres(String input)
         { adres = input; }
-        
+
         public string getPostcode()
         { return postcode; }
 
         public void setPostocde(String input)
         { postcode = input; }
-        
+
         public string getWoonplaats()
         { return woonplaats; }
 
         public void setWoonplaats(String input)
         { woonplaats = input; }
-        
+
         public string getTelefoonnr()
         { return telefoonnr; }
 
         public void setTelefoonnr(String input)
         { telefoonnr = input; }
-        
+
         public string getMail()
         { return mail; }
 
         public void setMail(String input)
         { mail = input; }
-        
+
         public string getWachtwoord()
         { return wachtwoord; }
 
         public void setWachtwoord(String input)
         { wachtwoord = input; }
-        
+
         public string getWachtwoordHerhalen()
         { return wachtwoord_herhalen; }
 
         public void setWachtwoordHerhalen(String input)
         { wachtwoord_herhalen = input; }
     }
-        
+
 }

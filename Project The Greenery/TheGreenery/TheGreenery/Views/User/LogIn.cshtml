@@ -1,0 +1,32 @@
+﻿@model TheGreenery.Models.Klant
+@*@using TheGreenery.Models.Klant*@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<html>
+<body>
+    <div style="float:left" id="textabout">
+
+
+        <div>
+            <form method="post" action="~/User/LoginResult">
+                <fieldset>
+                    <legend>Login Form</legend>
+                    <label>@ViewData["ero"]</label><br />
+                    <label for="mail">E-Mail:</label><br />
+                    <input type="text" name="mail" value="" /><br />
+                    <label for="wachtwoord">Wachtwoord:</label><br />
+                    <input type="password" name="wachtwoord" value="" /><br />
+                    <input type="submit" value="Log In" />
+                </fieldset>
+            </form>
+                
+        </div>
+        
+    </div>
+      
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -50,21 +51,25 @@ namespace TheGreenery.Controllers
         }
 
         
-      // [HttpGet]
+      
         public ActionResult Registreer()
         {
-            //RegistrerenDBController registrerenController = new RegistrerenDBController();
-            //registrerenController.InsertRegistratie(klant);
             return View();
         }
 
+        
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        
+        
             
-            
-     // [HttpPost]
+     
         public ActionResult geregistreerd( String voorletters, String tussenvoegsel ,  String achternaam, String adres , String postcode, String woonplaats, String telefoonnr, String mail, String wachtwoord, String wachtwoord_herhalen)
             {
-            //Klant klant = null;
-            //if(mail != null && !mail.Equals("")){
+            
             
             Klant klant = new Klant();
 
@@ -79,8 +84,7 @@ namespace TheGreenery.Controllers
                 klant.setWachtwoord(wachtwoord);
                 klant.setWachtwoordHerhalen(wachtwoord_herhalen);
 
-            //}
-            //else { ViewBag.errorMessage = "babababababab"; }
+         
 
 
             if (mail != null && !mail.Equals(""))
