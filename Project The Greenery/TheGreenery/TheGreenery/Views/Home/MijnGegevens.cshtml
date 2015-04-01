@@ -1,8 +1,7 @@
 ﻿@using TheGreenery.Models;
-@model List<Bestelling>
+@model List<Klant>
 @using System.Web.Mvc
-
-
+@using TheGreenery.Models;
 @{
 
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,65 +11,71 @@
         @*<div class="content-wrapper">*@
         <hgroup class="title"></hgroup>
 
-        <p> <h1>@ViewBag.Title "Bestellingen"</h1></p><br />
+        <p> <h1>@ViewBag.Title "Klanten"</h1></p><br />
 
     </section>
 
 }
 
-
-
 @*<div class="two">*@
-    @*<div id="producetop" class="row">*@
-    @using (Html.BeginForm())
-    {
+@*<div id="producetop" class="row">*@
+@using (Html.BeginForm())
+{
 
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-    }
-
-
+}
 
 
-    @{ if ((@Model == null) || (Model.Count == 0))
+
+@{ if ((@Model == null) || (Model.Count == 0))
+ {
+    <div>geen gegevens gevonden</div>
+ }
+ 
+ else
+ {
+    <div></div><br>
+
+
+     foreach (Klant kl in Model)
+         
      {
-        <div>geen producten gevonden</div>
-     }
-
-     else
-     {
-        <div></div><br>
 
 
-         foreach (Bestelling pro in Model)
-         {
+        <fieldset>
+            <legend>Klant:</legend>
             
-             
-                <fieldset>
-                    <legend>Bestelling:</legend>
-                    <div id="produce" style="float: left inherit">
+                <form name="inlogForm" action="/Home/GegevensGewijzigd" method="post">
+                    <label for="klantnr">Klantnummer:</label><br />
+                    <input type="text" disabled="disabled" name="klantnr" value="@kl.klantnr" /><br />
+                    <label for="voorletters">Voorletters:</label><br />
+                    <input type="text" name="voorletters" value="@kl.voorletters" /><br />
+                    <label for="tussenvoegsel">Tussenvoegsel:</label><br />
+                    <input type="text" name="tussenvoegsel" value="@kl. tussenvoegsel" /><br />
+                    <label for="achternaam">Achternaam:</label><br />
+                    <input type="text" name="achternaam" value="@kl.achternaam" /><br />
+                    <label for="adres">Adres:</label><br />
+                    <input type="text" name="adres" value="@kl.adres" /><br />
+                    <label for="postcode">Postcode:</label><br />
+                    <input type="text" name="postcode" value="@kl.postcode" /><br />
+                    <label for="woonplaats">Woonplaats:</label><br />
+                    <input type="text" name="woonplaats" value="@kl.woonplaats" /><br />
+                    <label for="telefoonnr">Telefoon:</label><br />
+                    <input type="text" name="telefoonnr" value="@kl.telefoonnr" /><br />
+                    <label for="mail">E-mail:</label><br />
+                    <input type="text" name="mail" value="@kl.mail" /><br />
+                 
 
-
-                        <div>Bestellingnr:          @pro.bestellingnr</div>
-                        <div>Klantnr:               @pro.klantnr</div>
-                        <div>Totaalbedrag:€         @pro.totaalbedrag</div>
-
-
-                    </div>
-
-                    <p>
-                        <input type="submit" value="Details" />
-                    </p>
-                </fieldset>
-
-
-             
-
-         }
-
-
-     }
+                    <br />
+                    <input type="submit" value="Edit" />
+                </form>
+              
+            </fieldset>
+    
+}
+ }
 
 }
 

@@ -151,12 +151,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DBcontrollers\BeheerderDBController.cs" />
+    <Compile Include="DBcontrollers\GegevensAanpassenDBController.cs" />
     <Compile Include="DBcontrollers\LoginDBController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
     <Compile Include="DBcontrollers\DatabaseController.cs" />
     <Compile Include="DBcontrollers\HerfstDBController.cs" />
     <Compile Include="DBcontrollers\LenteDBController.cs" />
     <Compile Include="DBcontrollers\ManagerDBController.cs" />
+    <Compile Include="DBcontrollers\MijnBestellingenDBController.cs" />
     <Compile Include="DBcontrollers\MijnGegevensDBController.cs" />
     <Compile Include="DBcontrollers\ProductDBController.cs" />
     <Compile Include="DBcontrollers\RegistrerenDBController.cs" />
@@ -286,6 +288,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ManagerDB\PersoneelInzien.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\MijnBestellingen.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\GegevensGewijzigd.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
