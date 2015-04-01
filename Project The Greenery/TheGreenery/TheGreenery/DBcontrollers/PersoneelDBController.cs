@@ -10,18 +10,21 @@ namespace TheGreenery.DBcontrollers
 {
     public class PersoneelDBController : DatabaseController
     {
-        public List<Personeel> getAllPersoneel()
+        public List<Personeel> getAllPersoneel(int? personeelnr)
         {
             MySqlTransaction trans = null;
             List<Personeel> personeellijst = new List<Personeel>();
 
             conn.Open();
-            trans = conn.BeginTransaction();
+            
             try
             {
+                trans = conn.BeginTransaction();
                 string selectQuery = @"select * from Personeel;";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
+                MySqlParameter personeelnrParam = new MySqlParameter("@personeelnr", MySqlDbType.Int32);
+                cmd.Parameters.Add(personeelnrParam);
                 cmd.Prepare();
 
 
@@ -34,7 +37,7 @@ namespace TheGreenery.DBcontrollers
                     personeel.voorletters = dataReader.GetString("voorletters");
                     personeel.tussenvoegsel = dataReader.GetString("tussenvoegsel");
                     personeel.achternaam = dataReader.GetString("achternaam");
-                    
+
                     personeellijst.Add(personeel);
                     Console.Write(personeel.personeelnr);
                 }
@@ -42,7 +45,7 @@ namespace TheGreenery.DBcontrollers
 
             catch (Exception e)
             {
-                Console.WriteLine("Personeel niet opgehaald: " + e);
+                throw new Exception("Personeel niet opgehaald: " + e);
             }
 
             finally

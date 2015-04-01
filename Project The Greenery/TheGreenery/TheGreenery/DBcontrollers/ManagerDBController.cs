@@ -27,11 +27,11 @@ namespace TheGreenery.DBcontrollers
             return View(producten);
         }
 
-        public ActionResult PersoneelInzien()
+        public ActionResult PersoneelInzien(int? personeelnr)
         {
             PersoneelDBController pc = new PersoneelDBController();
-            List<Personeel> personeel = pc.getAllPersoneel();
-            return View();
+            List<Personeel> personeel = pc.getAllPersoneel(personeelnr);
+            return View(personeel);
         }
 
     }
