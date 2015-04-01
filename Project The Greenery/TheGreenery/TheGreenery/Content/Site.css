@@ -83,6 +83,11 @@ nav, section {
 
 }
 
+hr {
+    clear: both;
+    visibility: hidden;
+}
+
 mark {
     background-color: #a6dbed;
     padding-left: 5px;
@@ -93,9 +98,7 @@ mark {
     float: left;
 }
 
-.float-right {
-    float: right;
-}
+
 
 .clear-fix:after {
     content: ".";

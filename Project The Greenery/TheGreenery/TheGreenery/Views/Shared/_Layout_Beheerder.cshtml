@@ -2,22 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <title>@ViewBag.Title - The Greenery</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @System.Web.Optimization.Styles.Render("~/Content/Site.css")
     @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
+    @if (Request.IsAuthenticated)
+    {
+        <strong>@Html.Encode(User.Identity.Name)</strong>
+        @Html.ActionLink("Log Out", "Logout", "User")
+        <div id="menubalk" style="float:right">  <a href="@Url.Action("MijnGegevens","Home") "><u>Mijn Gegevens</u></a></div>
+    }
+    else
+    {
+        @Html.ActionLink("Register", "Registreer", "Home")
+        <span> | </span>
+        @Html.ActionLink("Log In", "Login", "User")
+    }
 
     <header>
         <div class="content-wrapper">
             <div class="float-left">
-                <a href="@Url.Action("Index", "Home")"> <img border="0" alt="Greenery" src="~/Images/logo.png"><img /></a>
+                <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Images/logo.png")" alt="Home" /></a>
             </div>
-            <div id="menubalk" style="float:right">  <a href="@Url.Action("/MijnGegevens") "><u>Mijn Gegevens</u></a></div>
-            <div id="menubalk" style="float:right">  <a href="@Url.Action("/Registreer") "><u>Registreer</u></a></div>
-            <div id="menubalk" style="float:right">  <a href="@Url.Action("/Login") "></a><u>Log in</u></div>
+
+            @*<div id="menubalk" style="float:right">  <a href="@Url.Action("/Registreer") "><u>Registreer</u></a></div>*@
+            @*<div id="menubalk" style="float:right">  <a href="@Url.Action("/Login") "></a><u>Log in</u></div>*@
 
 
             <div class="float-right">
@@ -46,12 +58,18 @@
 
                     @using (Html.BeginForm())
                     {
-                        <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenToevoegen", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productToevoegen.png" /> </a></div>
-                        <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenBewerken", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productWijzigen.png" /> </a></div>
-                        <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelToevoegen", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelToevoegen.png" /> </a></div>
-                        <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenInzien", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_ProductenInzien.png" /> </a></div>
-                        <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelInzien", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_ProductenInzien.png" /> </a></div>
+                        <hr width="100%" align="right" size="0"/>
+                        <div>
+                            <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenToevoegen", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productToevoegen.png" /> </a></div>
+                            <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenBewerken", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productWijzigen.png" /> </a></div>
+                            <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenInzien", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_ProductenInzien.png" /> </a></div>
+                        </div>
+                        <div>
+                            <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelToevoegen", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelToevoegen.png" /> </a></div>
+                            <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelInzien", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelInzien.png" /> </a></div>
+                        </div>
                     }
+
 
                 </nav>
 
@@ -78,7 +96,7 @@
                     @Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home") &nbsp; &nbsp; @Html.ActionLink("Privacypolicy", "Privacypolicy", "Home") &nbsp; &nbsp; @Html.ActionLink("FAQ", "FAQ", "Home")
             </div>
         </div>
-        <div style="float:right"> <img border="0" alt="Greenery" src="~/Images/ekokeurmerk.jpg"><img /></div>
+        <div style="float:right"> <img width="90" height="90" border="0" alt="Greenery" src="~/Images/ekokeurmerk.jpg"><img /></div>
     </footer>
 
 </body>
