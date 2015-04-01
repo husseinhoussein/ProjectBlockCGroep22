@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DBcontrollers\BeheerderDBController.cs" />
     <Compile Include="DBcontrollers\LoginDBController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
     <Compile Include="DBcontrollers\DatabaseController.cs" />
@@ -183,7 +184,9 @@
     <Content Include="Images\button_aanbiedingen.png" />
     <Content Include="Images\button_herfst.png" />
     <Content Include="Images\button_lente.png" />
+    <Content Include="Images\button_PersoneelInzien.png" />
     <Content Include="Images\button_PersoneelToevoegen.png" />
+    <Content Include="Images\button_ProductenInzien.png" />
     <Content Include="Images\button_productToevoegen.png" />
     <Content Include="Images\button_productWijzigen.png" />
     <Content Include="Images\button_winter.png" />
@@ -258,6 +261,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\LoginResult.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BeheerderDB\ProductenBewerken.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BeheerderDB\PersoneelToevoegen.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BeheerderDB\ProductenInzien.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BeheerderDB\PersoneelInzien.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -13,12 +13,12 @@
     <header>
         <div class="content-wrapper">
             <div class="float-left">
-                <a href="@Url.Action("/Index")"> <img border="0" alt="Greenery" src="~/Images/logo.png"><img /></a>  
+                <a href="@Url.Action("Index", "Home")"> <img border="0" alt="Greenery" src="~/Images/logo.png"><img /></a>
             </div>
-                <div id="menubalk" style="float:right">  <a href="@Url.Action("/MijnGegevens") "><u>Mijn Gegevens</u></a></div>
-                <div id="menubalk" style="float:right">  <a href="@Url.Action("/Registreer") "><u>Registreer</u></a></div>
-                <div id="menubalk" style="float:right">  <a href="@Url.Action("/Login") "></a><u>Log in</u></div>
-            
+            <div id="menubalk" style="float:right">  <a href="@Url.Action("/MijnGegevens") "><u>Mijn Gegevens</u></a></div>
+            <div id="menubalk" style="float:right">  <a href="@Url.Action("/Registreer") "><u>Registreer</u></a></div>
+            <div id="menubalk" style="float:right">  <a href="@Url.Action("/Login") "></a><u>Log in</u></div>
+
 
             <div class="float-right">
 
@@ -36,28 +36,30 @@
                     <div style="float:left">@Html.ActionLink("Home", "Index", "Home")</div>
                     <div style="float:left">@Html.ActionLink("  Over Ons", "About", "Home")</div>
                     <div style="float:left">@Html.ActionLink("  Contact", "Contact", "Home")</div>
-                
+
 
                 </div>
 
-               
-                
-                <nav>
-                    
-                    @using (Html.BeginForm()) {
-                    <div id="menubalk" style="float:left">  <a href="@Url.Action("/ProductenToevoegen") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productToevoegen.png" /> </a></div>
-                    <div id="menubalk" style="float:left">  <a href="@Url.Action("/ProductenBewerken") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productWijzigen.png" /> </a></div>
-                    <div id="menubalk" style="float:left">  <a href="@Url.Action("/PersoneelToevoegen") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelToevoegen.png" /> </a></div>
 
+
+                <nav>
+
+                    @using (Html.BeginForm())
+                    {
+                        <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenToevoegen", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productToevoegen.png" /> </a></div>
+                        <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenBewerken", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_productWijzigen.png" /> </a></div>
+                        <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelToevoegen", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelToevoegen.png" /> </a></div>
+                        <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenInzien", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_ProductenInzien.png" /> </a></div>
+                        <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelInzien", "BeheerderDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_ProductenInzien.png" /> </a></div>
                     }
 
-                </nav> 
-                
-            </div>
-           
-                @*<div id="pakket"><a href="@Url.Action("/Pakketten") "><img src="~/Images/fruitandvegbox.png" width="300" height="182" border="1"></div>*@
+                </nav>
 
-          
+            </div>
+
+            @*<div id="pakket"><a href="@Url.Action("/Pakketten") "><img src="~/Images/fruitandvegbox.png" width="300" height="182" border="1"></div>*@
+
+
 
         </div>
     </header>
@@ -76,7 +78,7 @@
                     @Html.ActionLink("AlgemeneVoorwaarden", "AlgemeneVoorwaarden", "Home") &nbsp; &nbsp; @Html.ActionLink("Privacypolicy", "Privacypolicy", "Home") &nbsp; &nbsp; @Html.ActionLink("FAQ", "FAQ", "Home")
             </div>
         </div>
-       <div style="float:right"> <img border="0" alt="Greenery" src="~/Images/ekokeurmerk.jpg"><img /></div>
+        <div style="float:right"> <img border="0" alt="Greenery" src="~/Images/ekokeurmerk.jpg"><img /></div>
     </footer>
 
 </body>

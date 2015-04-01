@@ -21,7 +21,25 @@ namespace TheGreenery.DBcontrollers
             return View();
         }
 
+        public ActionResult ProductenBewerken()
+        {
+            return View();
+        }
 
+        public ActionResult PersoneelToevoegen()
+        {
+            return View();
+        }
+
+        public ActionResult ProductenInzien()
+        {
+            return View();
+        }
+
+        public ActionResult PersoneelInzien()
+        {
+            return View();
+        }
 
     }
 }
