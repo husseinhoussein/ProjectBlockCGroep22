@@ -46,7 +46,8 @@ a {
 }
 #produce {
     float:left;
-margin-right:0.5%;
+    border-color:black;
+    margin-bottom:0.6%
 
 
 }

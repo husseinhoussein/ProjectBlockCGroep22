@@ -56,7 +56,7 @@ namespace TheGreenery.DBcontrollers
                 woonplaatsParam.Value = klant.woonplaats;
                 telefoonnrParam.Value = klant.telefoonnr;
                 mailParam.Value = klant.mail;
-                wachtwoordParam.Value = klant.wachtwoord;
+                 wachtwoordParam.Value = klant.wachtwoord;
                 wachtwoord_herhalenParam.Value = klant.wachtwoord_herhalen;
 
                 cmd.Parameters.Add(voorlettersParam);

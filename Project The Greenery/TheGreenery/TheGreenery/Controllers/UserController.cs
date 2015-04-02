@@ -33,8 +33,9 @@ namespace TheGreenery.Controllers
 
         public ActionResult LoginResult(String mail, String wachtwoord)
         {
-            Session[""] = false;
+            //Session[""] = false;
             LoginDBController gebruiker = new LoginDBController();
+            Session["LoggedIn"] = null;
 
             Klant gUser = gebruiker.LogInSelect(mail, wachtwoord);
             try
@@ -45,7 +46,7 @@ namespace TheGreenery.Controllers
                     {
                         //if (gUser.mail.Equals(""))
                         //{
-                        Session["LoggedIn"] = true;
+                        Session["LoggedIn"] = gUser.Code_Klant;
                         String url = "/Home/Mijngegevens";
                         return Redirect(url);
                         //}

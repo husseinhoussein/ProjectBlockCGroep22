@@ -1,17 +1,17 @@
 ﻿@using TheGreenery.Models;
 @model List<Product>
 @{
-   // ViewBag.Title = "YAY LENTE";
+    // ViewBag.Title = "YAY LENTE";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section featured {
     <section class="featured">
-     
-            <hgroup class="title">
-                <h1>@ViewBag.Title</h1>
-                            
-            </hgroup>
-      
+
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+
+        </hgroup>
+
     </section>
 }
 <html>
@@ -34,16 +34,16 @@
             <div id="producetop" class="row">
                 <div><h1>Bloeiende lente selectie!</h1></div><br>
                 @{ if ((@Model == null) || (Model.Count == 0))
-                     {
+                 {
                     <div>geen producten gevonden</div>
-                     }
-                     else
-                     {
+                 }
+                 else
+                 {
                     <div></div><br>
-                         foreach (Product pro in Model)
-                         {
-                            <div id="produce" style="float: left inherit">
-
+                     foreach (Product pro in Model)
+                     {
+                        <div id="produce" style="float: left inherit">
+                            <fieldset id="produce">
                                 <div>                       <h3>@pro.naam</h3></div>
                                 <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
                                 <div>productnr:             @pro.productnr</div>
@@ -51,16 +51,16 @@
                                 <div>Voorraad:              @pro.voorraadPerEenheid</div>
                                 <div>Omschrijving:<br />    @pro.omschrijving</div>
                                 <div>Eenheid:       @pro.eenheid</div>
+                            </fieldset>
+                        </div>
 
-                            </div>
 
-
-                         }
                      }
+                 }
                 }
             </div>
         </div>
-        
+
 
         <div class="three">
 
