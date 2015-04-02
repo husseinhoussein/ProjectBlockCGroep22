@@ -31,7 +31,7 @@ namespace TheGreenery.DBcontrollers
         {
             PersoneelDBController pc = new PersoneelDBController();
             List<Personeel> personeel = pc.getAllPersoneel();
-            return View();
+            return View(personeel);
         }
 
     }
