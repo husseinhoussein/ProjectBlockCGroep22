@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MySql.Data.MySqlClient;
 using TheGreenery.Models;
+using TheGreenery.DBcontrollers;
 
 
 namespace TheGreenery.DBcontrollers
@@ -45,7 +46,7 @@ namespace TheGreenery.DBcontrollers
                     product.zomer = dataReader.GetString("zomer");
                     product.herfst = dataReader.GetString("herfst");
                     product.winter = dataReader.GetString("winter");
-                    product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
+                    product.prijsPerEenheid = dataReader.GetString("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
@@ -70,55 +71,88 @@ namespace TheGreenery.DBcontrollers
             return producten;
         }
 
-//        public void InsertProduct(Product product)
-//        {
-//            MySqlTransaction trans = null;
-//            try
-//            {
-//                conn.Open();
-//                trans = conn.BeginTransaction();
-//                string insertString = @"insert into the_greenery.product (idproduct, naam, soort, seizoen, prijs, voorraad) 
-//                                               values (@idproduct, @naam, @soort, @seizoen, prijs, voorraad)";
-//                MySqlCommand cmd = new MySqlCommand(insertString, conn);
-//                MySqlParameter idproductParam = new MySqlParameter("@idproduct", MySqlDbType.Int32);
-//                MySqlParameter naamParam = new MySqlParameter("@naam", MySqlDbType.VarChar);
-//                MySqlParameter soortParam = new MySqlParameter("@soort", MySqlDbType.VarChar);
-//                MySqlParameter seizoenParam = new MySqlParameter("@seizoen", MySqlDbType.Int32);
-//                MySqlParameter prijsParam = new MySqlParameter("@prijs", MySqlDbType.Double);
-//                MySqlParameter voorraadParam = new MySqlParameter("@voorraad", MySqlDbType.Int32);
+        public void InsertProduct(Product product)
+        {
+            MySqlTransaction trans = null;
+            conn.Open();
+            trans = conn.BeginTransaction();
 
-//                idproductParam.Value = product.productnr;
-//                naamParam.Value = product.naam;
-//                soortParam.Value = product.type;
-//                seizoenParam.Value = product.seizoen;
-//                prijsParam.Value = product.prijs;
-//                voorraadParam.Value = product.voorraad;
+            try
+            {
 
-//                cmd.Parameters.Add(idproductParam);
-//                cmd.Parameters.Add(naamParam);
-//                cmd.Parameters.Add(soortParam);
-//                cmd.Parameters.Add(seizoenParam);
-//                cmd.Parameters.Add(prijsParam);
-//                cmd.Parameters.Add(voorraadParam);
+               
+                string insertString = @"
+                             INSERT INTO Product 
+                              (naam, type, lente, zomer, herfst, winter, prijsPerEenheid, 
+                              eenheid, omschrijving, voorraadPerEenheid, imageNaam, aanbieding) 
+                              values 
+                              (@naam, @type, @lente, @zomer, @herfst, @winter, @prijsPerEenheid, 
+                              @eenheid, @omschrijving, @voorraadPerEenheid, @imageNaam, @aanbieding);
+                 ";
 
-//                cmd.Prepare();
+                MySqlCommand cmd = new MySqlCommand(insertString, conn);
+                MySqlParameter naamParam = new MySqlParameter("@naam", MySqlDbType.VarChar);
+                MySqlParameter typeParam = new MySqlParameter("@type", MySqlDbType.VarChar);
+                MySqlParameter lenteParam = new MySqlParameter("@lente", MySqlDbType.VarChar);
+                MySqlParameter zomerParam = new MySqlParameter("@zomer", MySqlDbType.VarChar);
+                MySqlParameter herfstParam = new MySqlParameter("@herfst", MySqlDbType.VarChar);
+                MySqlParameter winterParam = new MySqlParameter("@winter", MySqlDbType.VarChar);
+                MySqlParameter prijsPerEenheidParam = new MySqlParameter("@prijsPerEenheid", MySqlDbType.VarChar);
+                MySqlParameter eenheidParam = new MySqlParameter("@eenheid", MySqlDbType.VarChar);
+                MySqlParameter omschrijvingParam = new MySqlParameter("@omschrijving", MySqlDbType.VarChar);
+                MySqlParameter voorraadPerEenheidParam = new MySqlParameter("@voorraadPerEenheid", MySqlDbType.VarChar);
+                MySqlParameter imageNaamParam = new MySqlParameter("@imageNaam", MySqlDbType.VarChar);
+                MySqlParameter aanbiedingParam = new MySqlParameter("@aanbieding", MySqlDbType.VarChar);
 
-//                cmd.ExecuteNonQuery();
 
-//                trans.Commit();
+                naamParam.Value = product.naam;
+                typeParam.Value = product.type;
+                lenteParam.Value = product.lente;
+                zomerParam.Value = product.zomer;
+                herfstParam.Value = product.herfst;
+                winterParam.Value = product.winter;
+                prijsPerEenheidParam.Value = product.prijsPerEenheid;
+                eenheidParam.Value = product.eenheid;
+                omschrijvingParam.Value = product.omschrijving;
+                voorraadPerEenheidParam.Value = product.voorraadPerEenheid;
+                imageNaamParam.Value = product.imageNaam;
+                aanbiedingParam.Value = product.aanbieding;
 
-//            }
-//            catch (Exception e)
-//            {
-//                trans.Rollback();
-//                Console.Write("Product niet toegevoegd: " + e);
-//            }
-//            finally
-//            {
-//                conn.Close();
-//            }
-//        }
 
+                cmd.Parameters.Add(naamParam);
+                cmd.Parameters.Add(typeParam);
+                cmd.Parameters.Add(lenteParam);
+                cmd.Parameters.Add(zomerParam);
+                cmd.Parameters.Add(herfstParam);
+                cmd.Parameters.Add(winterParam);
+                cmd.Parameters.Add(prijsPerEenheidParam);
+                cmd.Parameters.Add(eenheidParam);
+                cmd.Parameters.Add(omschrijvingParam);
+                cmd.Parameters.Add(voorraadPerEenheidParam);
+                cmd.Parameters.Add(imageNaamParam);
+                cmd.Parameters.Add(aanbiedingParam);
+
+                cmd.Prepare();
+
+                cmd.ExecuteNonQuery();
+
+                trans.Commit();
+
+            }
+            catch (Exception e)
+            {
+                trans.Rollback();
+                throw new Exception("Product niet toegevoegd: " + e);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+
+       
         public void DeleteAllProducts()
         {
             MySqlTransaction trans = null;
@@ -144,6 +178,7 @@ namespace TheGreenery.DBcontrollers
                 conn.Close();
             }
         }
+       
     }
 }
 
