@@ -11,64 +11,54 @@ namespace TheGreenery.DBcontrollers
 {
     public class AanbiedingDBController : DatabaseController
     {
+        
         public List<Product> getAllProductenByAanbieding(String aanbieding)
         {
             MySqlTransaction trans = null;
             List<Product> producten = new List<Product>();
-
-
-
-            //BLOB oplsaan, naam ook, header
-
-            //conn.Open();
+            conn.Open();
+            trans = conn.BeginTransaction();
             try
             {
-                conn.Open();
-                trans = conn.BeginTransaction();
                 string selectQuery = @"select * from Product where aanbieding = 'ja' ";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 cmd.Prepare();
-
-
-               MySqlDataReader dataReader = cmd.ExecuteReader();
+                
+                MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
                     Product product = new Product();
                     product.productnr = dataReader.GetInt32("productnr");
                     product.naam = dataReader.GetString("naam");                   
-                    product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
+                    product.prijsPerEenheid = dataReader.GetString("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
                     product.imageNaam = dataReader.GetString("imageNaam");
 
-
                     producten.Add(product);
                     Console.Write(product.naam);
                 }
             }
-
             catch (Exception e)
             {
                 Console.WriteLine("Aanbieding niet opgehaald: " + e);
             }
-
             finally
             {
                 conn.Close();
             }
-
             return producten;
         }
 
         //        public void InsertProduct(Product product)
         //        {
         //            MySqlTransaction trans = null;
+        //            conn.Open();
+        //            trans = conn.BeginTransaction();
         //            try
         //            {
-        //                conn.Open();
-        //                trans = conn.BeginTransaction();
         //                string insertString = @"insert into the_greenery.product (idproduct, naam, soort, seizoen, prijs, voorraad) 
         //                                               values (@idproduct, @naam, @soort, @seizoen, prijs, voorraad)";
         //                MySqlCommand cmd = new MySqlCommand(insertString, conn);
@@ -94,11 +84,8 @@ namespace TheGreenery.DBcontrollers
         //                cmd.Parameters.Add(voorraadParam);
 
         //                cmd.Prepare();
-
         //                cmd.ExecuteNonQuery();
-
         //                trans.Commit();
-
         //            }
         //            catch (Exception e)
         //            {
@@ -114,17 +101,14 @@ namespace TheGreenery.DBcontrollers
         public void DeleteAllProducts()
         {
             MySqlTransaction trans = null;
+            conn.Open();
+            trans = conn.BeginTransaction();
             try
             {
-                conn.Open();
-                trans = conn.BeginTransaction();
                 string deleteString = @"delete from the_greenery.product WHERE  idproduct = "" ;";
-
                 MySqlCommand cmd = new MySqlCommand(deleteString, conn);
                 cmd.ExecuteNonQuery();
-
                 trans.Commit();
-
             }
             catch (Exception e)
             {

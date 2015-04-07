@@ -12,14 +12,11 @@ namespace TheGreenery.Controllers
 {
     public class UserController : Controller
     {
-        //
-        // GET: /User/
         public ActionResult Index()
         {
             return View();
         }
-
-
+        
         public ActionResult LogIn()
         {
             return View();
@@ -32,12 +29,9 @@ namespace TheGreenery.Controllers
         }
 
         public ActionResult LoginResult(int? klantnr, String mail, String wachtwoord)
-        {
-            
-            //Session[""] = false;
+        {            
             LoginDBController gebruiker = new LoginDBController();
             Session["LoggedIn"] = null;
-
             Klant gUser = gebruiker.LogInSelect(klantnr, mail, wachtwoord);
             try
             {
@@ -45,24 +39,21 @@ namespace TheGreenery.Controllers
                 {
                     if (gUser.mail == @mail && gUser.wachtwoord == @wachtwoord)
                     {
-                        //if (gUser.mail.Equals(""))
-                        //{
                         Session["LoggedIn"] = gUser.Code_Klant;
                         String url = "/Home/Mijngegevens";
                         return Redirect(url);
-                        //}
                     }
                 }
             }
             catch (FormatException)
             {
                 ViewData["Ero"] = "you dun goofed";
-
                 return View("LogIn");
             }
             return View();
         }
 
+<<<<<<< HEAD
         public ActionResult Registreer()
         {
             return View();
@@ -126,8 +117,9 @@ namespace TheGreenery.Controllers
         }
 
 
+=======
+>>>>>>> origin/master
     }
-
 }
 
 

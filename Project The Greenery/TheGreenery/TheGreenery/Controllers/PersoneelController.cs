@@ -12,8 +12,6 @@ namespace TheGreenery.Controllers
 {
     public class PersoneelController : Controller
     {
-        //
-        // GET: /User/
         public ActionResult Index()
         {
             return View();
@@ -40,12 +38,9 @@ namespace TheGreenery.Controllers
         }
 
         public ActionResult LoginResult(int? personeelnr, String wachtwoord, String type)
-        {
-            
-            //Session[""] = false;
+        {    
             LoginDBController gebruiker = new LoginDBController();
             Session["LoggedIn"] = null;
-
             Personeel gUser = gebruiker.LogInPersSelect(personeelnr, wachtwoord, type);
             try
             {
@@ -55,9 +50,9 @@ namespace TheGreenery.Controllers
                     {
                         if (gUser.type == "beheerder")
                         {
-                        Session["LoggedIn"] = gUser.Code_Personeel;
-                        String url = "/Personeel/LoginResultB";
-                        return Redirect(url);
+                            Session["LoggedIn"] = gUser.Code_Personeel;
+                            String url = "/Personeel/LoginResultB";
+                            return Redirect(url);
                         }
                         else if (gUser.type == "manager")
                         {
@@ -65,23 +60,18 @@ namespace TheGreenery.Controllers
                             String url = "/Personeel/LoginResultM";
                             return Redirect(url);
                         }
-
-
                     }
                 }
             }
             catch (FormatException)
             {
                 ViewData["Ero"] = "you dun goofed";
-
                 return View("LogIn");
             }
             return View();
         }
 
-
     }
-
 }
 
 
