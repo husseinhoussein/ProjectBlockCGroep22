@@ -6,7 +6,6 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @System.Web.Optimization.Styles.Render("~/Content/Site.css")
-    @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
     @if (Request.IsAuthenticated)
@@ -23,14 +22,12 @@
         <span> | </span>
         @Html.ActionLink("Personeel Log In", "PersoneelLogIn", "Personeel")
     }
-
     <header>
         <div class="content-wrapper">
             <div class="float-left">
                 <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Images/logo.png")" alt="Home" /></a>
             </div>
             <div class="float-right">
-
                 <section id="login">
                     <div style="float:right">
                         <form naam="input" action="@Url.Action("Showproduct", "Product")" method="post">
@@ -40,7 +37,6 @@
                     </div>
                 </section>
                 <div style="float:right" id="menu">
-
                     <div style="float:left"><a href="@Url.Action("Winkelwagen", "Home") "> <img border="0" alt="Greenery" src="~/Images/winkelwagen.png" /></a></div>
                     <div style="float:left">@Html.ActionLink("Home", "Index", "Home")</div>
                     <div style="float:left">@Html.ActionLink("  Over Ons", "About", "Home")</div>
@@ -54,19 +50,15 @@
                     <div id="menubalk" style="float:left">  <a href="@Url.Action("LentePage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_lente.png" /> </a></div>
                     <div id="menubalk" style="float:left">  <a href="@Url.Action("ZomerPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_zomer.png" /></a></div>
                     <div id="menubalk" style="float:left">  <a href="@Url.Action("HerfstPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_herfst.png" /> </a></div>
-                    <div id="menubalk" style="float:left">  <a href="@Url.Action("WinterPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>
-                    
+                    <div id="menubalk" style="float:left">  <a href="@Url.Action("WinterPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>       
                     }
                     <hr width="100%" align="right" size="0" />
-                </nav> 
-                
+                </nav>         
             </div>
         </div>
     </header>
-
     @RenderSection("featured", required: false)
     <section class="content-wrapper main-content clear-fix">
-
         @RenderBody()
     </section>
     <footer>
@@ -79,6 +71,5 @@
         </div>
        <div style="float:right"> <img width="90" height="90" border="0" alt="Greenery" src="~/Images/ekokeurmerk.jpg"><img /></div>
     </footer>
-
 </body>
 </html>

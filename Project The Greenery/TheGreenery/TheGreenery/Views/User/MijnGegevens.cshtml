@@ -3,50 +3,30 @@
 @using System.Web.Mvc
 @using TheGreenery.Models;
 @{
-
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section featured {
     <section class="featured">
-        @*<div class="content-wrapper">*@
         <hgroup class="title"></hgroup>
-
-        <p> <h1>@ViewBag.Title "Klanten"</h1></p><br />
-
+        <p><h1>@ViewBag.Title "Klanten"</h1></p><br />
     </section>
-
 }
-
-@*<div class="two">*@
-@*<div id="producetop" class="row">*@
 @using (Html.BeginForm())
 {
-
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
 }
-
-
-
 @{ if ((@Model == null) || (Model.Count == 0))
  {
     <div>geen gegevens gevonden</div>
  }
- 
  else
  {
     <div></div><br>
-
-
      foreach (Klant kl in Model)
-         
      {
-
-
         <fieldset>
             <legend>Klant:</legend>
-            
                 <form name="inlogForm" action="@Url.Action("GegevensGewijzigd","User")" method="post">
                     <label for="klantnr">Klantnummer:</label><br />
                     <input type="text" disabled="disabled" name="klantnr" value="@kl.klantnr" /><br />
@@ -66,17 +46,12 @@
                     <input type="text" name="telefoonnr" value="@kl.telefoonnr" /><br />
                     <label for="mail">E-mail:</label><br />
                     <input type="text" name="mail" value="@kl.mail" /><br />
-                 
-
                     <br />
                     <input type="submit" value="Edit" />
-                </form>
-              
+                </form>        
             </fieldset>
-    
-}
- }
-
+     }
+    }
 }
 
 
