@@ -28,14 +28,21 @@
              else
              {
                 <div>de volgende personeelsleden zijn gevonden</div><br>
-                 foreach (Personeel pro in Model)
+                 foreach (Personeel per in Model)
                  {
+<<<<<<< HEAD:Project The Greenery/TheGreenery/TheGreenery/Views/Manager/PersoneelInzien.cshtml
                     <fieldset id="produce">
                         <div>personeelnummer:   @pro.personeelnr</div>
                         <div>voorletters:       @pro.voorletters</div>
                         <div>tussenvoegsel:      @pro.tussenvoegsel</div>
                         <div>achternaam:         @pro.achternaam</div>
                     </fieldset>
+=======
+                    <div>personeelnummer:   @per.personeelnr</div>
+                    <div>voorletters:       @per.voorletters</div>
+                    <div>tussenvoegsel:     @per.tussenvoegsel</div>
+                    <div>achternaam:        @per.achternaam</div>
+>>>>>>> origin/master:Project The Greenery/TheGreenery/TheGreenery/Views/ManagerDB/PersoneelInzien.cshtml
                  }
              }
 }
