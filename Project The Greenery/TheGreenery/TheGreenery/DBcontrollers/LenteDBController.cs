@@ -12,7 +12,7 @@ namespace TheGreenery.DBcontrollers
     public class LenteDBController : DatabaseController
     {
         
-        public List<Product> getAllProductenBylente(String lente)
+        public List<Product> getAllProductenByLente(String lente)
         {
             MySqlTransaction trans = null;
             List<Product> producten = new List<Product>();
@@ -30,7 +30,7 @@ namespace TheGreenery.DBcontrollers
                     Product product = new Product();
                     product.productnr = dataReader.GetInt32("productnr");
                     product.naam = dataReader.GetString("naam");
-                    product.prijsPerEenheid = dataReader.GetString("prijsPerEenheid");
+                    product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
