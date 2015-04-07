@@ -9,13 +9,13 @@ namespace TheGreenery.Models
     public class Personeel
     {
 
-         public Personeel(int Code_Personeel)
+        public Personeel(int Code_Personeel)
         {
             this.Code_Personeel = Code_Personeel;
         }
-        public Personeel() { }
-
+        
         public int Code_Personeel;
+
         public int IdPersoneel
         {
             get { return Code_Personeel; }
@@ -61,7 +61,7 @@ namespace TheGreenery.Models
         { return wachtwoord; }
 
         public void setWachtwoord(String input)
-        { wachtwoord = input; }
-        
+        { wachtwoord = input; } 
     }
+
 }

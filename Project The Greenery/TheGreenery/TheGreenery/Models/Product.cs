@@ -21,8 +21,7 @@ namespace TheGreenery.Models
         public String imageNaam;
         public String aanbieding;
      
-
-         public int getProductnr()
+        public int getProductnr()
         { return productnr; }
 
         public void setProductnr(int input)
@@ -64,18 +63,11 @@ namespace TheGreenery.Models
         public string getWinter()
         { return winter; }
 
-
-
-
         public void setPrijsPerEenheid(String input)
         { prijsPerEenheid = input; }
 
         public String getPrijsPerEenheid()
         { return prijsPerEenheid; }
-
-
-
-
 
         public string getEenheid()
         { return eenheid; }
@@ -89,17 +81,11 @@ namespace TheGreenery.Models
         public void setOmschrijving(String input)
         { omschrijving = input; }
 
-
-
-
         public int getVoorraadPerEenheid()
         { return voorraadPerEenheid; }
 
         public void setVoorraadPerEenheid(int input)
         { voorraadPerEenheid = input; }
-
-
-
 
         public string getImageNaam()
         { return imageNaam; }
@@ -114,4 +100,4 @@ namespace TheGreenery.Models
         { aanbieding = input; }
     }
 
-    }
+}
