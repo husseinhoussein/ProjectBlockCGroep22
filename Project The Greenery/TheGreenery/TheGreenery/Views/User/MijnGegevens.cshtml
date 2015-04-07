@@ -1,5 +1,4 @@
-﻿@using TheGreenery.Models;
-@model List<Klant>
+﻿@model Klant
 @using System.Web.Mvc
 @using TheGreenery.Models;
 @{
@@ -29,7 +28,7 @@
 
 
 
-@{ if ((@Model == null) || (Model.Count == 0))
+@{ if (@Model == null) 
  {
     <div>geen gegevens gevonden</div>
  }
@@ -38,34 +37,28 @@
  {
     <div></div><br>
 
-
-     foreach (Klant kl in Model)
-         
-     {
-
-
         <fieldset>
             <legend>Klant:</legend>
             
                 <form name="inlogForm" action="@Url.Action("GegevensGewijzigd","User")" method="post">
                     <label for="klantnr">Klantnummer:</label><br />
-                    <input type="text" disabled="disabled" name="klantnr" value="@kl.klantnr" /><br />
+                    <input type="text" disabled="disabled" name="klantnr" value="@Model.klantnr" /><br />
                     <label for="voorletters">Voorletters:</label><br />
-                    <input type="text" name="voorletters" value="@kl.voorletters" /><br />
+                    <input type="text" name="voorletters" value="@Model.voorletters" /><br />
                     <label for="tussenvoegsel">Tussenvoegsel:</label><br />
-                    <input type="text" name="tussenvoegsel" value="@kl.tussenvoegsel" /><br />
+                    <input type="text" name="tussenvoegsel" value="@Model.tussenvoegsel" /><br />
                     <label for="achternaam">Achternaam:</label><br />
-                    <input type="text" name="achternaam" value="@kl.achternaam" /><br />
+                    <input type="text" name="achternaam" value="@Model.achternaam" /><br />
                     <label for="adres">Adres:</label><br />
-                    <input type="text" name="adres" value="@kl.adres" /><br />
+                    <input type="text" name="adres" value="@Model.adres" /><br />
                     <label for="postcode">Postcode:</label><br />
-                    <input type="text" name="postcode" value="@kl.postcode" /><br />
+                    <input type="text" name="postcode" value="@Model.postcode" /><br />
                     <label for="woonplaats">Woonplaats:</label><br />
-                    <input type="text" name="woonplaats" value="@kl.woonplaats" /><br />
+                    <input type="text" name="woonplaats" value="@Model.woonplaats" /><br />
                     <label for="telefoonnr">Telefoon:</label><br />
-                    <input type="text" name="telefoonnr" value="@kl.telefoonnr" /><br />
+                    <input type="text" name="telefoonnr" value="@Model.telefoonnr" /><br />
                     <label for="mail">E-mail:</label><br />
-                    <input type="text" name="mail" value="@kl.mail" /><br />
+                    <input type="text" name="mail" value="@Model.mail" /><br />
                  
 
                     <br />
@@ -77,7 +70,7 @@
 }
  }
 
-}
+ 
 
 
 

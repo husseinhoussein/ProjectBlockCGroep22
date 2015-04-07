@@ -38,16 +38,8 @@ namespace TheGreenery.Controllers
         {
 
             ZomerDBController sc = new ZomerDBController();
-<<<<<<< HEAD
 
             List<Product> producten = sc.getAllProductenByZomer(zomer);
-
-            
-
-=======
-            List<Product> producten = sc.getAllProductenByZomer(zomer);
-            
->>>>>>> origin/master
             return View(producten);
         }
 
@@ -55,30 +47,15 @@ namespace TheGreenery.Controllers
         {
 
             HerfstDBController sc = new HerfstDBController();
-<<<<<<< HEAD
-
             List<Product> producten = sc.getAllProductenByHerfst(herfst);
 
-            
-
-=======
-            List<Product> producten = sc.getAllProductenByHerfst(herfst);
->>>>>>> origin/master
             return View(producten);
         }
         public ActionResult WinterPage(String winter)
         {
 
             WinterDBController sc = new WinterDBController();
-<<<<<<< HEAD
-
             List<Product> producten = sc.getAllProductenByWinter(winter);
-
-           
-
-=======
-            List<Product> producten = sc.getAllProductenByWinter(winter);
->>>>>>> origin/master
             return View(producten);
         }
 

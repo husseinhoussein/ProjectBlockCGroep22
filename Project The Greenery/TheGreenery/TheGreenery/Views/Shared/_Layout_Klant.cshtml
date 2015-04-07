@@ -10,21 +10,12 @@
     @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
-    @if (Request.IsAuthenticated)
-    {
-        UserController loginresult = new UserController();
-        <strong>@Html.Encode(User.Identity.Name)</strong>
-        @Html.ActionLink("Log Out", "Logout", "User")
-        <div id="menubalk" style="float:right">  <a href="@Url.Action("MijnGegevens","User") "><u>Mijn Gegevens</u></a></div>
-    }
-    else
-    {
-        @Html.ActionLink("Register", "Registreer", "Home")
-        <span> | </span>
-        @Html.ActionLink("Log In", "Login", "User")
-        <span> | </span>
-        @Html.ActionLink("Personeel Log In", "PersoneelLogIn", "Personeel")
-    }
+
+    @Html.ActionLink("Mijn Gegevens", "MijnGegevens", "User")
+    <span> | </span>
+    @Html.ActionLink("Mijn Bestellingen", "MijnBestellingen", "User")
+    <span> | </span>
+    @Html.ActionLink("Log uit", "Index", "Home")
 
     <header>
         <div class="content-wrapper">

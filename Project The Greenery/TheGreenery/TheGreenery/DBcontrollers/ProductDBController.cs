@@ -175,7 +175,7 @@ namespace TheGreenery.DBcontrollers
             }
         }
 
-        public List<Product> getAllProducten()
+        public List<Product> getAllProducten(String naam)
         {
             MySqlTransaction trans = null;
             List<Product> producten = new List<Product>();

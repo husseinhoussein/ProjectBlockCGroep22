@@ -6,18 +6,19 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @System.Web.Optimization.Styles.Render("~/Content/Site.css")
-    @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
+
+    @Html.ActionLink("Mijn Gegevens", "MijnGegevens", "User")
+    <span> | </span>
+    @Html.ActionLink("Log uit", "Index", "Home")
 
     <header>
         <div class="content-wrapper">
             <div class="float-left">
                 <a href="@Url.Action("Index", "Home")"> <img border="0" alt="Greenery" src="~/Images/logo.png"><img /></a>
             </div>
-            <div id="menubalk" style="float:right">  <a href="@Url.Action("/MijnGegevens") "><u>Mijn Gegevens</u></a></div>
-            <div id="menubalk" style="float:right">  <a href="@Url.Action("/Registreer") "><u>Registreer</u></a></div>
-            <div id="menubalk" style="float:right">  <a href="@Url.Action("/Login") "></a><u>Log in</u></div>
+            
 
 
             <div class="float-right">
@@ -46,8 +47,8 @@
                     {
                         <hr width="100%" align="right" size="0" />
                         <div>
-                            <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenInzien", "ManagerDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_ProductenInzien.png" /> </a></div>
-                            <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelInzien", "ManagerDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelInzien.png" /> </a></div>
+                            <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenInzien", "Manager") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_ProductenInzien.png" /> </a></div>
+                            <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelInzien", "Manager") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelInzien.png" /> </a></div>
                         </div>
                     }
                 </nav>
