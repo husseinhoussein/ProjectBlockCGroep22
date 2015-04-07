@@ -11,20 +11,15 @@ namespace TheGreenery.DBcontrollers
 {
     public class ZoekDBController : DatabaseController
     {
+        
         public List<Zoek> getAllProductenByNaam(String naam)
         {
             MySqlTransaction trans = null;
             List<Zoek> producten = new List<Zoek>();
-
-
-
-            //BLOB oplsaan, naam ook, header
-
-            //conn.Open();
+            conn.Open();
+            trans = conn.BeginTransaction();
             try
             {
-                conn.Open();
-                trans = conn.BeginTransaction();
                 string selectQuery = @"select * from Product where naam like @naam";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
@@ -32,7 +27,6 @@ namespace TheGreenery.DBcontrollers
                 naamParam.Value = "%" + naam + "%";
                 cmd.Parameters.Add(naamParam);
                 cmd.Prepare();
-
 
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
@@ -56,17 +50,14 @@ namespace TheGreenery.DBcontrollers
                     Console.Write(product.naam);
                 }
             }
-
             catch (Exception e)
             {
-                Console.WriteLine("Studenten niet opgehaald: " + e);
+                Console.WriteLine("Producten niet opgehaald: " + e);
             }
-
             finally
             {
                 conn.Close();
             }
-
             return producten;
         }
 
@@ -102,11 +93,8 @@ namespace TheGreenery.DBcontrollers
         //                cmd.Parameters.Add(voorraadParam);
 
         //                cmd.Prepare();
-
         //                cmd.ExecuteNonQuery();
-
         //                trans.Commit();
-
         //            }
         //            catch (Exception e)
         //            {
@@ -122,17 +110,14 @@ namespace TheGreenery.DBcontrollers
         public void DeleteAllProducts()
         {
             MySqlTransaction trans = null;
+            conn.Open();
+            trans = conn.BeginTransaction();
             try
-            {
-                conn.Open();
-                trans = conn.BeginTransaction();
+            {                
                 string deleteString = @"delete from the_greenery.product WHERE  idproduct = "" ;";
-
                 MySqlCommand cmd = new MySqlCommand(deleteString, conn);
                 cmd.ExecuteNonQuery();
-
                 trans.Commit();
-
             }
             catch (Exception e)
             {
@@ -144,6 +129,7 @@ namespace TheGreenery.DBcontrollers
                 conn.Close();
             }
         }
+
     }
 }
 

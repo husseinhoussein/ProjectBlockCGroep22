@@ -48,7 +48,7 @@ namespace TheGreenery.DBcontrollers
             }
             catch (Exception e)
             {
-                Console.WriteLine(" === niet opgehaald: " + e);
+                Console.WriteLine(" Bestellingen niet opgehaald: " + e);
             }
             finally
             {
@@ -56,8 +56,6 @@ namespace TheGreenery.DBcontrollers
             }
             return bestellingen;
         }
-
-
        
     }
 }

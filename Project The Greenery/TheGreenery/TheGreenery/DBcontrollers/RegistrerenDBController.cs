@@ -7,22 +7,16 @@ using MySql.Data.MySqlClient;
 using TheGreenery.Models;
 using TheGreenery.Controllers;
 
-
-
-
 namespace TheGreenery.DBcontrollers
 {
     class RegistrerenDBController : DatabaseController
     {
-        //
-        // GET: /Registeren/
-
+        
         public void InsertRegistratie(Klant klant)
         {
             MySqlTransaction trans = null;
             conn.Open();
             trans = conn.BeginTransaction();
-
             try
             {
                 string insertString = @"
@@ -56,7 +50,7 @@ namespace TheGreenery.DBcontrollers
                 woonplaatsParam.Value = klant.woonplaats;
                 telefoonnrParam.Value = klant.telefoonnr;
                 mailParam.Value = klant.mail;
-                 wachtwoordParam.Value = klant.wachtwoord;
+                wachtwoordParam.Value = klant.wachtwoord;
                 wachtwoord_herhalenParam.Value = klant.wachtwoord_herhalen;
 
                 cmd.Parameters.Add(voorlettersParam);
@@ -90,7 +84,6 @@ namespace TheGreenery.DBcontrollers
             MySqlTransaction trans = null;
             conn.Open();
             trans = conn.BeginTransaction();
-
             try
             {
                 string insertString = @"
@@ -115,8 +108,7 @@ namespace TheGreenery.DBcontrollers
                 tussenvoegselParam.Value = personeel.tussenvoegsel;
                 achternaamParam.Value = personeel.achternaam;
                 typeParam.Value = personeel.type;
-                wachtwoordParam.Value = personeel.wachtwoord;
-                
+                wachtwoordParam.Value = personeel.wachtwoord; 
 
                 cmd.Parameters.Add(voorlettersParam);
                 cmd.Parameters.Add(tussenvoegselParam);
@@ -138,8 +130,6 @@ namespace TheGreenery.DBcontrollers
                 conn.Close();
             }
         }
-
-
 
     }
 }

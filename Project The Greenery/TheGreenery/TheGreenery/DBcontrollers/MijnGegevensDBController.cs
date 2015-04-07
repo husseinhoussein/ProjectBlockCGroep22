@@ -11,30 +11,27 @@ namespace TheGreenery.DBcontrollers
 {
     public class MijnGegevensDBController : DatabaseController
     {
+        
         public List<Klant> getKlantbyID(int? klantnr, String mail, String wachtwoord)
         {
             MySqlTransaction trans = null;
             List<Klant> klanten = new List<Klant>();
             LoginDBController gebruiker = new LoginDBController();
-
-
             UserController thingy = new UserController();
             Klant gUser = gebruiker.LogInSelect(klantnr, mail, wachtwoord);
 
             //Session["LoggedIn"] = null;
             //Session["LoggedIn"] = gUser.Code_Klant.Equals("@klantr");
             conn.Open();
+            trans = conn.BeginTransaction();
             try
             {
-                trans = conn.BeginTransaction();
                 string selectQuery = @"select * from Klant where klantnr = 1;";  //" + gUser.Code_Klant + ";";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 MySqlParameter klantnrParam = new MySqlParameter("@klantnr", MySqlDbType.Int32);
                 cmd.Parameters.Add(klantnrParam);
                 cmd.Prepare();
-
-
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
@@ -49,42 +46,35 @@ namespace TheGreenery.DBcontrollers
                     klant.telefoonnr = dataReader.GetString("telefoonnr");
                     klant.mail = dataReader.GetString("mail");
 
-
                     klanten.Add(klant);
                     Console.Write(klant.klantnr);
                 }
             }
-
             catch (Exception e)
             {
                 throw new Exception("Mijn gegevens niet opgehaald: " + e);
             }
-
             finally
             {
                 conn.Close();
             }
-
             return klanten;
-
         }
+
         public void GegevensAanpassen(Klant klant)
         {
             MySqlTransaction trans = null;
             conn.Open();
             trans = conn.BeginTransaction();
-
             try
             {
                 string insertString = @"
-                    UPDATE Klant 
-                    
+                    UPDATE Klant      
                     SET  voorletters = @voorletters, tussenvoegsel = @tussenvoegsel, achternaam = @achternaam, 
                          adres = @adres, postcode = @postcode, woonplaats = @woonplaats, telefoonnr = @telefoonnr, 
-                         mail = @mail 
-                        
+                         mail = @mail           
                     WHERE klantnr = 1 
-                ;";
+                    ;";
 
                 MySqlCommand cmd = new MySqlCommand(insertString, conn);
                 MySqlParameter voorlettersParam = new MySqlParameter("@voorletters", MySqlDbType.VarChar);
@@ -95,7 +85,6 @@ namespace TheGreenery.DBcontrollers
                 MySqlParameter woonplaatsParam = new MySqlParameter("@woonplaats", MySqlDbType.VarChar);
                 MySqlParameter telefoonnrParam = new MySqlParameter("@telefoonnr", MySqlDbType.VarChar);
                 MySqlParameter mailParam = new MySqlParameter("@mail", MySqlDbType.VarChar);
-
 
                 voorlettersParam.Value = klant.voorletters;
                 tussenvoegselParam.Value = klant.tussenvoegsel;
@@ -122,7 +111,7 @@ namespace TheGreenery.DBcontrollers
             catch (Exception e)
             {
                 trans.Rollback();
-                throw new Exception("Klant niet aangepast: " + e);
+                throw new Exception("Klantgegevens niet aangepast: " + e);
             }
             finally
             {

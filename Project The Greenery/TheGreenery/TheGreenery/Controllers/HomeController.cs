@@ -12,12 +12,14 @@ namespace TheGreenery.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index(String aanbieding)
         {
             AanbiedingDBController sc = new AanbiedingDBController();
             List<Product> producten = sc.getAllProductenByAanbieding(aanbieding);
             return View(producten);
         }
+
         public ActionResult About()
         {
             return View();
@@ -42,7 +44,6 @@ namespace TheGreenery.Controllers
         public ActionResult FAQ()
         {
             return View();
-
         }
 
         public ActionResult Winkelwagen()
