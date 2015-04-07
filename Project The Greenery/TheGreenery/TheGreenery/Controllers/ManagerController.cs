@@ -30,11 +30,8 @@ namespace TheGreenery.Controllers
         public ActionResult PersoneelInzien(int? personeelnr)
         {
             PersoneelDBController pc = new PersoneelDBController();
-<<<<<<< HEAD
-            List<Personeel> personeel = pc.getAllPersoneel();
-=======
+            //List<Personeel> personeel = pc.getAllPersoneel();
             List<Personeel> personeel = pc.getAllPersoneel(personeelnr);
->>>>>>> origin/master
             return View(personeel);
         }
 
