@@ -13,7 +13,7 @@
     {
         <strong>@Html.Encode(User.Identity.Name)</strong>
         @Html.ActionLink("Log Out", "Logout", "User")
-        <div id="menubalk" style="float:right">  <a href="@Url.Action("MijnGegevens","Home") "><u>Mijn Gegevens</u></a></div>
+        <div id="menubalk" style="float:right">  <a href="@Url.Action("MijnGegevens","User") "><u>Mijn Gegevens</u></a></div>
     }
     else
     {

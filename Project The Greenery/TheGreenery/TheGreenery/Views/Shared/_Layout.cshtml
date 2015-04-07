@@ -17,7 +17,7 @@
     }
     else
     {
-        @Html.ActionLink("Register", "Registreer", "Home")
+        @Html.ActionLink("Register", "Registreer", "User")
         <span> | </span>
         @Html.ActionLink("Log In", "Login", "User")
         <span> | </span>
@@ -33,7 +33,7 @@
 
                 <section id="login">
                     <div style="float:right">
-                        <form naam="input" action="/Home/ShowProduct" method="post">
+                        <form naam="input" action="@Url.Action("Showproduct", "Product")" method="post">
                             <input type=text name="naam" placeholder="zoekproduct" />
                             <input type="submit" value="zoeken" />
                         </form>

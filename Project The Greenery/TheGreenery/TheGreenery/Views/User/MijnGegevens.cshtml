@@ -47,7 +47,7 @@
         <fieldset>
             <legend>Klant:</legend>
             
-                <form name="inlogForm" action="/Home/GegevensGewijzigd" method="post">
+                <form name="inlogForm" action="@Url.Action("GegevensGewijzigd","User")" method="post">
                     <label for="klantnr">Klantnummer:</label><br />
                     <input type="text" disabled="disabled" name="klantnr" value="@kl.klantnr" /><br />
                     <label for="voorletters">Voorletters:</label><br />

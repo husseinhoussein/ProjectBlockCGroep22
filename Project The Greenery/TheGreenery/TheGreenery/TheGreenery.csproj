@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersoneelController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\BeheerderController.cs" />
     <Compile Include="DBcontrollers\GegevensAanpassenDBController.cs" />
@@ -234,7 +235,7 @@
     <Content Include="Views\Home\AlgemeneVoorwaarden.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
-    <Content Include="Views\Home\geregistreerd.cshtml" />
+    <Content Include="Views\User\geregistreerd.cshtml" />
     <Content Include="Views\Home\HerfstPage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\LentePage.cshtml" />
@@ -245,13 +246,13 @@
     <Content Include="Views\Home\ZomerPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\ShowProduct.cshtml" />
+    <Content Include="Views\Product\ShowProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Registreer.cshtml" />
+    <Content Include="Views\User\Registreer.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\MijnGegevens.cshtml" />
+    <Content Include="Views\User\MijnGegevens.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout_Beheerder.cshtml" />
@@ -278,7 +279,7 @@
     <Content Include="Views\Home\MijnBestellingen.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\GegevensGewijzigd.cshtml" />
+    <Content Include="Views\User\GegevensGewijzigd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Beheerder\Ingelogd.cshtml" />

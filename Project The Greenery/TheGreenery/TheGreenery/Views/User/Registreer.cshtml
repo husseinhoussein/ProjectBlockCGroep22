@@ -8,7 +8,7 @@
 
 <h2>Registreer</h2>
 <fieldset>
-    <form name="inlogForm" action="/Home/geregistreerd" method="post">
+    <form name="inlogForm" action="@Url.Action("geregistreerd", "User")" method="post">
         <label for="voorletters">Voorletters:</label><br />
         <input type="text" name="voorletters" value="" id="voorlettersText" /><br />
         <label for="tussenvoegsel">Tussenvoegsel:</label><br />
