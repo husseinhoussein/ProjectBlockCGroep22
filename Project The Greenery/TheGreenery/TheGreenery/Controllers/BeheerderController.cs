@@ -12,9 +12,6 @@ namespace TheGreenery.Controllers
 {
     public class BeheerderController : DatabaseController
     {
-        //
-        // GET: /BeheerderDB/
-
         public ActionResult Ingelogd()
         {
             return View();
@@ -46,10 +43,9 @@ namespace TheGreenery.Controllers
             List<Personeel> personeel = pc.getAllPersoneel(personeelnr);
             return View(personeel);
         }
+
         public ActionResult PersoneelToegevoegd(int? personeelnr, String voorletters, String tussenvoegsel, String achternaam, String type, String wachtwoord)
         {
-
-
             Personeel personeel = new Personeel();
             personeel.getPersoneelnr();
             personeel.setVoorletters(voorletters);
@@ -59,15 +55,12 @@ namespace TheGreenery.Controllers
             personeel.setWachtwoord(wachtwoord);
 
             if (personeelnr != null && !personeelnr.Equals(""))
-            {
-                RegistrerenDBController registrerenController = new RegistrerenDBController();
-                registrerenController.InsertPersoneel(personeel);
-
-            }
+                {
+                    RegistrerenDBController registrerenController = new RegistrerenDBController();
+                    registrerenController.InsertPersoneel(personeel);
+                }
             return View();
-
         }
-
 
     }
 }

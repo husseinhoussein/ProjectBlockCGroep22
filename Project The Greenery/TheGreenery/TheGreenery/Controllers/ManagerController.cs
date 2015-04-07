@@ -12,9 +12,6 @@ namespace TheGreenery.Controllers
 {
     public class ManagerController : DatabaseController
     {
-        //
-        // GET: /ManagerDB/
-
         public ActionResult Ingelogd()
         {
             return View();
@@ -30,7 +27,6 @@ namespace TheGreenery.Controllers
         public ActionResult PersoneelInzien(int? personeelnr)
         {
             PersoneelDBController pc = new PersoneelDBController();
-            //List<Personeel> personeel = pc.getAllPersoneel();
             List<Personeel> personeel = pc.getAllPersoneel(personeelnr);
             return View(personeel);
         }

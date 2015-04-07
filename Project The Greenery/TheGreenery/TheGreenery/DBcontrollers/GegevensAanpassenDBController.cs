@@ -8,19 +8,13 @@ using MySql.Data.MySqlClient;
 
 namespace TheGreenery.DBcontrollers
 {
-
-        //
-        // GET: /GegevensAanpassenDB/
-        public class GegevensAanpassenDBController : DatabaseController
+    public class GegevensAanpassenDBController : DatabaseController
         {
 
-            // GET: /GegevensAanpassenDB/
             public void GegevensAanpassen()
             {
-
                 MySqlTransaction trans = null;
                 conn.Open();
-
                 trans = conn.BeginTransaction();
                 try
                 {
@@ -75,7 +69,5 @@ namespace TheGreenery.DBcontrollers
                 }
             }
 
-
         }
-
     }

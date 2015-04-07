@@ -11,25 +11,19 @@ namespace TheGreenery.DBcontrollers
 {
     public class WinterDBController : DatabaseController
     {
-        public List<Product> getAllProductenBylente(String winter)
+        
+        public List<Product> getAllProductenByWinter(String winter)
         {
             MySqlTransaction trans = null;
             List<Product> producten = new List<Product>();
-
-
-
-            //BLOB oplsaan, naam ook, header
-
-            //conn.Open();
+            conn.Open();
+            trans = conn.BeginTransaction();
             try
             {
-                conn.Open();
-                trans = conn.BeginTransaction();
                 string selectQuery = @"select * from Product where winter = 'ja' ";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 cmd.Prepare();
-
 
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
@@ -43,32 +37,28 @@ namespace TheGreenery.DBcontrollers
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
                     product.imageNaam = dataReader.GetString("imageNaam");
 
-
                     producten.Add(product);
                     Console.Write(product.naam);
                 }
             }
-
             catch (Exception e)
             {
-                Console.WriteLine("Lente niet opgehaald: " + e);
+                Console.WriteLine("Winter niet opgehaald: " + e);
             }
-
             finally
             {
                 conn.Close();
             }
-
             return producten;
         }
 
         //        public void InsertProduct(Product product)
         //        {
         //            MySqlTransaction trans = null;
+        //            conn.Open();
+        //            trans = conn.BeginTransaction();
         //            try
         //            {
-        //                conn.Open();
-        //                trans = conn.BeginTransaction();
         //                string insertString = @"insert into the_greenery.product (idproduct, naam, soort, seizoen, prijs, voorraad) 
         //                                               values (@idproduct, @naam, @soort, @seizoen, prijs, voorraad)";
         //                MySqlCommand cmd = new MySqlCommand(insertString, conn);
@@ -94,11 +84,8 @@ namespace TheGreenery.DBcontrollers
         //                cmd.Parameters.Add(voorraadParam);
 
         //                cmd.Prepare();
-
         //                cmd.ExecuteNonQuery();
-
         //                trans.Commit();
-
         //            }
         //            catch (Exception e)
         //            {
@@ -124,18 +111,18 @@ namespace TheGreenery.DBcontrollers
                 cmd.ExecuteNonQuery();
 
                 trans.Commit();
-
             }
             catch (Exception e)
             {
                 trans.Rollback();
-                Console.Write("Genres niet verwijderd: " + e);
+                Console.Write("Producten niet verwijderd: " + e);
             }
             finally
             {
                 conn.Close();
             }
         }
+
     }
 }
 
