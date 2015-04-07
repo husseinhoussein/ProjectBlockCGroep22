@@ -10,10 +10,9 @@
 
 
         <div>
-            <form method="post" action="~/User/LoginResult">
+            <form method="post" action="@Url.Action("LogInResult","User")">
                 <fieldset>
                     <legend>Login Form</legend>
-                    @*<label>@ViewData["ero"]</label><br />*@
                     <label for="mail">E-Mail:</label><br />
                     <input type="text" name="mail" value="" /><br />
                     <label for="wachtwoord">Wachtwoord:</label><br />

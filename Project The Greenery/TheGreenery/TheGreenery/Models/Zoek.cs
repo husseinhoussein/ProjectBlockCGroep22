@@ -6,8 +6,7 @@ using System.Web;
 namespace TheGreenery.Models
 {
     public class Zoek
-    {
-        
+    {      
         public int productnr;
         public String naam;
         public int type;
@@ -20,9 +19,7 @@ namespace TheGreenery.Models
         public String omschrijving;
         public int voorraadPerEenheid;
         public String imageNaam;
-        public String aanbieding;
-     
-
+        public String aanbieding; 
     }
     
 }

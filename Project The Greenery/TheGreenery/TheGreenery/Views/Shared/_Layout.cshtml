@@ -19,7 +19,7 @@
     {
         @Html.ActionLink("Register", "Registreer", "User")
         <span> | </span>
-        @Html.ActionLink("Log In", "Login", "User")
+        @Html.ActionLink("Log In", "LogIn", "User")
         <span> | </span>
         @Html.ActionLink("Personeel Log In", "PersoneelLogIn", "Personeel")
     }
@@ -41,7 +41,7 @@
                 </section>
                 <div style="float:right" id="menu">
 
-                    <div style="float:left"><a href="@Url.Action("/Winkelwagen") "> <img border="0" alt="Greenery" src="~/Images/winkelwagen.png" /></a></div>
+                    <div style="float:left"><a href="@Url.Action("Winkelwagen", "Home") "> <img border="0" alt="Greenery" src="~/Images/winkelwagen.png" /></a></div>
                     <div style="float:left">@Html.ActionLink("Home", "Index", "Home")</div>
                     <div style="float:left">@Html.ActionLink("  Over Ons", "About", "Home")</div>
                     <div style="float:left">@Html.ActionLink("  Contact", "Contact", "Home")</div>
@@ -51,10 +51,10 @@
                     @using (Html.BeginForm())
                     {
                     <div id="menubalk" style="float:left">  <a href="@Url.Action("Index", "Home") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_aanbiedingen.png" /> </a></div>
-                    <div id="menubalk" style="float:left">  <a href="@Url.Action("LentePage", "Home") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_lente.png" /> </a></div>
-                    <div id="menubalk" style="float:left">  <a href="@Url.Action("ZomerPage", "Home") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_zomer.png" /></a></div>
-                    <div id="menubalk" style="float:left">  <a href="@Url.Action("HerfstPage", "Home") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_herfst.png" /> </a></div>
-                    <div id="menubalk" style="float:left">  <a href="@Url.Action("WinterPage", "Home") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>
+                    <div id="menubalk" style="float:left">  <a href="@Url.Action("LentePage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_lente.png" /> </a></div>
+                    <div id="menubalk" style="float:left">  <a href="@Url.Action("ZomerPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_zomer.png" /></a></div>
+                    <div id="menubalk" style="float:left">  <a href="@Url.Action("HerfstPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_herfst.png" /> </a></div>
+                    <div id="menubalk" style="float:left">  <a href="@Url.Action("WinterPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>
                     
                     }
                     <hr width="100%" align="right" size="0" />

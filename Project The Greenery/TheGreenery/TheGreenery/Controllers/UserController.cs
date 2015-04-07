@@ -40,7 +40,7 @@ namespace TheGreenery.Controllers
                     if (gUser.mail == @mail && gUser.wachtwoord == @wachtwoord)
                     {
                         Session["LoggedIn"] = gUser.Code_Klant;
-                        String url = "/Home/Mijngegevens";
+                        String url = "/Home/Index";
                         return Redirect(url);
                     }
                 }
@@ -53,8 +53,11 @@ namespace TheGreenery.Controllers
             return View();
         }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
         public ActionResult Registreer()
         {
             return View();
@@ -122,7 +125,10 @@ namespace TheGreenery.Controllers
             return View(bestelling);
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     }
 }
 
