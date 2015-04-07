@@ -53,7 +53,7 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-<<<<<<< HEAD
+
         public ActionResult Registreer()
         {
             return View();
@@ -117,8 +117,7 @@ namespace TheGreenery.Controllers
         }
 
 
-=======
->>>>>>> origin/master
+
     }
 }
 

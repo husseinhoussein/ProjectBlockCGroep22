@@ -30,7 +30,7 @@ namespace TheGreenery.Controllers
         {
 
             LenteDBController sc = new LenteDBController();
-            List<Product> producten = sc.getAllProductenBylente(lente);
+            List<Product> producten = sc.getAllProductenByLente(lente);
             return View(producten);
         }
 
@@ -38,7 +38,7 @@ namespace TheGreenery.Controllers
         {
 
             ZomerDBController sc = new ZomerDBController();
-            List<Product> producten = sc.getAllProductenBylente(zomer);
+            List<Product> producten = sc.getAllProductenByLente(zomer);
             return View(producten);
         }
 
@@ -46,14 +46,14 @@ namespace TheGreenery.Controllers
         {
 
             HerfstDBController sc = new HerfstDBController();
-            List<Product> producten = sc.getAllProductenBylente(herfst);
+            List<Product> producten = sc.getAllProductenByLente(herfst);
             return View(producten);
         }
         public ActionResult WinterPage(String winter)
         {
 
             WinterDBController sc = new WinterDBController();
-            List<Product> producten = sc.getAllProductenBylente(winter);
+            List<Product> producten = sc.getAllProductenByLente(winter);
             return View(producten);
         }
 
