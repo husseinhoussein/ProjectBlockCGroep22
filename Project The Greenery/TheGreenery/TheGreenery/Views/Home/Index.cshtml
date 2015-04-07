@@ -3,21 +3,16 @@
 @{
     //ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
-
 }
 @section featured {
     <section class="featured">
         @*<div class="content-wrapper">*@
         <hgroup class="title"></hgroup>
-           
-        
         <style>
             p {
                 width: 75em;
                 white-space: pre-line;
                 word-break: keep-all;
-                
             }
         </style>
         <div style="margin-left: 25%"><h1>Alleen deze week!!</h1></div><br>
@@ -31,37 +26,20 @@
     </section>
 }
 <!DOCTYPE html>
-
 <html>
-
 <head>
     <title></title>
     <meta charset="utf-8" />
-
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width" />
-    @*@Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")*@
-    
+    <meta name="viewport" content="width=device-width" /> 
 </head>
-
-
 <body>
-    
     <p> <h1>@ViewBag.Title "Alleen deze week!!!"</h1></p><br />
-
     <div class="round">
-        <div class="one">
-          
-            <div></div>
-        </div>
-        
+        <div class="one"></div>
         <div class="two">
-          
             <div class="two">
-
                 <div id="producetop" class="row">
-
                     @{ if ((@Model == null) || (Model.Count == 0))
                      {
                         <div>geen producten gevonden</div>
@@ -71,7 +49,6 @@
                         <div></div><br>
                          foreach (Product pro in Model)
                          {
-
                             <div id="produce" style="float: left inherit">
                                 <fieldset id="produce">
                                 <div>                       <h3>@pro.naam</h3></div>
@@ -83,24 +60,13 @@
                                 <div>Eenheid:       @pro.eenheid</div>
                                 </fieldset>
                             </div>
-
-
                          }
                      }
                     }
-
                 </div>
-
             </div>
-          
-               
-
             </div>
         </div>
-
-        <div class="three">
-
-        </div>
-  
+    <div class="three"></div> 
 </body>
 </html>
