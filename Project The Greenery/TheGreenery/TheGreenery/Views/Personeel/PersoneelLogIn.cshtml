@@ -1,31 +1,30 @@
-﻿@model TheGreenery.Models.Klant
+﻿@model TheGreenery.Models.Personeel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "PersoneelLogIn";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
+
 <html>
 <body>
     <div style="float:left" id="textabout">
 
 
         <div>
-            <form method="post" action="~/User/LoginResult">
+            <form method="post" action="~/Personeel/LoginResult">
                 <fieldset>
-                    <legend>Login Form</legend>
-                    @*<label>@ViewData["ero"]</label><br />*@
-                    <label for="mail">E-Mail:</label><br />
+                    <legend>Login:</legend>
+                    <label for="personeelnr">Gebruikersnaam:</label><br />
                     <input type="text" name="mail" value="" /><br />
                     <label for="wachtwoord">Wachtwoord:</label><br />
                     <input type="password" name="wachtwoord" value="" /><br />
                     <input type="submit" value="Log In" />
                 </fieldset>
             </form>
-                
+
         </div>
-        
+
     </div>
-      
+
 
 </body>
 </html>

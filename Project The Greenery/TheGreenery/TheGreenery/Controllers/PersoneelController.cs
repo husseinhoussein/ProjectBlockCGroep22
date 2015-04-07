@@ -10,7 +10,7 @@ using TheGreenery.DBcontrollers;
 
 namespace TheGreenery.Controllers
 {
-    public class UserController : Controller
+    public class PersoneelController : Controller
     {
         //
         // GET: /User/
@@ -19,8 +19,16 @@ namespace TheGreenery.Controllers
             return View();
         }
 
+        public ActionResult PersoneelLogin()
+        {
+            return View();
+        }
 
-        public ActionResult LogIn()
+        public ActionResult LoginResultB()
+        {
+            return View();
+        }
+        public ActionResult LoginResultM()
         {
             return View();
         }
@@ -31,26 +39,34 @@ namespace TheGreenery.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult LoginResult(int? klantnr, String mail, String wachtwoord)
+        public ActionResult LoginResult(int? personeelnr, String wachtwoord, String type)
         {
             
             //Session[""] = false;
             LoginDBController gebruiker = new LoginDBController();
             Session["LoggedIn"] = null;
 
-            Klant gUser = gebruiker.LogInSelect(klantnr, mail, wachtwoord);
+            Personeel gUser = gebruiker.LogInPersSelect(personeelnr, wachtwoord, type);
             try
             {
                 if (gUser != null)
                 {
-                    if (gUser.mail == @mail && gUser.wachtwoord == @wachtwoord)
+                    if (gUser.personeelnr == @personeelnr && gUser.wachtwoord == @wachtwoord)
                     {
-                        //if (gUser.mail.Equals(""))
-                        //{
-                        Session["LoggedIn"] = gUser.Code_Klant;
-                        String url = "/Home/Mijngegevens";
+                        if (gUser.type == "beheerder")
+                        {
+                        Session["LoggedIn"] = gUser.Code_Personeel;
+                        String url = "/Personeel/LoginResultB";
                         return Redirect(url);
-                        //}
+                        }
+                        else if (gUser.type == "manager")
+                        {
+                            Session["LoggedIn"] = gUser.Code_Personeel;
+                            String url = "/Personeel/LoginResultM";
+                            return Redirect(url);
+                        }
+
+
                     }
                 }
             }
@@ -67,6 +83,8 @@ namespace TheGreenery.Controllers
     }
 
 }
+
+
 
 
 

@@ -51,7 +51,7 @@ a {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 }
-
+    
 #overOns2 {
     top: 300px;
     right: 600px;
@@ -64,15 +64,18 @@ a {
 }
 
 #produce {
-    float: left;
-    margin-right: 0.5%;
-}
+    float:left;
+    border-color:black;
+    margin-bottom:0.6%
 
+
+}
+   
 #aboutbody {
-    width: 75em;
-    white-space: pre-line;
-    word-break: keep-all;
-    display: block;
+            width: 75em;
+            white-space: pre-line;
+            word-break: keep-all;
+            display: block;
 }
 
 #FAQtxt {
@@ -81,14 +84,14 @@ a {
     word-break: keep-all;
 }
 
-a:link, a:visited,
-a:active, a:hover {
-    color: #333;
-}
+    a:link, a:visited,
+    a:active, a:hover {
+        color: #333;
+    }
 
-a:hover {
-    background-color: #c7d1d6;
-}
+    a:hover {
+        background-color: #c7d1d6;
+    }
 
 header, footer, hgroup,
 nav, section {
@@ -151,7 +154,7 @@ h5, h6 {
         text-decoration: none;
     }
 
-/* main layout
+    /* main layout
 ----------------------------------------------------------*/
 .content-wrapper {
     margin: 0 auto;
@@ -165,7 +168,7 @@ h5, h6 {
 }
 
 header .content-wrapper {
-    padding-top: 20px;
+    padding-top: 20px; 
 }
 
 footer {
@@ -185,12 +188,12 @@ footer {
     margin: 0;
 }
 
-    .site-title a, .site-title a:hover, .site-title a:active {
-        background: none;
-        color: #c8c8c8;
-        outline: none;
-        text-decoration: none;
-    }
+.site-title a, .site-title a:hover, .site-title a:active {
+    background: none;
+    color: #c8c8c8;
+    outline: none;
+    text-decoration: none;
+}
 
 .content-wrapper {
     margin: 0 auto;
@@ -204,7 +207,7 @@ footer {
 }
 
 header .content-wrapper {
-    padding-top: 20px;
+    padding-top: 20px; 
 }
 
 footer {
@@ -221,12 +224,12 @@ footer {
     margin: 0;
 }
 
-    .site-title a, .site-title a:hover, .site-title a:active {
-        background: none;
-        color: #c8c8c8;
-        outline: none;
-        text-decoration: none;
-    }
+.site-title a, .site-title a:hover, .site-title a:active {
+    background: none;
+    color: #c8c8c8;
+    outline: none;
+    text-decoration: none;
+}
 
 /* menu
 ----------------------------------------------------------*/
@@ -251,7 +254,7 @@ ul#menu {
             text-decoration: none;
         }
 
-            ul#menu li a:hover {
-                color: #000;
-                text-decoration: none;
-            }
+        ul#menu li a:hover {
+            color: #000;
+            text-decoration: none;
+        }

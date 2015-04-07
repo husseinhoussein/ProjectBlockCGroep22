@@ -22,47 +22,34 @@
 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @*@Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
-    <div class="round">
-        <div class="one">
-            <div></div>
-        </div>
-        <div class="two">
-            <div id="producetop" class="row">
-                <div><h1>Hartige Winter selectie!</h1></div><br>
-                @{ if ((@Model == null) || (Model.Count == 0))
-                     {
-                    <div>geen producten gevonden</div>
-                     }
-                     else
-                     {
-                    <div></div><br>
-                         foreach (Product pro in Model)
-                         {
-                            <div id="produce" style="float: left inherit">
-
-                                <div>                       <h3>@pro.naam</h3></div>
-                                <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
-                                <div>productnr:             @pro.productnr</div>
-                                <div>Prijs:€                @pro.prijsPerEenheid</div>
-                                <div>Voorraad:              @pro.voorraadPerEenheid</div>
-                                <div>Omschrijving:<br />    @pro.omschrijving</div>
-                                <div>Eenheid:       @pro.eenheid</div>
-
-                            </div>
-
-
-                         }
-                     }
-                }
-            </div>
-        </div>
-
-        <div class="three">
-
+    <div class="two">
+        <div id="producetop" class="row">
+            <div><h1>Hartige Winter selectie!</h1></div><br>
+            @{ if ((@Model == null) || (Model.Count == 0))
+             {
+                <div>geen producten gevonden</div>
+             }
+             else
+             {
+                <div></div><br>
+                 foreach (Product pro in Model)
+                 {
+                    <div id="produce" style="float: left inherit">
+                        <fieldset id="produce">
+                            <div>                       <h3>@pro.naam</h3></div>
+                            <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                            <div>productnr:             @pro.productnr</div>
+                            <div>Prijs:€                @pro.prijsPerEenheid</div>
+                            <div>Voorraad:              @pro.voorraadPerEenheid</div>
+                            <div>Omschrijving:<br />    @pro.omschrijving</div>
+                            <div>Eenheid:       @pro.eenheid</div>
+                        </fieldset>
+                    </div>
+                 }
+             }
+            }
         </div>
     </div>
 </body>

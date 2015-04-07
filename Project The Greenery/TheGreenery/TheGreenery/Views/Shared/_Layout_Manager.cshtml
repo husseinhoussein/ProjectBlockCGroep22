@@ -44,8 +44,11 @@
                 <nav>
                     @using (Html.BeginForm())
                     {
-                        <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenInzien", "ManagerDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_ProductenInzien.png" /> </a></div>
-                        <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelInzien", "ManagerDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelInzien.png" /> </a></div>
+                        <hr width="100%" align="right" size="0" />
+                        <div>
+                            <div id="menubalk" style="float:left">  <a href="@Url.Action("ProductenInzien", "ManagerDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_ProductenInzien.png" /> </a></div>
+                            <div id="menubalk" style="float:left">  <a href="@Url.Action("PersoneelInzien", "ManagerDB") "><img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_PersoneelInzien.png" /> </a></div>
+                        </div>
                     }
                 </nav>
 

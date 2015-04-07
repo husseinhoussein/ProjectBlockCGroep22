@@ -1,10 +1,11 @@
-﻿@using TheGreenery.Models;
+﻿@using TheGreenery.Controllers;
+@using TheGreenery.Models;
 @model List<Product>
-
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
 
+    Layout = "~/Views/Shared/_Layout_Beheerder.cshtml";
 }
+
 @section featured {
     <section class="zoek">
         @*<div class="content-wrapper">*@
@@ -15,22 +16,20 @@
     </section>
 }
 
-
-
-<h2>ShowProduct</h2>
+<h2>Overzicht Producten</h2>
 <html>
 <body>
-    <div>
-        @{ if ((@Model == null) || (Model.Count == 0))
-         {
-            <div>geen producten gevonden</div>
-         }
-         else
-         {
-            <div>de producten zijn gevonden</div><br>
-             foreach (Product pro in Model)
+    <fieldset>
+        <div>
+            @{ if ((@Model == null) || (Model.Count == 0))
              {
-                <fieldset id="produce">
+                <div>geen producten gevonden</div>
+             }
+             else
+             {
+                <div>de volgende producten zijn gevonden</div><br>
+                 foreach (Product pro in Model)
+                 {
                     <div>productnr:     @pro.productnr</div>
                     <div>naam:          @pro.naam</div>
                     <div>type:          @pro.type</div>
@@ -43,11 +42,12 @@
                     <div>omschrijving:  @pro.omschrijving</div>
                     <div>eenheid:       @pro.eenheid</div>
                     <div>aanbieding:    @pro.aanbieding</div>
-                    <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
-                </fieldset>
+                    <div><img src="~/Images/@pro.imageNaam" /></div>
+                 }
              }
-         }
-        }
-    </div>
+            }
+        </div>
+    </fieldset>
 </body>
 </html>
+

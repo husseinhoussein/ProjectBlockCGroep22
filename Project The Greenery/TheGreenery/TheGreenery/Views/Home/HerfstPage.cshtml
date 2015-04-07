@@ -6,12 +6,12 @@
 }
 @section featured {
     <section class="featured">
-        
-            <hgroup class="title">
-                @*<h1>@ViewBag.Title.</h1>*@
 
-            </hgroup>
-       
+        <hgroup class="title">
+            @*<h1>@ViewBag.Title.</h1>*@
+
+        </hgroup>
+
     </section>
 }
 <!DOCTYPE html>
@@ -44,15 +44,15 @@
                      foreach (Product pro in Model)
                      {
                         <div id="produce" style="float: left">
-
-                            <div>                       <h3>@pro.naam</h3></div>
-                            <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
-                            <div>productnr:             @pro.productnr</div>
-                            <div>Prijs:€                @pro.prijsPerEenheid</div>
-                            <div>Voorraad:              @pro.voorraadPerEenheid</div>
-                            <div>Omschrijving:<br />    @pro.omschrijving</div>
-                            <div>Eenheid:       @pro.eenheid</div>
-
+                            <fieldset id="produce">
+                                <div>                       <h3>@pro.naam</h3></div>
+                                <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                                <div>productnr:             @pro.productnr</div>
+                                <div>Prijs:€                @pro.prijsPerEenheid</div>
+                                <div>Voorraad:              @pro.voorraadPerEenheid</div>
+                                <div>Omschrijving:<br />    @pro.omschrijving</div>
+                                <div>Eenheid:       @pro.eenheid</div>
+                            </fieldset>
                         </div>
 
 

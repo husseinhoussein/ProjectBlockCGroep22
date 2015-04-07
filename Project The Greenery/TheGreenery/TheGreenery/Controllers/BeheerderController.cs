@@ -9,9 +9,9 @@ using TheGreenery.Models;
 using MySql.Data.MySqlClient;
 
 
-namespace TheGreenery.DBcontrollers
+namespace TheGreenery.Controllers
 {
-    public class BeheerderDBController : DatabaseController
+    public class BeheerderController : DatabaseController
     {
         //
         // GET: /BeheerderDB/
@@ -53,7 +53,7 @@ namespace TheGreenery.DBcontrollers
             return View();
 
         }
-      
+
 
         public ActionResult ProductenBewerken()
         {
@@ -70,17 +70,36 @@ namespace TheGreenery.DBcontrollers
             return View();
         }
 
-        public ActionResult PersoneelInzien()
+        public ActionResult PersoneelInzien(int? personeelnr)
         {
+            PersoneelDBController pc = new PersoneelDBController();
+            List<Personeel> personeel = pc.getAllPersoneel(personeelnr);
+            return View(personeel);
+        }
+        public ActionResult PersoneelToegevoegd(int? personeelnr, String voorletters, String tussenvoegsel, String achternaam, String type, String wachtwoord)
+        {
+
+
+            Personeel personeel = new Personeel();
+            personeel.getPersoneelnr();
+            personeel.setVoorletters(voorletters);
+            personeel.setTussenvoegsel(tussenvoegsel);
+            personeel.setAchternaam(achternaam);
+            personeel.setType(type);
+            personeel.setWachtwoord(wachtwoord);
+
+            if (personeelnr != null && !personeelnr.Equals(""))
+        {
+                RegistrerenDBController registrerenController = new RegistrerenDBController();
+                registrerenController.InsertPersoneel(personeel);
+
+            }
             return View();
+
         }
 
-
-
-       
-
     }
-} 
+}
         
 
 

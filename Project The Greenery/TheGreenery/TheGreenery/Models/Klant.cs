@@ -9,7 +9,18 @@ namespace TheGreenery.Models
 {
     public class Klant
     {
-        //public int persoonID { get; set; }
+         public Klant(int Code_Klant)
+        {
+            this.Code_Klant = Code_Klant;
+        }
+        public Klant() { }
+
+        public int Code_Klant;
+        public int IdKlant
+        {
+            get { return Code_Klant; }
+            set { Code_Klant = value; }
+        }
         public int klantnr;
         public String voorletters;// { get; set; }
         public String tussenvoegsel;// { get; set; }
