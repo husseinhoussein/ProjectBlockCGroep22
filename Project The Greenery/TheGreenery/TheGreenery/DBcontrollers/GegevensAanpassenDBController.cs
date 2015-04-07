@@ -24,9 +24,9 @@ namespace TheGreenery.DBcontrollers
                 trans = conn.BeginTransaction();
                 try
                 {
-                    string updateQuery = @"UPDATE Klant SET voorletters= @voorletters, tussenvoegsel = @tussenvoegsel, achternaam = @achternaam, 
-                         adres =@adres, postcode =@postcode, woonplaats =@woonplaats, telefoonnr =@telefoonnr, mail = @mail, klantnr= @klantnr
-                         WHERE Klantnr = 1;"; 
+                    string updateQuery = @"UPDATE Klant SET voorletters = @voorletters, tussenvoegsel = @tussenvoegsel, achternaam = @achternaam, 
+                         adres =@adres, postcode = @postcode, woonplaats = @woonplaats, telefoonnr = @telefoonnr, mail = @mail, klantnr= @klantnr
+                         WHERE klantnr = 1;";
 
                     Klant klant = new Klant();
                     MySqlCommand cmd = new MySqlCommand(updateQuery, conn);

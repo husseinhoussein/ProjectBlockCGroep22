@@ -1,0 +1,46 @@
+﻿@using TheGreenery.Controllers;
+@using TheGreenery.Models;
+@model List<Personeel>
+@{
+
+    Layout = "~/Views/Shared/_Layout_Manager.cshtml";
+}
+
+@section featured {
+    <section class="zoek">
+        @*<div class="content-wrapper">*@
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </section>
+}
+
+<h2>Overzicht Personeel</h2>
+<html>
+<body>
+    <fieldset>
+        <div>
+            @{ if ((@Model == null) || (Model.Count == 0))
+             {
+                <div>geen personeel gevonden</div>
+             }
+             else
+             {
+                <div>de volgende personeelsleden zijn gevonden</div><br>
+                 foreach (Personeel pro in Model)
+                 {
+                    <fieldset id="produce">
+                        <div>personeelnummer:   @pro.personeelnr</div>
+                        <div>voorletters:       @pro.voorletters</div>
+                        <div>tussenvoegsel:      @pro.tussenvoegsel</div>
+                        <div>achternaam:         @pro.achternaam</div>
+                    </fieldset>
+                 }
+             }
+}
+        </div>
+    </fieldset>
+</body>
+</html>
+

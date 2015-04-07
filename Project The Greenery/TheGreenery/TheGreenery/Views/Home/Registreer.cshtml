@@ -7,16 +7,10 @@
 }
 
 <h2>Registreer</h2>
-
-@*@using (Html.BeginForm(@*"geregistreerd","home", FormMethod.Post)) {*@
-    @*@Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)*@
-
-
-    <fieldset>
-    <form name="inlogForm" action="/Home/geregistreerd" method="post" >
+<fieldset>
+    <form name="inlogForm" action="/Home/geregistreerd" method="post">
         <label for="voorletters">Voorletters:</label><br />
-        <input type="text" name="voorletters" value="" id="voorlettersText"/><br />
+        <input type="text" name="voorletters" value="" id="voorlettersText" /><br />
         <label for="tussenvoegsel">Tussenvoegsel:</label><br />
         <input type="text" name="tussenvoegsel" value="" /><br />
         <label for="achternaam">Achternaam:</label><br />
@@ -38,99 +32,8 @@
         <br />
         <input type="submit" value="Registreren" />
     </form>
+</fieldset>
 
-        @*<fieldset>
-            <legend>Klant</legend>
-            @*<form action="~/DBcontrollers/InsertRegistratie">
-                
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.voorletters)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.voorletters)
-                    @Html.ValidationMessageFor(model => model.voorletters)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.tussenvoegsel)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(Model => Model.tussenvoegsel)
-                    @Html.ValidationMessageFor(Model => Model.tussenvoegsel)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.achternaam)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(Model => Model.achternaam)
-                    @Html.ValidationMessageFor(Model => Model.achternaam)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.adres)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(Model => Model.adres)
-                    @Html.ValidationMessageFor(Model => Model.adres)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.postcode)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(Model => Model.postcode)
-                    @Html.ValidationMessageFor(Model => Model.postcode)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.woonplaats)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(Model => Model.woonplaats)
-                    @Html.ValidationMessageFor(Model => Model.woonplaats)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.telefoonnr)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(Model => Model.telefoonnr)
-                    @Html.ValidationMessageFor(Model => Model.telefoonnr)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.mail)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(Model => Model.mail)
-                    @Html.ValidationMessageFor(Model => Model.mail)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.wachtwoord)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(Model => Model.wachtwoord)
-                    @Html.ValidationMessageFor(Model => Model.wachtwoord)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(Model => Model.wachtwoord_herhalen)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(Model => Model.wachtwoord_herhalen)
-                    @Html.ValidationMessageFor(Model => Model.wachtwoord_herhalen)
-                </div>
-
-                <p>
-                    <input type="submit" value="Create" />
-                </p>
-            @*</form>
-</fieldset>*@
-    </fieldset>
-@*}*@
 
 <div>
     @Html.ActionLink("Back to List", "Index")

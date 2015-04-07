@@ -8,9 +8,9 @@ using TheGreenery.DBcontrollers;
 using TheGreenery.Models;
 using MySql.Data.MySqlClient;
 
-namespace TheGreenery.DBcontrollers
+namespace TheGreenery.Controllers
 {
-    public class ManagerDBController : DatabaseController
+    public class ManagerController : DatabaseController
     {
         //
         // GET: /ManagerDB/

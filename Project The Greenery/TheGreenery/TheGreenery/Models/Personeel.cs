@@ -8,21 +8,30 @@ namespace TheGreenery.Models
 {
     public class Personeel
     {
-        public int personeelnr; // { get; set; }
-        public int persoonID; // { get; set; }
-        public String voorletters; // { get; set; }
-        public String tussenvoegsel; // { get; set; }
-        public String achternaam; // { get; set; }
-        //public enum type; // { get; set; }
+
+         public Personeel(int Code_Personeel)
+        {
+            this.Code_Personeel = Code_Personeel;
+        }
+        public Personeel() { }
+
+        public int Code_Personeel;
+        public int IdPersoneel
+        {
+            get { return Code_Personeel; }
+            set { Code_Personeel = value; }
+        }
+
+        public int personeelnr; 
+        public int persoonID; 
+        public String voorletters; 
+        public String tussenvoegsel; 
+        public String achternaam; 
+        public String type;
+        public String wachtwoord;
 
         public int getPersoneelnr()
         { return personeelnr; }
-
-        public int getPersoonID()
-        { return persoonID; }
-
-        public void setPersoonID(int input)
-        { persoonID = input; }
 
         public string getVoorletters()
         { return voorletters; }
@@ -42,5 +51,17 @@ namespace TheGreenery.Models
         public void setAchternaam(String input)
         { achternaam = input; }
 
+        public string getType()
+        { return type; }
+
+        public void setType(String input)
+        { type = input; }
+
+        public string getWachtwoord()
+        { return wachtwoord; }
+
+        public void setWachtwoord(String input)
+        { wachtwoord = input; }
+        
     }
 }

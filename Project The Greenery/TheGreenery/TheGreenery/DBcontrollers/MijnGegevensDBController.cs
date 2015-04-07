@@ -5,23 +5,29 @@ using System.Web;
 using System.Web.Mvc;
 using MySql.Data.MySqlClient;
 using TheGreenery.Models;
+using TheGreenery.Controllers;
 
 namespace TheGreenery.DBcontrollers
 {
     public class MijnGegevensDBController : DatabaseController
     {
-        public List<Klant> getKlantbyID(int? klantnr)
+        public List<Klant> getKlantbyID(int? klantnr, String mail, String wachtwoord)
         {
-                        MySqlTransaction trans = null;
+            MySqlTransaction trans = null;
             List<Klant> klanten = new List<Klant>();
-            
+            LoginDBController gebruiker = new LoginDBController();
 
+
+            UserController thingy = new UserController();
+            Klant gUser = gebruiker.LogInSelect(klantnr, mail, wachtwoord);
+
+            //Session["LoggedIn"] = null;
+            //Session["LoggedIn"] = gUser.Code_Klant.Equals("@klantr");
             conn.Open();
-
             try
             {
                 trans = conn.BeginTransaction();
-                string selectQuery = @"select * from Klant where klantnr = 1;";
+                string selectQuery = @"select * from Klant where klantnr = 1;";  //" + gUser.Code_Klant + ";";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 MySqlParameter klantnrParam = new MySqlParameter("@klantnr", MySqlDbType.Int32);
@@ -42,7 +48,7 @@ namespace TheGreenery.DBcontrollers
                     klant.woonplaats = dataReader.GetString("woonplaats");
                     klant.telefoonnr = dataReader.GetString("telefoonnr");
                     klant.mail = dataReader.GetString("mail");
-                    
+
 
                     klanten.Add(klant);
                     Console.Write(klant.klantnr);
@@ -60,8 +66,8 @@ namespace TheGreenery.DBcontrollers
             }
 
             return klanten;
-        }
 
+        }
         public void GegevensAanpassen(Klant klant)
         {
             MySqlTransaction trans = null;
@@ -77,8 +83,8 @@ namespace TheGreenery.DBcontrollers
                          adres = @adres, postcode = @postcode, woonplaats = @woonplaats, telefoonnr = @telefoonnr, 
                          mail = @mail 
                         
-                    WHERE klantnr = @klantnr 
-                ";
+                    WHERE klantnr = 1 
+                ;";
 
                 MySqlCommand cmd = new MySqlCommand(insertString, conn);
                 MySqlParameter voorlettersParam = new MySqlParameter("@voorletters", MySqlDbType.VarChar);
@@ -99,7 +105,7 @@ namespace TheGreenery.DBcontrollers
                 woonplaatsParam.Value = klant.woonplaats;
                 telefoonnrParam.Value = klant.telefoonnr;
                 mailParam.Value = klant.mail;
-                
+
                 cmd.Parameters.Add(voorlettersParam);
                 cmd.Parameters.Add(tussenvoegselParam);
                 cmd.Parameters.Add(achternaamParam);

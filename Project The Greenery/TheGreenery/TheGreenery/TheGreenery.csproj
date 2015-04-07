@@ -149,15 +149,16 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersoneelController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="DBcontrollers\BeheerderDBController.cs" />
+    <Compile Include="Controllers\BeheerderController.cs" />
     <Compile Include="DBcontrollers\GegevensAanpassenDBController.cs" />
     <Compile Include="DBcontrollers\LoginDBController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
     <Compile Include="DBcontrollers\DatabaseController.cs" />
     <Compile Include="DBcontrollers\HerfstDBController.cs" />
     <Compile Include="DBcontrollers\LenteDBController.cs" />
-    <Compile Include="DBcontrollers\ManagerDBController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="DBcontrollers\MijnBestellingenDBController.cs" />
     <Compile Include="DBcontrollers\MijnGegevensDBController.cs" />
     <Compile Include="DBcontrollers\PersoneelDBController.cs" />
@@ -256,46 +257,53 @@
     <Content Include="Views\Shared\_Layout_Beheerder.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\BeheerderDB\Ingelogd.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BeheerderDB\ProductenToevoegen.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\User\LogIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\LoginResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\BeheerderDB\ProductenBewerken.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BeheerderDB\PersoneelToevoegen.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BeheerderDB\ProductenInzien.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BeheerderDB\PersoneelInzien.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\_Layout_Manager.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\ManagerDB\Ingelogd.cshtml" />
+    <Content Include="Views\Manager\Ingelogd.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\ManagerDB\ProductenInzien.cshtml" />
+    <Content Include="Views\Manager\ProductenInzien.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\ManagerDB\PersoneelInzien.cshtml" />
+    <Content Include="Views\Manager\PersoneelInzien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\MijnBestellingen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\GegevensGewijzigd.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Beheerder\Ingelogd.cshtml" />
+    <Content Include="Views\Beheerder\PersoneelInzien.cshtml" />
+    <Content Include="Views\Beheerder\PersoneelToevoegen.cshtml" />
+    <Content Include="Views\Beheerder\ProductenBewerken.cshtml" />
+    <Content Include="Views\Beheerder\ProductenInzien.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Beheerder\PersoneelToegevoegd.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personeel\PersoneelLogIn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personeel\LoginResultB.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personeel\LoginResultM.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personeel\LoginResult.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout_Klant.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

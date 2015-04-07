@@ -3,7 +3,7 @@
 @model List<Personeel>
 @{
 
-    Layout = "~/Views/Shared/_Layout_Manager.cshtml";
+    Layout = "~/Views/Shared/_Layout_Beheerder.cshtml";
 }
 
 @section featured {
@@ -30,10 +30,12 @@
                 <div>de volgende personeelsleden zijn gevonden</div><br>
                  foreach (Personeel pro in Model)
                  {
-                    <div>personeelnummer:   @pro.personeelnr</div>
-                    <div>voorletters:       @pro.voorletters</div>
-                    <div>tussenvoegsel:      @pro.tussenvoegsel</div>
-                    <div>achternaam:         @pro.achternaam</div>
+                    <fieldset id="produce">
+                        <div>personeelnummer:   @pro.personeelnr</div>
+                        <div>voorletters:       @pro.voorletters</div>
+                        <div>tussenvoegsel:      @pro.tussenvoegsel</div>
+                        <div>achternaam:         @pro.achternaam</div>
+                    </fieldset>
                  }
              }
             }

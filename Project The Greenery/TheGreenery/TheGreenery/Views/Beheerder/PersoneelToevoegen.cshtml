@@ -1,0 +1,23 @@
+﻿@using TheGreenery.Controllers;
+@model TheGreenery.Models.Personeel
+@{
+
+    Layout = "~/Views/Shared/_Layout_Beheerder.cshtml";
+}
+
+<fieldset>
+    <form name="inlogForm" action="/beheerder/personeelToegevoegd" method="post">
+        <label for="voorletters">Voorletters:</label><br />
+        <input type="text" name="voorletters" value="" id="voorlettersText" /><br />
+        <label for="tussenvoegsel">Tussenvoegsel:</label><br />
+        <input type="text" name="tussenvoegsel" value="" /><br />
+        <label for="achternaam">Achternaam:</label><br />
+        <input type="text" name="achternaam" value="" /><br />
+        <label for="type">Functie:</label><br />
+        <input type="text" name="type" value="" /><br />
+        <label for="wachtwoord">Wachtwoord:</label><br />
+        <input type="password" name="wachtwoord" value="" /><br />
+
+        <input type="submit" value="Registreren" />
+    </form>
+</fieldset>

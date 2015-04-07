@@ -163,10 +163,10 @@ namespace TheGreenery.Controllers
 
         }
 
-        public ActionResult MijnGegevens(int? klantr)
+        public ActionResult MijnGegevens(int? klantnr, String mail, String wachtwoord)
         {
             MijnGegevensDBController sc = new MijnGegevensDBController();
-            List<Klant> klant = sc.getKlantbyID(klantr);
+            List<Klant> klant = sc.getKlantbyID(klantnr, mail, wachtwoord);
             return View(klant);
 
 
