@@ -16,7 +16,7 @@ namespace TheGreenery.Controllers
         {
             return View();
         }
-        
+
         public ActionResult LogIn()
         {
             return View();
@@ -29,7 +29,7 @@ namespace TheGreenery.Controllers
         }
 
         public ActionResult LoginResult(int? klantnr, String mail, String wachtwoord)
-        {            
+        {
             LoginDBController gebruiker = new LoginDBController();
             Session["LoggedIn"] = null;
             Klant gUser = gebruiker.LogInSelect(klantnr, mail, wachtwoord);
@@ -53,7 +53,6 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-<<<<<<< HEAD
         public ActionResult Registreer()
         {
             return View();
@@ -112,13 +111,15 @@ namespace TheGreenery.Controllers
             List<Klant> klant = sc.getKlantbyID(klantnr, mail, wachtwoord);
             return View(klant);
 
-
-
         }
 
+        public ActionResult MijnBestellingen(int? bestellingnr)
+        {
+            MijnBestellingenDBController sc = new MijnBestellingenDBController();
+            List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
+            return View(bestelling);
+        }
 
-=======
->>>>>>> origin/master
     }
 }
 

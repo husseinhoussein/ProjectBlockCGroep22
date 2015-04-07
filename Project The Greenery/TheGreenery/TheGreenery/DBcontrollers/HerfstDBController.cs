@@ -12,7 +12,7 @@ namespace TheGreenery.DBcontrollers
     public class HerfstDBController : DatabaseController
     {
         
-        public List<Product> getAllProductenByHerst(String herfst)
+        public List<Product> getAllProductenByHerfst(String herfst)
         {
             MySqlTransaction trans = null;
             List<Product> producten = new List<Product>();

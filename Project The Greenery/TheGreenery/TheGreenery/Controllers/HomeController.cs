@@ -14,7 +14,6 @@ namespace TheGreenery.Controllers
     {
         public ActionResult Index(String aanbieding)
         {
-
             AanbiedingDBController sc = new AanbiedingDBController();
             List<Product> producten = sc.getAllProductenByAanbieding(aanbieding);
             return View(producten);
@@ -51,17 +50,10 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-
-        
-
-
         public ActionResult Beheerder()
         {
             return View();
         }
-
-
-
 
     }
 }

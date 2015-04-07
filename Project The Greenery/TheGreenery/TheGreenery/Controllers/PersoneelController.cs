@@ -38,7 +38,7 @@ namespace TheGreenery.Controllers
         }
 
         public ActionResult LoginResult(int? personeelnr, String wachtwoord, String type)
-        {    
+        {
             LoginDBController gebruiker = new LoginDBController();
             Session["LoggedIn"] = null;
             Personeel gUser = gebruiker.LogInPersSelect(personeelnr, wachtwoord, type);

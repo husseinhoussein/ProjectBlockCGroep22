@@ -13,29 +13,15 @@ namespace TheGreenery.Controllers
 {
     public class BeheerderController : DatabaseController
     {
-<<<<<<< HEAD
-=======
-        //
-        // GET: /BeheerderDB/
-
-
-
-
-
->>>>>>> origin/master
         public ActionResult Ingelogd()
         {
             return View();
         }
 
-
         public ActionResult ProductenToevoegen(String naam, int type, String lente, String zomer, String herfst, String winter, String prijsPerEenheid,
                                        String eenheid, String omschrijving, int voorraadPerEenheid, String imageNaam, String aanbieding)
         {
-
-
             Product product = new Product();
-
             product.setNaam(naam);
             product.setType(type);
             product.setLente(lente);
@@ -49,14 +35,9 @@ namespace TheGreenery.Controllers
             product.setImageNaam(imageNaam);
             product.setAanbieding(aanbieding);
 
-
-
-
-
             return View();
 
         }
-
 
         public ActionResult ProductenBewerken()
         {
@@ -91,23 +72,22 @@ namespace TheGreenery.Controllers
             personeel.setWachtwoord(wachtwoord);
 
             if (personeelnr != null && !personeelnr.Equals(""))
-<<<<<<< HEAD
-                {
-                    RegistrerenDBController registrerenController = new RegistrerenDBController();
-                    registrerenController.InsertPersoneel(personeel);
-                }
-=======
-        {
+            {
+                RegistrerenDBController registrerenController = new RegistrerenDBController();
+                registrerenController.InsertPersoneel(personeel);
+            }
+
+            {
                 RegistrerenDBController registrerenController = new RegistrerenDBController();
                 registrerenController.InsertPersoneel(personeel);
 
             }
->>>>>>> origin/master
+
             return View();
         }
 
     }
 }
-        
+
 
 

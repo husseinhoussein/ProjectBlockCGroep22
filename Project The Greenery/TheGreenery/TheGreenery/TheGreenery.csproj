@@ -236,14 +236,14 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\User\geregistreerd.cshtml" />
-    <Content Include="Views\Home\HerfstPage.cshtml" />
+    <Content Include="Views\Product\HerfstPage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\LentePage.cshtml" />
+    <Content Include="Views\Product\LentePage.cshtml" />
     <Content Include="Views\Home\Privacypolicy.cshtml" />
     <Content Include="Views\Home\Veelgesteldevragen.cshtml" />
     <Content Include="Views\Home\Winkelwagen.cshtml" />
-    <Content Include="Views\Home\WinterPage.cshtml" />
-    <Content Include="Views\Home\ZomerPage.cshtml" />
+    <Content Include="Views\Product\WinterPage.cshtml" />
+    <Content Include="Views\Product\ZomerPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Product\ShowProduct.cshtml" />
@@ -276,7 +276,7 @@
     <Content Include="Views\Manager\PersoneelInzien.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\MijnBestellingen.cshtml" />
+    <Content Include="Views\User\MijnBestellingen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\GegevensGewijzigd.cshtml" />

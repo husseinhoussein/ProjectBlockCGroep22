@@ -15,9 +15,6 @@ namespace TheGreenery.DBcontrollers
             MySqlTransaction trans = null;
             List<Bestelling> bestellingen = new List<Bestelling>();
 
-
-
-
             conn.Open();
             trans = conn.BeginTransaction(); 
             try
@@ -31,16 +28,13 @@ namespace TheGreenery.DBcontrollers
                 cmd.Parameters.Add(klantnrParam);
                 cmd.Prepare();
 
-
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
                     Bestelling bestelling = new Bestelling();
-
                     bestelling.bestellingnr = dataReader.GetInt32("bestellingnr");
                     bestelling.klantnr = dataReader.GetInt32("klantnr");
                     bestelling.totaalbedrag = dataReader.GetDouble("totaalbedrag");
-
 
                     bestellingen.Add(bestelling);
                     Console.Write(bestelling.bestellingnr);

@@ -12,7 +12,7 @@ namespace TheGreenery.DBcontrollers
     public class ZomerDBController : DatabaseController
     {
         
-        public List<Product> getAllProductenBylente(String zomer)
+        public List<Product> getAllProductenByZomer(String zomer)
         {
             MySqlTransaction trans = null;
             List<Product> producten = new List<Product>();
