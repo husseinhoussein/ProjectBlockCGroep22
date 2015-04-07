@@ -13,7 +13,7 @@ namespace TheGreenery.Models
         {
             this.Code_Personeel = Code_Personeel;
         }
-        
+        public Personeel() { }
         public int Code_Personeel;
 
         public int IdPersoneel

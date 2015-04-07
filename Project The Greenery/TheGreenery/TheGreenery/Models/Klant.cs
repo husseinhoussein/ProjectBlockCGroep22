@@ -14,6 +14,7 @@ namespace TheGreenery.Models
         {
             this.Code_Klant = Code_Klant;
         }
+        public Klant() { }
         
         public int Code_Klant;
 
