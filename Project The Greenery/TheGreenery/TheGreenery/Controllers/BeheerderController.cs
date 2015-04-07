@@ -13,14 +13,13 @@ namespace TheGreenery.Controllers
 {
     public class BeheerderController : DatabaseController
     {
-<<<<<<< HEAD
-=======
+
 
         //
         // GET: /BeheerderDB/
 
 
->>>>>>> origin/master
+
         public ActionResult Ingelogd()
         {
             return View();
@@ -80,33 +79,30 @@ namespace TheGreenery.Controllers
             personeel.setWachtwoord(wachtwoord);
 
             if (personeelnr != null && !personeelnr.Equals(""))
-<<<<<<< HEAD
             {
                 RegistrerenDBController registrerenController = new RegistrerenDBController();
                 registrerenController.InsertPersoneel(personeel);
             }
 
             {
-=======
+
 
                 {
                     RegistrerenDBController registrerenController = new RegistrerenDBController();
                     registrerenController.InsertPersoneel(personeel);
                 }
 
-        {
->>>>>>> origin/master
-                RegistrerenDBController registrerenController = new RegistrerenDBController();
-                registrerenController.InsertPersoneel(personeel);
+                {
 
+                    RegistrerenDBController registrerenController = new RegistrerenDBController();
+                    registrerenController.InsertPersoneel(personeel);
+
+                }
+
+                return View();
             }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
-            return View();
         }
-
     }
 }
 

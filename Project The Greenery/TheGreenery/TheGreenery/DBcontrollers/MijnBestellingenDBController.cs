@@ -15,11 +15,7 @@ namespace TheGreenery.DBcontrollers
         {
             MySqlTransaction trans = null;
             List<Bestelling> bestellingen = new List<Bestelling>();
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> origin/master
             conn.Open();
             trans = conn.BeginTransaction(); 
             try
@@ -30,10 +26,7 @@ namespace TheGreenery.DBcontrollers
                 MySqlParameter klantnrParam = new MySqlParameter("@bestellingnr", MySqlDbType.Int32);
                 cmd.Parameters.Add(klantnrParam);
                 cmd.Prepare();
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
