@@ -3,15 +3,15 @@
 @{
     //ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+    
 
 }
 @section featured {
     <section class="featured">
         @*<div class="content-wrapper">*@
         <hgroup class="title"></hgroup>
-
-
+           
+        
         <style>
             p {
                 width: 75em;
@@ -42,20 +42,22 @@
     <meta name="viewport" content="width=device-width" />
     @*@Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
-
+    
 </head>
 
 
 <body>
+    
+    <p> <h1>@ViewBag.Title "Alleen deze week!!!"</h1></p><br />
 
     <div class="round">
         <div class="one">
-
+          
             <div></div>
         </div>
-
+        
         <div class="two">
-
+          
             <div class="two">
 
                 <div id="producetop" class="row">
@@ -72,13 +74,13 @@
 
                             <div id="produce" style="float: left inherit">
                                 <fieldset id="produce">
-                                    <div>                       <h3>@pro.naam</h3></div>
-                                    <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
-                                    <div>productnr:             @pro.productnr</div>
-                                    <div>Prijs:€                @pro.prijsPerEenheid</div>
-                                    <div>Voorraad:              @pro.voorraadPerEenheid</div>
-                                    <div>Omschrijving:<br />    @pro.omschrijving</div>
-                                    <div>Eenheid:       @pro.eenheid</div>
+                                <div>                       <h3>@pro.naam</h3></div>
+                                <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                                <div>productnr:             @pro.productnr</div>
+                                <div>Prijs:€                @pro.prijsPerEenheid</div>
+                                <div>Voorraad:              @pro.voorraadPerEenheid</div>
+                                <div>Omschrijving:<br />    @pro.omschrijving</div>
+                                <div>Eenheid:       @pro.eenheid</div>
                                 </fieldset>
                             </div>
 
@@ -90,15 +92,15 @@
                 </div>
 
             </div>
+          
+               
 
+            </div>
+        </div>
 
+        <div class="three">
 
         </div>
-    </div>
-
-    <div class="three">
-
-    </div>
-
+  
 </body>
 </html>

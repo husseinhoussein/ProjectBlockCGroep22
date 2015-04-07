@@ -29,7 +29,7 @@ namespace TheGreenery.DBcontrollers
                     Product product = new Product();
                     product.productnr = dataReader.GetInt32("productnr");
                     product.naam = dataReader.GetString("naam");
-                    product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
+                    product.prijsPerEenheid = dataReader.GetString("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");

@@ -5,3 +5,43 @@
 
     Layout = "~/Views/Shared/_Layout_Beheerder.cshtml";
 }
+
+<fieldset>
+    <form name="ProductToevoegenForm" action="/ProductDBController/InsertProduct" method="post">
+        <label for="Naam">Naam:</label><br />
+        <input type="text" name="name" value="" /><br />
+        <br />
+        <div class="Product_Type">
+            <label for="Naam">Type:</label><br />
+            <div class="btn-group">
+                <form action="">
+                    <input type="radio" name="sex" value="male">Groent<br>
+                    <input type="radio" name="sex" value="female">Fruit<br />
+                </form>
+            </div>
+        </div>
+        <br />
+        <label for="seizoen">Seizoen:</label><br />
+        <input type="checkbox" name="lente" value="">Lente<br>
+        <input type="checkbox" name="zomer" value="">Zomer<br>
+        <input type="checkbox" name="herfst" value="">Herfst<br>
+        <input type="checkbox" name="winter" value="">Winter<br>
+        <br />
+        <label for="prijsPerEenheid">Prijs per eendheid:</label><br />
+        <input type="text" name="PrijsPerEenheid" value="" /><br />
+        <label for="eenheid">Eendheid:</label><br />
+        <input type="text" name="Eenheid" value="" /><br />
+        <label for="omschrijving">Omschrijving:</label><br />
+        <input type="text" name="omschrijving" value="" /><br />
+        <label for="voorraadPerEenheid">Voorraad per eenheid:</label><br />
+        <input type="text" name="voorraadPerEenheid" value="" /><br />
+        <label for="imageNaam">Afbeelding:</label><br />
+        <input type="text" name="imageNaam" value="" /><br />
+        <br />
+        <input type="checkbox" name="aanbieding" value="">Aanbieding<br>
+        <br />
+        <input type="submit" value="Toevoegen" />
+    </form>
+
+
+</fieldset>

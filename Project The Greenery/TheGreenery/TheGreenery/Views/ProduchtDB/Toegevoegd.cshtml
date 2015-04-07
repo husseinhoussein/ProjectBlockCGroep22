@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Beheerder.cshtml";
+}
+@section featured {
+    <section class="featured">
+        @*<div class="content-wrapper">*@
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </section>
+}
+
+<html>
+<head>
+    <title> Toegevoegd </title>
+</head>
+
+<body>
+    <div style="float:left" id="textabout">
+        <h1>Product is toegevoegd!</h1>
+    </div>
+
+
+</body>
+
+</html>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
