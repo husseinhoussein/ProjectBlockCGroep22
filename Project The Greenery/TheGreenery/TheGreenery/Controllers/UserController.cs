@@ -55,7 +55,11 @@ namespace TheGreenery.Controllers
             return View();
         }
 
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> origin/master
         public ActionResult Registreer()
         {
             return View();
@@ -146,7 +150,12 @@ namespace TheGreenery.Controllers
             List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
             return View(bestelling);
         }
+<<<<<<< HEAD
          
+=======
+
+
+>>>>>>> origin/master
     }
 }
 
