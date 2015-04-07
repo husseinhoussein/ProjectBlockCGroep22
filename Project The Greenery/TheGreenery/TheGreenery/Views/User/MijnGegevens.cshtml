@@ -10,78 +10,53 @@
         <p><h1>@ViewBag.Title "Klanten"</h1></p><br />
     </section>
 }
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-}
-<<<<<<< HEAD
 
-
-
-@{ if (@Model == null) 
-=======
-@{ if ((@Model == null) || (Model.Count == 0))
->>>>>>> origin/master
+@{ if (@Model == null)
  {
     <div>geen gegevens gevonden</div>
  }
  else
  {
     <div></div><br>
-<<<<<<< HEAD
 
-=======
-     foreach (Klant kl in Model)
-     {
->>>>>>> origin/master
-        <fieldset>
-            <legend>Klant:</legend>
-                <form name="inlogForm" action="@Url.Action("GegevensGewijzigd","User")" method="post">
-                    <label for="klantnr">Klantnummer:</label><br />
-                    <input type="text" disabled="disabled" name="klantnr" value="@Model.klantnr" /><br />
-                    <label for="voorletters">Voorletters:</label><br />
-                    <input type="text" name="voorletters" value="@Model.voorletters" /><br />
-                    <label for="tussenvoegsel">Tussenvoegsel:</label><br />
-                    <input type="text" name="tussenvoegsel" value="@Model.tussenvoegsel" /><br />
-                    <label for="achternaam">Achternaam:</label><br />
-                    <input type="text" name="achternaam" value="@Model.achternaam" /><br />
-                    <label for="adres">Adres:</label><br />
-                    <input type="text" name="adres" value="@Model.adres" /><br />
-                    <label for="postcode">Postcode:</label><br />
-                    <input type="text" name="postcode" value="@Model.postcode" /><br />
-                    <label for="woonplaats">Woonplaats:</label><br />
-                    <input type="text" name="woonplaats" value="@Model.woonplaats" /><br />
-                    <label for="telefoonnr">Telefoon:</label><br />
-                    <input type="text" name="telefoonnr" value="@Model.telefoonnr" /><br />
-                    <label for="mail">E-mail:</label><br />
-<<<<<<< HEAD
-                    <input type="text" name="mail" value="@Model.mail" /><br />
-                 
 
-=======
-                    <input type="text" name="mail" value="@kl.mail" /><br />
->>>>>>> origin/master
-                    <br />
-                    <input type="submit" value="Edit" />
-                </form>        
-            </fieldset>
-<<<<<<< HEAD
-    
-}
+
+    <fieldset>
+        <legend>Klant:</legend>
+        <form name="inlogForm" action="@Url.Action("GegevensGewijzigd","User")" method="post">
+            <label for="klantnr">Klantnummer:</label><br />
+            <input type="text" disabled="disabled" name="klantnr" value="@Model.klantnr" /><br />
+            <label for="voorletters">Voorletters:</label><br />
+            <input type="text" name="voorletters" value="@Model.voorletters" /><br />
+            <label for="tussenvoegsel">Tussenvoegsel:</label><br />
+            <input type="text" name="tussenvoegsel" value="@Model.tussenvoegsel" /><br />
+            <label for="achternaam">Achternaam:</label><br />
+            <input type="text" name="achternaam" value="@Model.achternaam" /><br />
+            <label for="adres">Adres:</label><br />
+            <input type="text" name="adres" value="@Model.adres" /><br />
+            <label for="postcode">Postcode:</label><br />
+            <input type="text" name="postcode" value="@Model.postcode" /><br />
+            <label for="woonplaats">Woonplaats:</label><br />
+            <input type="text" name="woonplaats" value="@Model.woonplaats" /><br />
+            <label for="telefoonnr">Telefoon:</label><br />
+            <input type="text" name="telefoonnr" value="@Model.telefoonnr" /><br />
+            <label for="mail">E-mail:</label><br />
+            <input type="text" name="mail" value="@Model.mail" /><br />
+
+            <br />
+            <input type="submit" value="Edit" />
+        </form>
+    </fieldset>
  }
+}
 
  
-=======
-     }
-    }
-}
->>>>>>> origin/master
 
 
 
 
 
 
-        
+
+
 

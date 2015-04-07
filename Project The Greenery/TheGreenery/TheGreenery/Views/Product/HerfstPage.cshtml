@@ -4,8 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section featured {
-    <section class="featured">
-    </section>
+    <section class="featured"></section>
 }
 
 <!DOCTYPE html>
@@ -17,37 +16,31 @@
     <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-    <div class="round">
-        <div class="one">
-        </div>
-        <div class="two">
-            <div id="producetop" class="row">
-                @{ if ((@Model == null) || (Model.Count == 0))
+    <div class="two">
+        <div id="producetop" class="row">
+            @{ if ((@Model == null) || (Model.Count == 0))
+             {
+                <div>geen producten gevonden</div>
+             }
+             else
+             {
+                <div><h1>Oranje herfst selectie!</h1></div><br>
+                 foreach (Product pro in Model)
                  {
-                    <div>geen producten gevonden</div>
+                    <div id="produce" style="float: left">
+                        <fieldset id="produce">
+                            <div>                       <h3>@pro.naam</h3></div>
+                            <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                            <div>productnr:             @pro.productnr</div>
+                            <div>Prijs:€                @pro.prijsPerEenheid</div>
+                            <div>Voorraad:              @pro.voorraadPerEenheid</div>
+                            <div>Omschrijving:<br />    @pro.omschrijving</div>
+                            <div>Eenheid:       @pro.eenheid</div>
+                        </fieldset>
+                    </div>
                  }
-                 else
-                 {
-                    <div><h1>Oranje herfst selectie!</h1></div><br>
-                     foreach (Product pro in Model)
-                     {
-                        <div id="produce" style="float: left">
-                            <fieldset id="produce">
-                                <div>                       <h3>@pro.naam</h3></div>
-                                <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
-                                <div>productnr:             @pro.productnr</div>
-                                <div>Prijs:€                @pro.prijsPerEenheid</div>
-                                <div>Voorraad:              @pro.voorraadPerEenheid</div>
-                                <div>Omschrijving:<br />    @pro.omschrijving</div>
-                                <div>Eenheid:       @pro.eenheid</div>
-                            </fieldset>
-                        </div>
-                     }
-                 }
-                }
-            </div>
-        </div>
-        <div class="three">
+             }
+            }
         </div>
     </div>
 </body>

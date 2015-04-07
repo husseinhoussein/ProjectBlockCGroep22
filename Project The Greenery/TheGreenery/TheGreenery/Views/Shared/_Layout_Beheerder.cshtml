@@ -8,14 +8,11 @@
     @System.Web.Optimization.Styles.Render("~/Content/Site.css")
 </head>
 <body>
-<<<<<<< HEAD
    
     @Html.ActionLink("Mijn Gegevens", "MijnGegevens", "User")
     <span> | </span>
     @Html.ActionLink("Log uit", "Index", "Home")
-   
 
-=======
     @if (Request.IsAuthenticated)
     {
         <strong>@Html.Encode(User.Identity.Name)</strong>
@@ -28,7 +25,7 @@
         <span> | </span>
         @Html.ActionLink("Log In", "Login", "User")
     }
->>>>>>> origin/master
+
     <header>
         <div class="content-wrapper">
             <div class="float-left">

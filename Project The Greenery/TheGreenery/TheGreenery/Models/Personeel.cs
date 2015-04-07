@@ -22,11 +22,10 @@ namespace TheGreenery.Models
             set { Code_Personeel = value; }
         }
 
-        public int personeelnr; 
-        public int persoonID; 
-        public String voorletters; 
-        public String tussenvoegsel; 
-        public String achternaam; 
+        public int personeelnr;
+        public String voorletters;
+        public String tussenvoegsel;
+        public String achternaam;
         public String type;
         public String wachtwoord;
 
@@ -61,7 +60,7 @@ namespace TheGreenery.Models
         { return wachtwoord; }
 
         public void setWachtwoord(String input)
-        { wachtwoord = input; } 
+        { wachtwoord = input; }
     }
 
 }

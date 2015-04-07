@@ -69,7 +69,7 @@ namespace TheGreenery.DBcontrollers
             return klant;
         }
 
-        public Personeel LogInPersSelect(int? personeelnr, String wachtwoord, String type)
+        public Personeel LogInPersSelect(String achternaam, String wachtwoord, String type)
         {
 
             Personeel personeel = new Personeel();
@@ -78,16 +78,16 @@ namespace TheGreenery.DBcontrollers
             trans = conn.BeginTransaction();
             try
             {
-                string selectQuery = @"SELECT * FROM Personeel WHERE personeelnr = @personeelnr AND wachtwoord = @wachtwoord;";
+                string selectQuery = @"SELECT * FROM Personeel WHERE achternaam = @achternaam AND wachtwoord = @wachtwoord;";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
-                MySqlParameter personeelnrParam = new MySqlParameter("@personeelnr", MySqlDbType.Int32);
+                MySqlParameter achternaamParam = new MySqlParameter("@achternaam", MySqlDbType.VarChar);
                 MySqlParameter wachtwoordParam = new MySqlParameter("@wachtwoord", MySqlDbType.VarChar);
 
-                personeelnrParam.Value = personeelnr;
+                achternaamParam.Value = achternaam;
                 wachtwoordParam.Value = wachtwoord;
 
-                cmd.Parameters.Add(personeelnrParam);
+                cmd.Parameters.Add(achternaamParam);
                 cmd.Parameters.Add(wachtwoordParam);
 
                 cmd.Prepare();
@@ -95,8 +95,19 @@ namespace TheGreenery.DBcontrollers
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    personeel.personeelnr = dataReader.GetInt32("personeelnr");
-                    personeel.wachtwoord = dataReader.GetString("wachtwoord");
+                    int Personeelnr = dataReader.GetInt32("personeelnr");
+                    String Voorletters = dataReader.GetString("voorletters");
+                    String Tussenvoegsel = dataReader.GetString("tussenvoegsel");
+                    String Achternaam = dataReader.GetString("achternaam");
+                    String Type = dataReader.GetString("type");
+                    String Wachtwoord = dataReader.GetString("wachtwoord");
+
+                    personeel.personeelnr = Personeelnr;
+                    personeel.voorletters = Voorletters;
+                    personeel.tussenvoegsel = Tussenvoegsel;
+                    personeel.achternaam = Achternaam;
+                    personeel.type = Type;
+                    personeel.wachtwoord = Wachtwoord;
                 }
 
             }

@@ -307,7 +307,7 @@
     <Content Include="Views\Shared\_Layout_Klant.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\ProduchtDB\Toegevoegd.cshtml" />
+    <Content Include="Views\Product\Toegevoegd.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

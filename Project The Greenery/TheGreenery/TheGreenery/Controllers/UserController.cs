@@ -33,18 +33,19 @@ namespace TheGreenery.Controllers
             LoginDBController gebruiker = new LoginDBController();
             Session["LoggedIn"] = null;
             Klant gUser = gebruiker.LogInSelect(mail, wachtwoord);
+
             try
             {
-               
-                    if (gUser != null)
+                if (gUser != null)
+                {
+                    if (gUser.mail == @mail && gUser.wachtwoord == @wachtwoord)
                     {
-                        if (gUser.mail == @mail && gUser.wachtwoord == @wachtwoord)
-                        {
-                            Session["LoggedIn"] = gUser;
-                            String url = "/Home/Index";
-                            return Redirect(url);
-                        }
+                        Session["LoggedIn"] = gUser;
+                        String url = "/Home/Index";
+                        return Redirect(url);
                     }
+
+                }
             }
 
             catch (FormatException)
@@ -55,11 +56,6 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-<<<<<<< HEAD
-      
-=======
-
->>>>>>> origin/master
         public ActionResult Registreer()
         {
             return View();
@@ -102,18 +98,15 @@ namespace TheGreenery.Controllers
             klant.setTelefoonnr(telefoonnr);
             klant.setMail(mail);
 
-            //if (klantnr == 1 && !klantnr.Equals(@klantnr))
-            //{
             MijnGegevensDBController MijnGegevens = new MijnGegevensDBController();
             MijnGegevens.GegevensAanpassen(klant);
 
-            //}
             return View();
 
         }
 
         public ActionResult MijnGegevens()
-        {   
+        {
             if (Session["LoggedIn"] != null)
             {
                 Klant k = Session["LoggedIn"] as Klant;
@@ -128,34 +121,12 @@ namespace TheGreenery.Controllers
 
         }
 
-
-         public ActionResult gegevensK()
-        {
-            if (Session["LoggedIn"] != null)
-            {
-                Klant k = Session["LoggedIn"] as Klant;
-
-                return View(k);
-            }
-            else
-            {
-                String urlLogin = "/Login/Login";
-                return Redirect(urlLogin);
-            }
-
-        }
         public ActionResult MijnBestellingen(int? bestellingnr)
         {
             MijnBestellingenDBController sc = new MijnBestellingenDBController();
             List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
             return View(bestelling);
         }
-<<<<<<< HEAD
-         
-=======
-
-
->>>>>>> origin/master
     }
 }
 

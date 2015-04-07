@@ -1,12 +1,12 @@
 ﻿@using TheGreenery.Models;
 @model List<Product>
-<<<<<<< HEAD
 
-@{           
-=======
+
+
+
 @{
     //ViewBag.Title = "Home Page";
->>>>>>> origin/master
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -37,7 +37,7 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width" /> 
+    <meta name="viewport" content="width=device-width" />
 </head>
 <body>
     <p> <h1>@ViewBag.Title "Alleen deze week!!!"</h1></p><br />
@@ -57,13 +57,13 @@
                          {
                             <div id="produce" style="float: left inherit">
                                 <fieldset id="produce">
-                                <div>                       <h3>@pro.naam</h3></div>
-                                <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
-                                <div>productnr:             @pro.productnr</div>
-                                <div>Prijs:€                @pro.prijsPerEenheid</div>
-                                <div>Voorraad:              @pro.voorraadPerEenheid</div>
-                                <div>Omschrijving:<br />    @pro.omschrijving</div>
-                                <div>Eenheid:       @pro.eenheid</div>
+                                    <div>                       <h3>@pro.naam</h3></div>
+                                    <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                                    <div>productnr:             @pro.productnr</div>
+                                    <div>Prijs:€                @pro.prijsPerEenheid</div>
+                                    <div>Voorraad:              @pro.voorraadPerEenheid</div>
+                                    <div>Omschrijving:<br />    @pro.omschrijving</div>
+                                    <div>Eenheid:       @pro.eenheid</div>
                                 </fieldset>
                             </div>
                          }
@@ -71,8 +71,8 @@
                     }
                 </div>
             </div>
-            </div>
         </div>
-    <div class="three"></div> 
+    </div>
+    <div class="three"></div>
 </body>
 </html>

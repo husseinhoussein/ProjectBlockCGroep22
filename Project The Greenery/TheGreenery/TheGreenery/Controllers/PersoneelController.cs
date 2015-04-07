@@ -37,42 +37,44 @@ namespace TheGreenery.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult LoginResult(int? personeelnr, String wachtwoord, String type)
+        public ActionResult LoginResult(String achternaam, String wachtwoord, String type)
         {
             LoginDBController gebruiker = new LoginDBController();
-            Session["LoggedIn"] = null;
-            Personeel gUser = gebruiker.LogInPersSelect(personeelnr, wachtwoord, type);
-            try
-            {
-                if (gUser != null)
+            Session["LoggedInP"] = null;
+            Personeel gPers = gebruiker.LogInPersSelect(achternaam, wachtwoord, type);
+            //try
+            //{
+                if (gPers != null)
                 {
-                    if (gUser.personeelnr == @personeelnr && gUser.wachtwoord == @wachtwoord)
+                    if (gPers.achternaam == @achternaam && gPers.wachtwoord == @wachtwoord)
                     {
-                        if (gUser.type == "beheerder")
+                        if (gPers.type == "beheerder")
                         {
-                            Session["LoggedIn"] = gUser.Code_Personeel;
+                            Session["LoggedInP"] = gPers;
                             String url = "/Personeel/LoginResultB";
                             return Redirect(url);
                         }
-                        else if (gUser.type == "manager")
+                        else if (gPers.type == "manager")
                         {
-                            Session["LoggedIn"] = gUser.Code_Personeel;
+                            Session["LoggedInP"] = gPers.Code_Personeel;
                             String url = "/Personeel/LoginResultM";
                             return Redirect(url);
                         }
                     }
                 }
+                return View();
             }
-            catch (FormatException)
-            {
-                ViewData["Ero"] = "you dun goofed";
-                return View("LogIn");
-            }
-            return View();
-        }
+            //catch (FormatException)
+            //{
+            //    ViewData["Ero"] = "you dun goofed";
+            //    return View("LogIn");
+            //}
+            
+        
 
     }
 }
+
 
 
 
