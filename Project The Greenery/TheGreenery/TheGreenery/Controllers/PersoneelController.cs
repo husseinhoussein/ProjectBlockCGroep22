@@ -37,16 +37,16 @@ namespace TheGreenery.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult LoginResult(String achternaam, String wachtwoord, String type)
+        public ActionResult LoginResult(int personeelnr, String wachtwoord, String type)
         {
             LoginDBController gebruiker = new LoginDBController();
             Session["LoggedInP"] = null;
-            Personeel gPers = gebruiker.LogInPersSelect(achternaam, wachtwoord, type);
-            //try
-            //{
+            Personeel gPers = gebruiker.LogInPersSelect(personeelnr, wachtwoord, type);
+            try
+            {
                 if (gPers != null)
                 {
-                    if (gPers.achternaam == @achternaam && gPers.wachtwoord == @wachtwoord)
+                    if (gPers.personeelnr == @personeelnr && gPers.wachtwoord == @wachtwoord)
                     {
                         if (gPers.type == "beheerder")
                         {
@@ -62,16 +62,16 @@ namespace TheGreenery.Controllers
                         }
                     }
                 }
-                return View();
+               
             }
-            //catch (FormatException)
-            //{
-            //    ViewData["Ero"] = "you dun goofed";
-            //    return View("LogIn");
-            //}
-            
-        
+            catch (FormatException)
+            {
+                ViewData["Ero"] = "you dun goofed";
+                return View("PersoneelLogIn");
+            }
+            return View();
 
+        }
     }
 }
 

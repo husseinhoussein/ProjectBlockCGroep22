@@ -11,7 +11,7 @@ namespace TheGreenery.DBcontrollers
 {
     class RegistrerenDBController : DatabaseController
     {
-        
+
         public void InsertRegistratie(Klant klant)
         {
             MySqlTransaction trans = null;
@@ -88,27 +88,26 @@ namespace TheGreenery.DBcontrollers
             {
                 string insertString = @"
                     insert into Personeel 
-                        (personeelnr, voorletters, tussenvoegsel, achternaam, 
+                        (voorletters, tussenvoegsel, achternaam, 
                          type, wachtwoord) 
                         values 
-                        (@personeelnr, @voorletters, @tussenvoegsel, @achternaam, 
+                        (@voorletters, @tussenvoegsel, @achternaam, 
                          @type, @wachtwoord)
                 ;";
 
                 MySqlCommand cmd = new MySqlCommand(insertString, conn);
-                MySqlParameter personeelnrParam = new MySqlParameter("@personeelnr", MySqlDbType.Int32);
                 MySqlParameter voorlettersParam = new MySqlParameter("@voorletters", MySqlDbType.VarChar);
                 MySqlParameter tussenvoegselParam = new MySqlParameter("@tussenvoegsel", MySqlDbType.VarChar);
                 MySqlParameter achternaamParam = new MySqlParameter("@achternaam", MySqlDbType.VarChar);
                 MySqlParameter typeParam = new MySqlParameter("@type", MySqlDbType.VarChar);
                 MySqlParameter wachtwoordParam = new MySqlParameter("@wachtwoord", MySqlDbType.VarChar);
-               
-                personeelnrParam.Value = personeel.personeelnr;
+
+                
                 voorlettersParam.Value = personeel.voorletters;
                 tussenvoegselParam.Value = personeel.tussenvoegsel;
                 achternaamParam.Value = personeel.achternaam;
                 typeParam.Value = personeel.type;
-                wachtwoordParam.Value = personeel.wachtwoord; 
+                wachtwoordParam.Value = personeel.wachtwoord;
 
                 cmd.Parameters.Add(voorlettersParam);
                 cmd.Parameters.Add(tussenvoegselParam);
@@ -123,7 +122,7 @@ namespace TheGreenery.DBcontrollers
             catch (Exception e)
             {
                 trans.Rollback();
-                throw new Exception("Klant niet toegevoegd: " + e);
+                throw new Exception("Personeel niet toegevoegd: " + e);
             }
             finally
             {
