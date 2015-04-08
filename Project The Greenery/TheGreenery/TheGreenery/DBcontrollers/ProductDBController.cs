@@ -228,7 +228,60 @@ namespace TheGreenery.DBcontrollers
 
             return producten;
         }
-       
+
+        public List<Product> getProductByProductNr(int productnr)
+        {
+            List<Product> producten = new List<Product>();
+
+            conn.Open();
+            try
+            {
+
+                string selectQuery = @"select * from Product where productnr like @productnr";
+
+                MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
+                MySqlParameter productnrParam = new MySqlParameter("@productnr", MySqlDbType.VarChar);
+                productnrParam.Value = "%" + productnr + "%";
+                cmd.Parameters.Add(productnrParam);
+                cmd.Prepare();
+
+
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Product product = new Product();
+                    product.productnr = dataReader.GetInt32("productnr");
+                    product.naam = dataReader.GetString("naam");
+                    product.type = dataReader.GetInt32("type");
+                    product.lente = dataReader.GetString("lente");
+                    product.zomer = dataReader.GetString("zomer");
+                    product.herfst = dataReader.GetString("herfst");
+                    product.winter = dataReader.GetString("winter");
+                    product.prijsPerEenheid = dataReader.GetString("prijsPerEenheid");
+                    product.eenheid = dataReader.GetString("eenheid");
+                    product.omschrijving = dataReader.GetString("omschrijving");
+                    product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
+                    product.imageNaam = dataReader.GetString("imageNaam");
+                    product.aanbieding = dataReader.GetString("aanbieding");
+
+                    producten.Add(product);
+                    Console.Write(product.productnr);
+                }
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine("Producten niet opgehaald: " + e);
+            }
+
+            finally
+            {
+                conn.Close();
+            }
+
+            return producten;
+        }
     }
+       
 }
 

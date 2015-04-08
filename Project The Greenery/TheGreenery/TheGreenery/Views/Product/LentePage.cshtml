@@ -44,6 +44,7 @@
                                 <div>Voorraad:              @pro.voorraadPerEenheid</div>
                                 <div>Omschrijving:<br />    @pro.omschrijving</div>
                                 <div>Eenheid:       @pro.eenheid</div>
+                                <div>@Html.ActionLink("Bestelling plaatsen", "Bestellingplaatsen", "Winkelwagen", new { productnr = pro.productnr }, null)</div>
                             </fieldset>
                         </div>
                      }

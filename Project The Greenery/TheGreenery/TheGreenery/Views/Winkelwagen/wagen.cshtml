@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using TheGreenery.Controllers;
+@using TheGreenery.Models;
+@model List<Product>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>wagen</title>
+</head>
+<body>
+    <div style="float:left" id="textabout">
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Option</th>
+            <th>productnr</th>
+            <th>naam</th>
+            <th>type</th>
+            <th>lente</th>
+            <th>zomer</th>
+            <th>herfst</th>
+            <th>winter</th>
+            <th>prijsPerEenheid</th>
+            <th>Eenheid</th>
+            <th>omschrijving</th>
+            <th>voorraadPerEenheid</th>
+            <th>imageNaam</th>
+            <th>aantal producten</th>
+            <th>bestel knop onder</th>
+        </tr>
+
+        @foreach (Product product in (List<Product>)Session["wagen"])
+        {
+            <tr>
+                <td>@Html.ActionLink("Delete", "Delete", "Winkelwagen", new { productnr = product.productnr }, null)</td>
+                <td>@product.productnr</td>
+                <td>@product.naam</td>
+                <td>@product.type</td>
+                <td>@product.lente</td>
+                <td>@product.zomer</td>
+                <td>@product.herfst</td>
+                <td>@product.winter</td>
+                <td>@product.omschrijving</td>
+                <td>@product.voorraadPerEenheid</td>
+                <td><img width="200" height="150" src="~/Images/@product.imageNaam" /></td>
+                <td>@product.aanbieding</td>
+                @*<td>@Item.Productnr</td>*@
+                <td align="center">@Html.ActionLink("definitieveBestellingplaatsen", "definitieveBestellingplaatsen", "Winkelwagen")</td>
+                @*<td align="center">definitieveBestellingplaatsen</td>*@ 
+
+            </tr>
+        }
+        <tr>
+            <td align="right" colspan="5">Totaal aantal</td>
+        </tr>
+    </table>
+    <br /><b />
+    @Html.ActionLink("Ga door winkelen", "Index", "Home")
+</div>
+
+</body>
+</html>

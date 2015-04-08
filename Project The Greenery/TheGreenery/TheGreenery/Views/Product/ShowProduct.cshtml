@@ -40,6 +40,7 @@
                     <div>eenheid:       @pro.eenheid</div>
                     <div>aanbieding:    @pro.aanbieding</div>
                     <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                    <div>@Html.ActionLink("Bestelling plaatsen", "Bestellingplaatsen", "Winkelwagen", new { productnr = pro.productnr }, null)</div>
                 </fieldset>
              }
          }

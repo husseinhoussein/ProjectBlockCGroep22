@@ -1,0 +1,36 @@
+﻿@using TheGreenery.Controllers;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>wagen</title>
+</head>
+<body>
+    <div style="float:left" id="textabout">
+        <table cellpadding="2" cellspacing="2" border="1">
+            <tr>
+                <th>Option</th>
+                <th>productnr</th>
+                <th>naam</th>
+                <th>type</th>
+                <th>lente</th>
+                <th>zomer</th>
+                <th>herfst</th>
+                <th>winter</th>
+                <th>prijsPerEenheid</th>
+                <th>Eenheid</th>
+                <th>omschrijving</th>
+                <th>voorraadPerEenheid</th>
+                <th>imageNaam</th>
+                <th>aantal producten</th>
+                <th>bestel knop onder</th>
+            </tr>
+        </table>
+        <br /><b />
+        @Html.ActionLink("Ga door winkelen", "Index", "Winkelproduct")
+    </div>
+
+</body>
+</html>
