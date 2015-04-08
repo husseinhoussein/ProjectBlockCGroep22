@@ -25,7 +25,7 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-        public ActionResult ProductenToevoegen(String naam, int type, String lente, String zomer, String herfst, String winter, String prijsPerEenheid,
+        public ActionResult ProductenToevoegen(String naam, String type, String lente, String zomer, String herfst, String winter, Double prijsPerEenheid,
                                        String eenheid, String omschrijving, int voorraadPerEenheid, String imageNaam, String aanbieding)
         {
             Product product = new Product();
@@ -41,6 +41,9 @@ namespace TheGreenery.Controllers
             product.setVoorraadPerEenheid(voorraadPerEenheid);
             product.setImageNaam(imageNaam);
             product.setAanbieding(aanbieding);
+
+            ProductDBController productToevoegenController = new ProductDBController();
+            productToevoegenController.InsertProduct(product);
 
             return View();
 

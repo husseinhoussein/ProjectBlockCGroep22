@@ -9,12 +9,12 @@ namespace TheGreenery.Models
     {
         public int productnr;
         public String naam;
-        public int type;
+        public String type;
         public String lente;
         public String zomer;
         public String herfst;
         public String winter;
-        public String prijsPerEenheid;
+        public double prijsPerEenheid;
         public String eenheid;
         public String omschrijving;
         public int voorraadPerEenheid;
@@ -33,10 +33,10 @@ namespace TheGreenery.Models
         public void setNaam(String input)
         { naam = input; }
 
-        public int getType()
+        public String getType()
         { return type; }
 
-        public void setType(int input)
+        public void setType(String input)
         { type = input; }
 
         public string getLente()
@@ -63,11 +63,11 @@ namespace TheGreenery.Models
         public string getWinter()
         { return winter; }
 
-        public void setPrijsPerEenheid(String input)
-        { prijsPerEenheid = input; }
-
-        public String getPrijsPerEenheid()
+        public Double getPrijsPerEenheid()
         { return prijsPerEenheid; }
+
+        public void setPrijsPerEenheid(Double input)
+        { prijsPerEenheid = input; }  
 
         public string getEenheid()
         { return eenheid; }

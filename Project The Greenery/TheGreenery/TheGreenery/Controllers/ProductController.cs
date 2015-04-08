@@ -21,7 +21,7 @@ namespace TheGreenery.Controllers
         }
         public ActionResult ShowProduct(String naam)
         {
-            ProduchtDBController sc = new ProduchtDBController();
+            ProductDBController sc = new ProductDBController();
             List<Product> producten = sc.getAllProductenByNaam(naam);
             return View(producten);
         }

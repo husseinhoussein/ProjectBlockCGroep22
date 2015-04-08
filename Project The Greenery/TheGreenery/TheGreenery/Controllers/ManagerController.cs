@@ -19,7 +19,7 @@ namespace TheGreenery.Controllers
 
         public ActionResult ProductenInzien()
         {
-            ProduchtDBController sc = new ProduchtDBController();
+            ProductDBController sc = new ProductDBController();
             List<Product> producten = sc.getAllProducten();
             return View(producten);
         }
