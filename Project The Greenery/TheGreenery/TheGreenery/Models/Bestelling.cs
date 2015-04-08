@@ -12,5 +12,7 @@ namespace TheGreenery.Models
         public int klantnr;
 
         public double totaalbedrag;
+
+        public String status;
     }
 }
