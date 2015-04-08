@@ -14,7 +14,7 @@ namespace TheGreenery.Controllers
         //
         // GET: /Winkelwagen/
 
-        ProduchtDBController sc = new ProduchtDBController();
+        ProductDBController sc = new ProductDBController();
         Product product = new Product();
 
         public ActionResult Index()
