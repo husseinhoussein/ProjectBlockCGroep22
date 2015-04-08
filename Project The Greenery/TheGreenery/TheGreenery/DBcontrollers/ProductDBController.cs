@@ -252,12 +252,12 @@ namespace TheGreenery.DBcontrollers
                     Product product = new Product();
                     product.productnr = dataReader.GetInt32("productnr");
                     product.naam = dataReader.GetString("naam");
-                    product.type = dataReader.GetInt32("type");
+                    product.type = dataReader.GetString("type");
                     product.lente = dataReader.GetString("lente");
                     product.zomer = dataReader.GetString("zomer");
                     product.herfst = dataReader.GetString("herfst");
                     product.winter = dataReader.GetString("winter");
-                    product.prijsPerEenheid = dataReader.GetString("prijsPerEenheid");
+                    product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
