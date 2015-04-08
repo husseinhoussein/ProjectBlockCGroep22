@@ -153,6 +153,8 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\BeheerderController.cs" />
+    <Compile Include="Controllers\WinkelproductController.cs" />
+    <Compile Include="Controllers\WinkelwagenController.cs" />
     <Compile Include="DBcontrollers\GegevensAanpassenDBController.cs" />
     <Compile Include="DBcontrollers\LoginDBController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
@@ -307,7 +309,14 @@
     <Content Include="Views\Shared\_Layout_Klant.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\ProduchtDB\Toegevoegd.cshtml" />
+    <Content Include="Views\Product\Toegevoegd.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Winkelproduct\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Winkelwagen\Index.cshtml" />
+    <Content Include="Views\Winkelwagen\wagen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Beheerder\ProductenToevoegen.cshtml" />

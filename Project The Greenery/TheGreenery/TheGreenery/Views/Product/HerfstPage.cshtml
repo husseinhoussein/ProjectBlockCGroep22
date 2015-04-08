@@ -1,69 +1,47 @@
 ﻿@using TheGreenery.Models;
 @model List<Product>
 @{
-    //ViewBag.Title = "YAY LENTE";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section featured {
-    <section class="featured">
-
-        <hgroup class="title">
-            @*<h1>@ViewBag.Title.</h1>*@
-
-        </hgroup>
-
-    </section>
+    <section class="featured"></section>
 }
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
 <head>
     <title></title>
     <meta charset="utf-8" />
-
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @*@Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
-    <div class="round">
-        <div class="one">
-            <div></div>
-        </div>
-
-        <div class="two">
-            <div id="producetop" class="row">
-                @{ if ((@Model == null) || (Model.Count == 0))
+    <div class="two">
+        <div id="producetop" class="row">
+            @{ if ((@Model == null) || (Model.Count == 0))
+             {
+                <div>geen producten gevonden</div>
+             }
+             else
+             {
+                <div><h1>Oranje herfst selectie!</h1></div><br>
+                 foreach (Product pro in Model)
                  {
-                    <div>geen producten gevonden</div>
+                    <div id="produce" style="float: left">
+                        <fieldset id="produce">
+                            <div>                       <h3>@pro.naam</h3></div>
+                            <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                            <div>productnr:             @pro.productnr</div>
+                            <div>Prijs:€                @pro.prijsPerEenheid</div>
+                            <div>Voorraad:              @pro.voorraadPerEenheid</div>
+                            <div>Omschrijving:<br />    @pro.omschrijving</div>
+                            <div>Eenheid:       @pro.eenheid</div>
+                            <div>@Html.ActionLink("Bestelling plaatsen", "Bestellingplaatsen", "Winkelwagen", new { productnr = pro.productnr }, null)</div>
+                        </fieldset>
+                    </div>
                  }
-                 else
-                 {
-                    <div><h1>Oranje herfst selectie!</h1></div><br>
-                     foreach (Product pro in Model)
-                     {
-                        <div id="produce" style="float: left">
-                            <fieldset id="produce">
-                                <div>                       <h3>@pro.naam</h3></div>
-                                <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
-                                <div>productnr:             @pro.productnr</div>
-                                <div>Prijs:€                @pro.prijsPerEenheid</div>
-                                <div>Voorraad:              @pro.voorraadPerEenheid</div>
-                                <div>Omschrijving:<br />    @pro.omschrijving</div>
-                                <div>Eenheid:       @pro.eenheid</div>
-                            </fieldset>
-                        </div>
-
-
-                     }
-                 }
-                }
-            </div>
-        </div>
-
-        <div class="three">
-
+             }
+            }
         </div>
     </div>
 </body>

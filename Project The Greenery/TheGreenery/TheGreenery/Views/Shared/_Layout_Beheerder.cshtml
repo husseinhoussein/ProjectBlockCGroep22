@@ -6,9 +6,13 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @System.Web.Optimization.Styles.Render("~/Content/Site.css")
-
 </head>
 <body>
+   
+    @Html.ActionLink("Mijn Gegevens", "MijnGegevens", "User")
+    <span> | </span>
+    @Html.ActionLink("Log uit", "Index", "Home")
+
     @if (Request.IsAuthenticated)
     {
         <strong>@Html.Encode(User.Identity.Name)</strong>
@@ -37,14 +41,12 @@
                     </div>
                 </section>
                 <div style="float:right" id="menu">
-
                     <div style="float:left"><a href="@Url.Action("/Winkelwagen") "> <img border="0" alt="Greenery" src="~/Images/winkelwagen.png" /></a></div>
                     <div style="float:left">@Html.ActionLink("Home", "Index", "Home")</div>
                     <div style="float:left">@Html.ActionLink("  Over Ons", "About", "Home")</div>
                     <div style="float:left">@Html.ActionLink("  Contact", "Contact", "Home")</div>
                 </div>
                 <nav>
-
                     @using (Html.BeginForm())
                     {
                         <hr width="100%" align="right" size="0" />
@@ -59,19 +61,14 @@
                         </div>
                         <hr width="100%" align="right" size="0" />
                     }
-
-
                 </nav>
             </div>
         </div>
     </header>
-
     @RenderSection("featured", required: false)
     <section class="content-wrapper main-content clear-fix">
-
         @RenderBody()
     </section>
-
     <footer>
         <div class="content-wrapper">
             <div class="float-left">

@@ -10,28 +10,25 @@ namespace TheGreenery.DBcontrollers
 {
     public class LoginDBController : DatabaseController
     {
-        public Klant LogInSelect( int? klantnr, String mail, String wachtwoord)
+        public Klant LogInSelect(String mail, String wachtwoord)
         {
-            
+
             Klant klant = new Klant();
             MySqlTransaction trans = null;
             conn.Open();
+            trans = conn.BeginTransaction();
             try
             {
-                // conn.Open();
-                trans = conn.BeginTransaction();
                 string selectQuery = @"SELECT * FROM Klant WHERE mail = @mail AND wachtwoord = @wachtwoord;";
-
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 MySqlParameter mailParam = new MySqlParameter("@mail", MySqlDbType.VarChar);
                 MySqlParameter wachtwoordParam = new MySqlParameter("@wachtwoord", MySqlDbType.VarChar);
-                
+
                 mailParam.Value = mail;
                 wachtwoordParam.Value = wachtwoord;
 
                 cmd.Parameters.Add(mailParam);
                 cmd.Parameters.Add(wachtwoordParam);
-
                 cmd.Prepare();
 
 
@@ -39,12 +36,29 @@ namespace TheGreenery.DBcontrollers
                 while (dataReader.Read())
                 {
 
-                    klant.mail = dataReader.GetString("mail");
-                    klant.wachtwoord = dataReader.GetString("wachtwoord");
+                    int Klantnr = dataReader.GetInt32("klantnr");
+                    String Mail = dataReader.GetString("mail");
+                    String Wachtwoord = dataReader.GetString("wachtwoord");
+                    String Voorletters = dataReader.GetString("voorletters");
+                    String Tussenvoegsel = dataReader.GetString("tussenvoegsel");
+                    String Achternaam = dataReader.GetString("achternaam");
+                    String Adres = dataReader.GetString("adres");
+                    String Postcode = dataReader.GetString("postcode");
+                    String Woonplaats = dataReader.GetString("woonplaats");
+                    String Telefoonnr = dataReader.GetString("telefoonnr");
 
-                    
+                    klant.klantnr = Klantnr;
+                    klant.mail = Mail;
+                    klant.wachtwoord = wachtwoord;
+                    klant.voorletters = Voorletters;
+                    klant.tussenvoegsel = Tussenvoegsel;
+                    klant.achternaam = Achternaam;
+                    klant.adres = Adres;
+                    klant.postcode = Postcode;
+                    klant.woonplaats = Woonplaats;
+                    klant.telefoonnr = Telefoonnr;
+
                 }
-                
             }
 
             finally
@@ -55,39 +69,45 @@ namespace TheGreenery.DBcontrollers
             return klant;
         }
 
-
-        public Personeel LogInPersSelect(int? personeelnr,String wachtwoord, String type)
+        public Personeel LogInPersSelect(String achternaam, String wachtwoord, String type)
         {
 
             Personeel personeel = new Personeel();
             MySqlTransaction trans = null;
             conn.Open();
+            trans = conn.BeginTransaction();
             try
             {
-                // conn.Open();
-                trans = conn.BeginTransaction();
-                string selectQuery = @"SELECT * FROM Personeel WHERE personeelnr = @personeelnr AND wachtwoord = @wachtwoord;";
+                string selectQuery = @"SELECT * FROM Personeel WHERE achternaam = @achternaam AND wachtwoord = @wachtwoord;";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
-                MySqlParameter personeelnrParam = new MySqlParameter("@personeelnr", MySqlDbType.Int32);
+                MySqlParameter achternaamParam = new MySqlParameter("@achternaam", MySqlDbType.VarChar);
                 MySqlParameter wachtwoordParam = new MySqlParameter("@wachtwoord", MySqlDbType.VarChar);
 
-                personeelnrParam.Value = personeelnr;
+                achternaamParam.Value = achternaam;
                 wachtwoordParam.Value = wachtwoord;
 
-                cmd.Parameters.Add(personeelnrParam);
+                cmd.Parameters.Add(achternaamParam);
                 cmd.Parameters.Add(wachtwoordParam);
 
                 cmd.Prepare();
 
-
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    
-                    personeel.personeelnr = dataReader.GetInt32("personeelnr");
-                    personeel.wachtwoord = dataReader.GetString("wachtwoord");
+                    int Personeelnr = dataReader.GetInt32("personeelnr");
+                    String Voorletters = dataReader.GetString("voorletters");
+                    String Tussenvoegsel = dataReader.GetString("tussenvoegsel");
+                    String Achternaam = dataReader.GetString("achternaam");
+                    String Type = dataReader.GetString("type");
+                    String Wachtwoord = dataReader.GetString("wachtwoord");
 
+                    personeel.personeelnr = Personeelnr;
+                    personeel.voorletters = Voorletters;
+                    personeel.tussenvoegsel = Tussenvoegsel;
+                    personeel.achternaam = Achternaam;
+                    personeel.type = Type;
+                    personeel.wachtwoord = Wachtwoord;
                 }
 
             }
@@ -99,6 +119,6 @@ namespace TheGreenery.DBcontrollers
 
             return personeel;
         }
-              
+
     }
 }

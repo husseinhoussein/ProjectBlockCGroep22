@@ -40,7 +40,6 @@ namespace TheGreenery.Controllers
             ZomerDBController sc = new ZomerDBController();
 
             List<Product> producten = sc.getAllProductenByZomer(zomer);
-
             return View(producten);
         }
 
@@ -48,8 +47,6 @@ namespace TheGreenery.Controllers
         {
 
             HerfstDBController sc = new HerfstDBController();
-
-
             List<Product> producten = sc.getAllProductenByHerfst(herfst);
 
             return View(producten);
@@ -58,7 +55,6 @@ namespace TheGreenery.Controllers
         {
 
             WinterDBController sc = new WinterDBController();
-
             List<Product> producten = sc.getAllProductenByWinter(winter);
 
             return View(producten);

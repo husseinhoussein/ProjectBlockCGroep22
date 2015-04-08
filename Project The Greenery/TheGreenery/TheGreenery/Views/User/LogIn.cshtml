@@ -2,13 +2,10 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
 <html>
 <body>
     <div style="float:left" id="textabout">
-
-
         <div>
             <form method="post" action="@Url.Action("LogInResult","User")">
                 <fieldset>
@@ -19,12 +16,8 @@
                     <input type="password" name="wachtwoord" value="" /><br />
                     <input type="submit" value="Log In" />
                 </fieldset>
-            </form>
-                
+            </form>    
         </div>
-        
     </div>
-      
-
 </body>
 </html>

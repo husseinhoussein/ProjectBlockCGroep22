@@ -28,23 +28,26 @@ namespace TheGreenery.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult LoginResult(int? klantnr, String mail, String wachtwoord)
+        public ActionResult LoginResult(String mail, String wachtwoord)
         {
             LoginDBController gebruiker = new LoginDBController();
             Session["LoggedIn"] = null;
-            Klant gUser = gebruiker.LogInSelect(klantnr, mail, wachtwoord);
+            Klant gUser = gebruiker.LogInSelect(mail, wachtwoord);
+
             try
             {
                 if (gUser != null)
                 {
                     if (gUser.mail == @mail && gUser.wachtwoord == @wachtwoord)
                     {
-                        Session["LoggedIn"] = gUser.Code_Klant;
+                        Session["LoggedIn"] = gUser;
                         String url = "/Home/Index";
                         return Redirect(url);
                     }
+
                 }
             }
+
             catch (FormatException)
             {
                 ViewData["Ero"] = "you dun goofed";
@@ -52,7 +55,6 @@ namespace TheGreenery.Controllers
             }
             return View();
         }
-
 
         public ActionResult Registreer()
         {
@@ -96,21 +98,26 @@ namespace TheGreenery.Controllers
             klant.setTelefoonnr(telefoonnr);
             klant.setMail(mail);
 
-            //if (klantnr == 1 && !klantnr.Equals(@klantnr))
-            //{
             MijnGegevensDBController MijnGegevens = new MijnGegevensDBController();
             MijnGegevens.GegevensAanpassen(klant);
 
-            //}
             return View();
 
         }
 
-        public ActionResult MijnGegevens(int? klantnr, String mail, String wachtwoord)
+        public ActionResult MijnGegevens()
         {
-            MijnGegevensDBController sc = new MijnGegevensDBController();
-            List<Klant> klant = sc.getKlantbyID(klantnr, mail, wachtwoord);
-            return View(klant);
+            if (Session["LoggedIn"] != null)
+            {
+                Klant k = Session["LoggedIn"] as Klant;
+
+                return View(k);
+            }
+            else
+            {
+                String urlLogin = "/User/LogIn";
+                return Redirect(urlLogin);
+            }
 
         }
 
@@ -120,8 +127,6 @@ namespace TheGreenery.Controllers
             List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
             return View(bestelling);
         }
-
-
     }
 }
 

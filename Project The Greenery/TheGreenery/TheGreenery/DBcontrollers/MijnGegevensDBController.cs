@@ -12,21 +12,17 @@ namespace TheGreenery.DBcontrollers
     public class MijnGegevensDBController : DatabaseController
     {
         
-        public List<Klant> getKlantbyID(int? klantnr, String mail, String wachtwoord)
+        public Klant getKlantbyID(int? klantnr)
         {
+            Klant klant = new Klant();
             MySqlTransaction trans = null;
             List<Klant> klanten = new List<Klant>();
-            LoginDBController gebruiker = new LoginDBController();
-            UserController thingy = new UserController();
-            Klant gUser = gebruiker.LogInSelect(klantnr, mail, wachtwoord);
-
-            //Session["LoggedIn"] = null;
-            //Session["LoggedIn"] = gUser.Code_Klant.Equals("@klantr");
+                    
             conn.Open();
             trans = conn.BeginTransaction();
             try
             {
-                string selectQuery = @"select * from Klant where klantnr = 1;";  //" + gUser.Code_Klant + ";";
+                string selectQuery = @"select * from Klant";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 MySqlParameter klantnrParam = new MySqlParameter("@klantnr", MySqlDbType.Int32);
@@ -35,7 +31,7 @@ namespace TheGreenery.DBcontrollers
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    Klant klant = new Klant();
+                    
                     klant.klantnr = dataReader.GetInt32("klantnr");
                     klant.voorletters = dataReader.GetString("voorletters");
                     klant.tussenvoegsel = dataReader.GetString("tussenvoegsel");
@@ -58,7 +54,7 @@ namespace TheGreenery.DBcontrollers
             {
                 conn.Close();
             }
-            return klanten;
+            return klant;
         }
 
         public void GegevensAanpassen(Klant klant)

@@ -1,88 +1,62 @@
-﻿@using TheGreenery.Models;
-@model List<Klant>
+﻿@model Klant
 @using System.Web.Mvc
 @using TheGreenery.Models;
 @{
-
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section featured {
     <section class="featured">
-        @*<div class="content-wrapper">*@
         <hgroup class="title"></hgroup>
-
-        <p> <h1>@ViewBag.Title "Klanten"</h1></p><br />
-
+        <p><h1>@ViewBag.Title "Klanten"</h1></p><br />
     </section>
-
 }
 
-@*<div class="two">*@
-@*<div id="producetop" class="row">*@
-@using (Html.BeginForm())
-{
-
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-
-}
-
-
-
-@{ if ((@Model == null) || (Model.Count == 0))
+@{ if (@Model == null)
  {
     <div>geen gegevens gevonden</div>
  }
- 
  else
  {
     <div></div><br>
 
 
-     foreach (Klant kl in Model)
-         
-     {
 
+    <fieldset>
+        <legend>Klant:</legend>
+        <form name="inlogForm" action="@Url.Action("GegevensGewijzigd","User")" method="post">
+            <label for="klantnr">Klantnummer:</label><br />
+            <input type="text" disabled="disabled" name="klantnr" value="@Model.klantnr" /><br />
+            <label for="voorletters">Voorletters:</label><br />
+            <input type="text" name="voorletters" value="@Model.voorletters" /><br />
+            <label for="tussenvoegsel">Tussenvoegsel:</label><br />
+            <input type="text" name="tussenvoegsel" value="@Model.tussenvoegsel" /><br />
+            <label for="achternaam">Achternaam:</label><br />
+            <input type="text" name="achternaam" value="@Model.achternaam" /><br />
+            <label for="adres">Adres:</label><br />
+            <input type="text" name="adres" value="@Model.adres" /><br />
+            <label for="postcode">Postcode:</label><br />
+            <input type="text" name="postcode" value="@Model.postcode" /><br />
+            <label for="woonplaats">Woonplaats:</label><br />
+            <input type="text" name="woonplaats" value="@Model.woonplaats" /><br />
+            <label for="telefoonnr">Telefoon:</label><br />
+            <input type="text" name="telefoonnr" value="@Model.telefoonnr" /><br />
+            <label for="mail">E-mail:</label><br />
+            <input type="text" name="mail" value="@Model.mail" /><br />
 
-        <fieldset>
-            <legend>Klant:</legend>
-            
-                <form name="inlogForm" action="@Url.Action("GegevensGewijzigd","User")" method="post">
-                    <label for="klantnr">Klantnummer:</label><br />
-                    <input type="text" disabled="disabled" name="klantnr" value="@kl.klantnr" /><br />
-                    <label for="voorletters">Voorletters:</label><br />
-                    <input type="text" name="voorletters" value="@kl.voorletters" /><br />
-                    <label for="tussenvoegsel">Tussenvoegsel:</label><br />
-                    <input type="text" name="tussenvoegsel" value="@kl.tussenvoegsel" /><br />
-                    <label for="achternaam">Achternaam:</label><br />
-                    <input type="text" name="achternaam" value="@kl.achternaam" /><br />
-                    <label for="adres">Adres:</label><br />
-                    <input type="text" name="adres" value="@kl.adres" /><br />
-                    <label for="postcode">Postcode:</label><br />
-                    <input type="text" name="postcode" value="@kl.postcode" /><br />
-                    <label for="woonplaats">Woonplaats:</label><br />
-                    <input type="text" name="woonplaats" value="@kl.woonplaats" /><br />
-                    <label for="telefoonnr">Telefoon:</label><br />
-                    <input type="text" name="telefoonnr" value="@kl.telefoonnr" /><br />
-                    <label for="mail">E-mail:</label><br />
-                    <input type="text" name="mail" value="@kl.mail" /><br />
-                 
-
-                    <br />
-                    <input type="submit" value="Edit" />
-                </form>
-              
-            </fieldset>
-    
-}
+            <br />
+            <input type="submit" value="Edit" />
+        </form>
+    </fieldset>
  }
-
 }
 
+ 
 
 
 
 
 
-        
+
+
+
 

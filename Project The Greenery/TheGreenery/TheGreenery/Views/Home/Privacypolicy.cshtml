@@ -1,5 +1,4 @@
 ﻿@{
-   
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section featured {
@@ -11,6 +10,7 @@
             </hgroup>
     </section>
 }
+
 <html>
 <body>
     <div style="float:left" id="textabout">
@@ -30,14 +30,12 @@
                     margin: 0 auto;
                     text-align: justify;
                 }
-
                 #ppHeader {
                     font-family: verdana;
                     font-size: 21pt;
                     width: 100%;
                     margin: 0 auto;
                 }
-
                 .ppConsistencies {
                     display: none;
                 }
@@ -67,12 +65,10 @@
                     </div><div class='col-2'>
                         <div class="col-12 quick-links2 gen-text-center coppa-pad">
                             COPPA
-
                         </div>
                     </div><div class='col-2'>
                         <div class="col-12 quick-links2 quick4 gen-text-center caloppa-pad">
                             CalOPPA
-
                         </div>
                     </div><div class='col-2'>
                         <div class="quick-links2 gen-text-center">CAN-SPAM</div>
@@ -93,6 +89,6 @@
                 <li>@Html.ActionLink("About", "About", "Home")</li>
                 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
             </ul>
-            </div>
+    </div>
 </body>
-    </html>
+</html>

@@ -1,9 +1,7 @@
 ﻿@using TheGreenery.Models;
 @model List<Product>
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
 @section featured {
     <section class="zoek">
@@ -14,8 +12,6 @@
         </hgroup>
     </section>
 }
-
-
 
 <h2>ShowProduct</h2>
 <html>
@@ -44,6 +40,7 @@
                     <div>eenheid:       @pro.eenheid</div>
                     <div>aanbieding:    @pro.aanbieding</div>
                     <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                    <div>@Html.ActionLink("Bestelling plaatsen", "Bestellingplaatsen", "Winkelwagen", new { productnr = pro.productnr }, null)</div>
                 </fieldset>
              }
          }

@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using TheGreenery;
+@using TheGreenery.Models;
+@using TheGreenery.Controllers;
+@model List<Product>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div style="float:left" id="textabout">
+        <table cellpadding="2" cellspacing="2" border="1">
+            <tr>
+                <th>productnr</th>
+                <th>naam</th>
+                <th>type</th>
+                <th>lente</th>
+                <th>zomer</th>
+                <th>herfst</th>
+                <th>winter</th>
+                <th>prijsPerEenheid</th>
+                <th>eenheid</th>
+                <th>omschrijving</th>
+                <th>voorraadPerEenheid</th>
+                <th>imageNaam</th>
+                <th>aanbieding</th>
+                <th>bestellen</th>
+            </tr>
+            @foreach (Product product in (List<Product>)Session["wagen"])
+            {
+                <tr>
+                    <td>@product.productnr</td>
+                    <td>@product.naam</td>
+                    <td>@product.type</td>
+                    <td>@product.lente</td>
+                    <td>@product.zomer</td>
+                    <td>@product.herfst</td>
+                    <td>@product.winter</td>
+                    <td>@product.prijsPerEenheid</td>
+                    <td>@product.eenheid</td>
+                    <td>@product.omschrijving</td>
+                    <td>@product.voorraadPerEenheid</td>
+                    <td><img width="200" height="150" src="~/Images/@product.imageNaam" /></td>
+                    <td>@product.aanbieding</td>
+                    <td align="center">@Html.ActionLink("Bestelling plaatsen", "Bestellingplaatsen", "Winkelwagen", new { productnr = product.productnr }, null)</td>
+
+                </tr>
+            }
+        </table>
+        </div>
+</body>
+</html>

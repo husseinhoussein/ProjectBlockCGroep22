@@ -2,10 +2,8 @@
 @using TheGreenery.Models;
 @model List<Product>
 @{
-
     Layout = "~/Views/Shared/_Layout_Manager.cshtml";
 }
-
 @section featured {
     <section class="zoek">
         @*<div class="content-wrapper">*@
@@ -30,23 +28,27 @@
                 <div>de volgende producten zijn gevonden</div><br>
                  foreach (Product pro in Model)
                  {
-                    <div>productnr:     @pro.productnr</div>
-                    <div>naam:          @pro.naam</div>
-                    <div>type:          @pro.type</div>
-                    <div>seizoen:       @pro.lente</div>
-                    <div>               @pro.zomer</div>
-                    <div>               @pro.herfst</div>
-                    <div>               @pro.winter</div>
-                    <div>Prijs:€        @pro.prijsPerEenheid</div>
-                    <div>voorraad:      @pro.voorraadPerEenheid</div>
-                    <div>omschrijving:  @pro.omschrijving</div>
-                    <div>eenheid:       @pro.eenheid</div>
-                    <div>aanbieding:    @pro.aanbieding</div>
-                    <div><img src="~/Images/@pro.imageNaam" /></div>
-                 }
-             }
-            }
-        </div>
+                    <div id="produce" style="float: left inherit">
+                        <fieldset id="produce">
+                            <div>productnr:     @pro.productnr</div>
+                            <div>naam:          @pro.naam</div>
+                            <div>type:          @pro.type</div>
+                            <div>seizoen:       @pro.lente</div>
+                            <div>               @pro.zomer</div>
+                            <div>               @pro.herfst</div>
+                            <div>               @pro.winter</div>
+                            <div>Prijs:€        @pro.prijsPerEenheid</div>
+                            <div>voorraad:      @pro.voorraadPerEenheid</div>
+                            <div>omschrijving:  @pro.omschrijving</div>
+                            <div>eenheid:       @pro.eenheid</div>
+                            <div>aanbieding:    @pro.aanbieding</div>
+                            <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                        </fieldset>
+                        </div>
+                        }
+                        }
+                        }
+                    </div>
     </fieldset>
 </body>
 </html>

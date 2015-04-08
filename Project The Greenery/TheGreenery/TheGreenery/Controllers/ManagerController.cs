@@ -17,10 +17,10 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-        public ActionResult ProductenInzien()
+        public ActionResult ProductenInzien(String naam)
         {
-            ProductDBController sc = new ProductDBController();
-            List<Product> producten = sc.getAllProducten();
+            ProduchtDBController sc = new ProduchtDBController();
+            List<Product> producten = sc.getAllProducten(naam);
             return View(producten);
         }
 
