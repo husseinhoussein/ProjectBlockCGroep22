@@ -54,9 +54,18 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-        public ActionResult PersoneelToevoegen()
+        public ActionResult PersoneelToevoegen(String voorletters, String tussenvoegsel, String achternaam, String type, String wachtwoord)
         {
-            return View();
+            if (Session["LoggedInP"] != null)
+            {
+                Personeel p = Session["LoggedInP"] as Personeel;
+                return View(p);
+            }
+            else
+            {
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
+            }
         }
 
         public ActionResult ProductenInzien()
@@ -71,43 +80,37 @@ namespace TheGreenery.Controllers
             return View(personeel);
         }
 
-        public ActionResult PersoneelToegevoegd(int? personeelnr, String voorletters, String tussenvoegsel, String achternaam, String type, String wachtwoord)
+        public ActionResult PersoneelToegevoegd(String voorletters, String tussenvoegsel, String achternaam, String type, String wachtwoord)
         {
-            Personeel personeel = new Personeel();
-            personeel.getPersoneelnr();
-            personeel.setVoorletters(voorletters);
-            personeel.setTussenvoegsel(tussenvoegsel);
-            personeel.setAchternaam(achternaam);
-            personeel.setType(type);
-            personeel.setWachtwoord(wachtwoord);
-
-            if (personeelnr != null && !personeelnr.Equals(""))
+            if (Session["LoggedInP"] != null)
             {
+                Personeel personeel = new Personeel();
+                personeel.setVoorletters(voorletters);
+                personeel.setTussenvoegsel(tussenvoegsel);
+                personeel.setAchternaam(achternaam);
+                personeel.setType(type);
+                personeel.setWachtwoord(wachtwoord);
+                Personeel p = Session["LoggedInP"] as Personeel;
+
                 RegistrerenDBController registrerenController = new RegistrerenDBController();
                 registrerenController.InsertPersoneel(personeel);
-            }
 
+                return View(p);
+
+            }
+            else
             {
-
-
-                {
-                    RegistrerenDBController registrerenController = new RegistrerenDBController();
-                    registrerenController.InsertPersoneel(personeel);
-                }
-
-                {
-
-                    RegistrerenDBController registrerenController = new RegistrerenDBController();
-                    registrerenController.InsertPersoneel(personeel);
-
-                }
-
-                return View();
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
             }
-
+          
         }
+
+        
+
     }
 }
+
 
 
 

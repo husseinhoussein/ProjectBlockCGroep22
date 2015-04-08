@@ -26,9 +26,21 @@ namespace TheGreenery.Controllers
 
         public ActionResult PersoneelInzien(int? personeelnr)
         {
-            PersoneelDBController pc = new PersoneelDBController();
-            List<Personeel> personeel = pc.getAllPersoneel(personeelnr);
-            return View(personeel);
+            
+            //return View(personeel);
+            if (Session["LoggedInP"] != null)
+            {
+                PersoneelDBController pc = new PersoneelDBController();
+                List<Personeel> personeel = pc.getAllPersoneel(personeelnr);
+                Personeel p = Session["LoggedInP"] as Personeel;
+
+                return View(personeel);
+            }
+            else
+            {
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
+            }
         }
 
     }

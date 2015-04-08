@@ -69,7 +69,7 @@ namespace TheGreenery.DBcontrollers
             return klant;
         }
 
-        public Personeel LogInPersSelect(String achternaam, String wachtwoord, String type)
+        public Personeel LogInPersSelect(int personeelnr, String wachtwoord, String type)
         {
 
             Personeel personeel = new Personeel();
@@ -78,16 +78,16 @@ namespace TheGreenery.DBcontrollers
             trans = conn.BeginTransaction();
             try
             {
-                string selectQuery = @"SELECT * FROM Personeel WHERE achternaam = @achternaam AND wachtwoord = @wachtwoord;";
+                string selectQuery = @"SELECT * FROM Personeel WHERE personeelnr = @personeelnr AND wachtwoord = @wachtwoord;";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
-                MySqlParameter achternaamParam = new MySqlParameter("@achternaam", MySqlDbType.VarChar);
+                MySqlParameter personeelnrParam = new MySqlParameter("@personeelnr", MySqlDbType.Int32);
                 MySqlParameter wachtwoordParam = new MySqlParameter("@wachtwoord", MySqlDbType.VarChar);
 
-                achternaamParam.Value = achternaam;
+                personeelnrParam.Value = personeelnr;
                 wachtwoordParam.Value = wachtwoord;
 
-                cmd.Parameters.Add(achternaamParam);
+                cmd.Parameters.Add(personeelnrParam);
                 cmd.Parameters.Add(wachtwoordParam);
 
                 cmd.Prepare();
