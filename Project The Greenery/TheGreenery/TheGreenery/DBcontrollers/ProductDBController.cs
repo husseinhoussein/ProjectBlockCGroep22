@@ -69,7 +69,7 @@ namespace TheGreenery.DBcontrollers
 
         public void InsertProduct(Product product)
         {
-           MySqlTransaction trans = null;
+            MySqlTransaction trans = null;
             conn.Open();
             trans = conn.BeginTransaction();
             try
@@ -140,7 +140,7 @@ namespace TheGreenery.DBcontrollers
             }
         }
 
-    
+
 
 
         public void DeleteAllProducts()
@@ -251,7 +251,7 @@ namespace TheGreenery.DBcontrollers
                     product.zomer = dataReader.GetString("zomer");
                     product.herfst = dataReader.GetString("herfst");
                     product.winter = dataReader.GetString("winter");
-                    product.prijsPerEenheid = dataReader.GetInt32("prijsPerEenheid");
+                    product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");

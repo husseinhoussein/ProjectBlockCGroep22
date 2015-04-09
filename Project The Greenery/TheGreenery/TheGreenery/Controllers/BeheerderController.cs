@@ -14,12 +14,6 @@ namespace TheGreenery.Controllers
     public class BeheerderController : DatabaseController
     {
 
-
-        //
-        // GET: /BeheerderDB/
-
-
-
         public ActionResult Ingelogd()
         {
             return View();
@@ -45,23 +39,22 @@ namespace TheGreenery.Controllers
         {
             if (Session["LoggedInP"] != null)
             {
-                Product product = new Product();
-                product.setNaam(naam);
-                product.setType(type);
-                product.setLente(lente);
-                product.setZomer(zomer);
-                product.setHerfst(herfst);
-                product.setWinter(winter);
-                product.setPrijsPerEenheid(prijsPerEenheid);
-                product.setEenheid(eenheid);
-                product.setOmschrijving(omschrijving);
-                product.setVoorraadPerEenheid(voorraadPerEenheid);
-                product.setImageNaam(imageNaam);
-                product.setAanbieding(aanbieding);
-                Product p = Session["LoggedInP"] as Product;
+                Product product = Session["LoggedInP"] as Product;
+            product.setNaam(naam);
+            product.setType(type);
+            product.setLente(lente);
+            product.setZomer(zomer);
+            product.setHerfst(herfst);
+            product.setWinter(winter);
+            product.setPrijsPerEenheid(prijsPerEenheid);
+            product.setEenheid(eenheid);
+            product.setOmschrijving(omschrijving);
+            product.setVoorraadPerEenheid(voorraadPerEenheid);
+            product.setImageNaam(imageNaam);
+            product.setAanbieding(aanbieding);
 
-                ProductDBController productToevoegenController = new ProductDBController();
-                productToevoegenController.InsertProduct(product);
+            ProductDBController productToevoegenController = new ProductDBController();
+            productToevoegenController.InsertProduct(product);
 
                 return View(p);
 
@@ -73,8 +66,6 @@ namespace TheGreenery.Controllers
             }
 
         }
-
-        
 
         public ActionResult ProductenBewerken()
         {
@@ -95,34 +86,54 @@ namespace TheGreenery.Controllers
             }
         }
 
-        public ActionResult ProductenInzien()
+        public ActionResult ProductenInzien(String naam)
         {
-            return View();
+            if (Session["LoggedInP"] != null)
+            {
+
+                ProductDBController sc = new ProductDBController();
+                List<Product> producten = sc.getAllProducten(naam);
+                return View(producten);
+            }
+            else
+        {
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
+            }
         }
 
         public ActionResult PersoneelInzien(int? personeelnr)
         {
+            if (Session["LoggedInP"] != null)
+            {
+
             PersoneelDBController pc = new PersoneelDBController();
             List<Personeel> personeel = pc.getAllPersoneel(personeelnr);
             return View(personeel);
+        }
+            else
+            {
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
+            }
         }
 
         public ActionResult PersoneelToegevoegd(String voorletters, String tussenvoegsel, String achternaam, String type, String wachtwoord)
         {
             if (Session["LoggedInP"] != null)
             {
-                Personeel personeel = new Personeel();
+                Personeel personeel = Session["LoggedInP"] as Personeel;
                 personeel.setVoorletters(voorletters);
                 personeel.setTussenvoegsel(tussenvoegsel);
                 personeel.setAchternaam(achternaam);
                 personeel.setType(type);
                 personeel.setWachtwoord(wachtwoord);
-                Personeel p = Session["LoggedInP"] as Personeel;
+                
 
                 RegistrerenDBController registrerenController = new RegistrerenDBController();
                 registrerenController.InsertPersoneel(personeel);
 
-                return View(p);
+                return View(personeel);
 
             }
             else
