@@ -20,10 +20,11 @@ namespace TheGreenery.DBcontrollers
             trans = conn.BeginTransaction(); 
             try
             {         
-                string selectQuery = @"select * from Bestelling;";
+                string selectQuery = @"select * from Bestelling where @klantnr = Klant.klantnr;";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
-                MySqlParameter klantnrParam = new MySqlParameter("@bestellingnr", MySqlDbType.Int32);
+                MySqlParameter klantnrParam = new MySqlParameter("@klantnr", MySqlDbType.Int32);
+                MySqlParameter bestellingnrParam = new MySqlParameter("@bestellingnr", MySqlDbType.Int32);
                 cmd.Parameters.Add(klantnrParam);
                 cmd.Prepare();
 

@@ -123,9 +123,18 @@ namespace TheGreenery.Controllers
 
         public ActionResult MijnBestellingen(int? bestellingnr)
         {
-            MijnBestellingenDBController sc = new MijnBestellingenDBController();
-            List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
-            return View(bestelling);
+            if (Session["LoggedIn"] != null)
+            {
+                Klant klant = Session["LoggedIn"] as Klant;
+                MijnBestellingenDBController sc = new MijnBestellingenDBController();
+                List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
+                return View(bestelling);
+            }
+            else 
+            {
+                String urlLogin = "/User/LogIn";
+                    return Redirect(urlLogin);
+            }
         }
     }
 }
