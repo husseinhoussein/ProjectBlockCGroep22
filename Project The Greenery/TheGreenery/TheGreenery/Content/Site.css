@@ -200,6 +200,15 @@ footer {
     max-width: 960px;
 }
 
+#menubalk{
+    margin-left: 30%;
+    float:left;
+}
+
+#menubalkb{
+    margin-left: 20%;
+    float:left;
+}
 #body {
     background-color: #efeeef;
     clear: both;

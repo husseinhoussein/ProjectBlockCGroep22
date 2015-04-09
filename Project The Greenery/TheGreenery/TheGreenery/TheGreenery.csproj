@@ -307,9 +307,6 @@
     <Content Include="Views\Personeel\LoginResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Layout_Klant.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Product\Toegevoegd.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -321,6 +318,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Beheerder\ProductenToevoegen.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personeel\LogOut.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\LogOut.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

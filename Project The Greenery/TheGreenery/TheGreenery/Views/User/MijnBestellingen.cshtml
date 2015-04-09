@@ -11,11 +11,7 @@
         <p><h1>@ViewBag.Title "Bestellingen"</h1></p><br />
     </section>
 }
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-}
+
 @{ if ((@Model == null) || (Model.Count == 0))
  {
     <div>geen producten gevonden</div>
