@@ -37,12 +37,12 @@ namespace TheGreenery.DBcontrollers
                     Product product = new Product();
                     product.productnr = dataReader.GetInt32("productnr");
                     product.naam = dataReader.GetString("naam");
-                   // product.type = dataReader.GetString("type");
+                    product.type = dataReader.GetString("type");
                     product.lente = dataReader.GetString("lente");
                     product.zomer = dataReader.GetString("zomer");
                     product.herfst = dataReader.GetString("herfst");
                     product.winter = dataReader.GetString("winter");
-                    product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
+                    product.prijsPerEenheid = dataReader.GetInt32("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
@@ -69,31 +69,28 @@ namespace TheGreenery.DBcontrollers
 
         public void InsertProduct(Product product)
         {
-            MySqlTransaction trans = null;
+           MySqlTransaction trans = null;
             conn.Open();
             trans = conn.BeginTransaction();
-
             try
             {
-
-               
                 string insertString = @"
                              INSERT INTO Product 
-                              (naam, lente, zomer, herfst, winter, prijsPerEenheid, 
+                              (naam, type, lente, zomer, herfst, winter, prijsPerEenheid, 
                               eenheid, omschrijving, voorraadPerEenheid, imageNaam, aanbieding) 
                               values 
-                              (@naam, @lente, @zomer, @herfst, @winter, @prijsPerEenheid, 
+                              (@naam, @type, @lente, @zomer, @herfst, @winter, @prijsPerEenheid, 
                               @eenheid, @omschrijving, @voorraadPerEenheid, @imageNaam, @aanbieding);
                  ";
 
                 MySqlCommand cmd = new MySqlCommand(insertString, conn);
                 MySqlParameter naamParam = new MySqlParameter("@naam", MySqlDbType.VarChar);
-               // MySqlParameter typeParam = new MySqlParameter("@type", MySqlDbType.VarChar);
+                MySqlParameter typeParam = new MySqlParameter("@type", MySqlDbType.VarChar);
                 MySqlParameter lenteParam = new MySqlParameter("@lente", MySqlDbType.VarChar);
                 MySqlParameter zomerParam = new MySqlParameter("@zomer", MySqlDbType.VarChar);
                 MySqlParameter herfstParam = new MySqlParameter("@herfst", MySqlDbType.VarChar);
                 MySqlParameter winterParam = new MySqlParameter("@winter", MySqlDbType.VarChar);
-                MySqlParameter prijsPerEenheidParam = new MySqlParameter("@prijsPerEenheid", MySqlDbType.Double);
+                MySqlParameter prijsPerEenheidParam = new MySqlParameter("@prijsPerEenheid", MySqlDbType.Int32);
                 MySqlParameter eenheidParam = new MySqlParameter("@eenheid", MySqlDbType.VarChar);
                 MySqlParameter omschrijvingParam = new MySqlParameter("@omschrijving", MySqlDbType.Text);
                 MySqlParameter voorraadPerEenheidParam = new MySqlParameter("@voorraadPerEenheid", MySqlDbType.Int32);
@@ -102,7 +99,7 @@ namespace TheGreenery.DBcontrollers
 
 
                 naamParam.Value = product.naam;
-               // typeParam.Value = product.type;
+                typeParam.Value = product.type;
                 lenteParam.Value = product.lente;
                 zomerParam.Value = product.zomer;
                 herfstParam.Value = product.herfst;
@@ -116,7 +113,7 @@ namespace TheGreenery.DBcontrollers
 
 
                 cmd.Parameters.Add(naamParam);
-              //  cmd.Parameters.Add(typeParam);
+                cmd.Parameters.Add(typeParam);
                 cmd.Parameters.Add(lenteParam);
                 cmd.Parameters.Add(zomerParam);
                 cmd.Parameters.Add(herfstParam);
@@ -129,11 +126,8 @@ namespace TheGreenery.DBcontrollers
                 cmd.Parameters.Add(aanbiedingParam);
 
                 cmd.Prepare();
-
                 cmd.ExecuteNonQuery();
-
                 trans.Commit();
-
             }
             catch (Exception e)
             {
@@ -146,7 +140,7 @@ namespace TheGreenery.DBcontrollers
             }
         }
 
-
+    
 
 
         public void DeleteAllProducts()
@@ -204,7 +198,7 @@ namespace TheGreenery.DBcontrollers
                     product.zomer = dataReader.GetString("zomer");
                     product.herfst = dataReader.GetString("herfst");
                     product.winter = dataReader.GetString("winter");
-                    product.prijsPerEenheid = dataReader.GetDouble("prijsPerEenheid");
+                    product.prijsPerEenheid = dataReader.GetInt32("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");
@@ -252,12 +246,12 @@ namespace TheGreenery.DBcontrollers
                     Product product = new Product();
                     product.productnr = dataReader.GetInt32("productnr");
                     product.naam = dataReader.GetString("naam");
-                    product.type = dataReader.GetInt32("type");
+                    product.type = dataReader.GetString("type");
                     product.lente = dataReader.GetString("lente");
                     product.zomer = dataReader.GetString("zomer");
                     product.herfst = dataReader.GetString("herfst");
                     product.winter = dataReader.GetString("winter");
-                    product.prijsPerEenheid = dataReader.GetString("prijsPerEenheid");
+                    product.prijsPerEenheid = dataReader.GetInt32("prijsPerEenheid");
                     product.eenheid = dataReader.GetString("eenheid");
                     product.omschrijving = dataReader.GetString("omschrijving");
                     product.voorraadPerEenheid = dataReader.GetInt32("voorraadpereenheid");

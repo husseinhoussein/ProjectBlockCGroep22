@@ -25,29 +25,56 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-        public ActionResult ProductenToevoegen(String naam, String type, String lente, String zomer, String herfst, String winter, Double prijsPerEenheid,
+        public ActionResult ProductenToevoegen(String naam, String type, String lente, String zomer, String herfst, String winter, int prijsPerEenheid,
                                        String eenheid, String omschrijving, int voorraadPerEenheid, String imageNaam, String aanbieding)
         {
-            Product product = new Product();
-            product.setNaam(naam);
-            product.setType(type);
-            product.setLente(lente);
-            product.setZomer(zomer);
-            product.setHerfst(herfst);
-            product.setWinter(winter);
-            product.setPrijsPerEenheid(prijsPerEenheid);
-            product.setEenheid(eenheid);
-            product.setOmschrijving(omschrijving);
-            product.setVoorraadPerEenheid(voorraadPerEenheid);
-            product.setImageNaam(imageNaam);
-            product.setAanbieding(aanbieding);
+            if (Session["LoggedInP"] != null)
+            {
+                Personeel p = Session["LoggedInP"] as Personeel;
+                return View(p);
+            }
+            else
+            {
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
+            }
+        }
 
-            ProductDBController productToevoegenController = new ProductDBController();
-            productToevoegenController.InsertProduct(product);
+        public ActionResult ProductToegevoegd(String naam, String type, String lente, String zomer, String herfst, String winter, int prijsPerEenheid,
+                                       String eenheid, String omschrijving, int voorraadPerEenheid, String imageNaam, String aanbieding)
+        {
+            if (Session["LoggedInP"] != null)
+            {
+                Product product = new Product();
+                product.setNaam(naam);
+                product.setType(type);
+                product.setLente(lente);
+                product.setZomer(zomer);
+                product.setHerfst(herfst);
+                product.setWinter(winter);
+                product.setPrijsPerEenheid(prijsPerEenheid);
+                product.setEenheid(eenheid);
+                product.setOmschrijving(omschrijving);
+                product.setVoorraadPerEenheid(voorraadPerEenheid);
+                product.setImageNaam(imageNaam);
+                product.setAanbieding(aanbieding);
+                Product p = Session["LoggedInP"] as Product;
 
-            return View();
+                ProductDBController productToevoegenController = new ProductDBController();
+                productToevoegenController.InsertProduct(product);
+
+                return View(p);
+
+            }
+            else
+            {
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
+            }
 
         }
+
+        
 
         public ActionResult ProductenBewerken()
         {

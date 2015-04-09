@@ -319,6 +319,9 @@
     <Content Include="Views\Winkelwagen\wagen.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Beheerder\ProductToegevoegd.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\Beheerder\ProductenToevoegen.cshtml" />
   </ItemGroup>
   <PropertyGroup>
