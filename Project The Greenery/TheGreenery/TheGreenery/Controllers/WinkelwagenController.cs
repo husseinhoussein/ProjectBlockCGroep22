@@ -51,24 +51,36 @@ namespace TheGreenery.Controllers
                 Session["wagen"] = productq;
 
             }
-            else
+            foreach (Product product in (List<Product>)Session["wagen"])
             {
-               List<Product> productq = sc.getProductByProductNr(productnr);
-                int index = isExisting(productnr);
-                if (index == -1) 
-                    foreach (Product product in (List<Product>)Session["wagen"])
-                    {
-                        productq.Add(product);
-                    }
-                else
-                    productq[index].voorraadPerEenheid++;
-                Session["wagen"] = productq;
+                double z = product.prijsPerEenheid;
+                String m = Convert.ToString(z);
 
+                Session["prijspereenheid"] = (m);
             }
 
-            ////Product product = sc.getAllProducten();
-            //wagen.Add(product);
+            string bbb = Session["prijspereenheid"].ToString();
+            string abc = Session["inlogklantnr"].ToString();
+            int x = Convert.ToInt32(abc);
+            double vv = Convert.ToDouble(bbb);
 
+            int k = 4;
+            //double j = 4;
+
+            BestellenDBController bd = new BestellenDBController();
+
+            List<Bestelling> bestellinglist = bd.getBestellingByKlantNr(x);
+
+            Session["bestel"] = bestellinglist;
+
+            //string vbn = @Session["aantalEenheden"].ToString();
+
+            foreach (Bestelling bestell in (List<Bestelling>)Session["bestel"])
+            {
+                int d = bestell.bestellingnr;
+
+                bd.insertBestellingRegel(d, productnr, k, vv);
+            }
             return View("wagen");
         }
 

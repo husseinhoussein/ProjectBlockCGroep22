@@ -43,7 +43,15 @@ namespace TheGreenery.Controllers
                     if (gUser.mail == @mail && gUser.wachtwoord == @wachtwoord)
                     {
                         Session["LoggedIn"] = gUser;
+
+                        int k = gUser.klantnr;
+                        String d = Convert.ToString(k);
+
+                        Session["inlogklantnr"] = (d);
                         String url = "/Home/Index";
+
+                        BestellenDBController bd = new BestellenDBController();
+                        bd.insertLegeBestelling(k);
                         return Redirect(url);
                     }
 
