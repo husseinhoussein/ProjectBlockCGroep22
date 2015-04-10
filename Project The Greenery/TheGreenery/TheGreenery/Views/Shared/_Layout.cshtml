@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using TheGreenery.Models
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,103 +15,108 @@
 
     @if (Session["LoggedIn"] != null)
     {
-        @Html.ActionLink("Mijn Gegevens", "MijnGegevens", "User")
-        <span> | </span>
-        @Html.ActionLink("Mijn Bestellingen", "MijnBestellingen", "User")
-        <span> | </span>
-        @Html.ActionLink("Log Out", "Logout", "User")
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Images/logo.png")" alt="Home" /></a>
-            </div>
-            <div class="float-right">
-                <section id="login">
-                    <div style="float:right">
-                        <form naam="input" action="@Url.Action("Showproduct", "Product")" method="post">
-                            <input type=text name="naam" placeholder="zoekproduct" />
-                            <input type="submit" value="zoeken" />
-                        </form>
-                    </div>
-                </section>
-                <div style="float:right" id="menu">
-                    <div style="float:left"><a href="@Url.Action("Winkelwagen", "Home") "> <img border="0" alt="Greenery" src="~/Images/winkelwagen.png" /></a></div>
-                    <div style="float:left">@Html.ActionLink("Home", "Index", "Home")</div>
-                    <div style="float:left">@Html.ActionLink("  Over Ons", "About", "Home")</div>
-                    <div style="float:left">@Html.ActionLink("  Contact", "Contact", "Home")</div>
-                    <div style="float:left">@Html.ActionLink("wagen", "BestellingOverzicht", "Winkelwagen")</div>
-                </div>
-
-            </div>
+        Klant klant = Session["LoggedIn"] as Klant;
+        <div style="float:left">
+            @Html.ActionLink("Mijn Gegevens", "MijnGegevens", "User")
+            <span> | </span>
+            @Html.ActionLink("Mijn Bestellingen", "MijnBestellingen", "User")
+            <span> | </span>
+            @Html.ActionLink("Log Out", "Logout", "User")
+            <span> |   </span>
         </div>
-    </header>
-    <nav>
-        <hr width="100%" align="right" size="0" />
-        @using (Html.BeginForm())
-        {
-            <div id="menubalk" style="float:left">
-                <div style="float:left">  <a href="@Url.Action("Index", "Home") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_aanbiedingen.png" /> </a></div>
-                <div style="float:left">  <a href="@Url.Action("LentePage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_lente.png" /> </a></div>
-                <div style="float:left">  <a href="@Url.Action("ZomerPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_zomer.png" /></a></div>
-                <div style="float:left">  <a href="@Url.Action("HerfstPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_herfst.png" /> </a></div>
-                <div style="float:left">  <a href="@Url.Action("WinterPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>
+    <div style="float:left"><b><span>Welkom: </span>@klant.voorletters <span>   </span> @klant.tussenvoegsel <span>   </span> @klant.achternaam</b></div>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Images/logo.png")" alt="Home" /></a>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        <div style="float:right">
+                            <form naam="input" action="@Url.Action("Showproduct", "Product")" method="post">
+                                <input type=text name="naam" placeholder="zoekproduct" />
+                                <input type="submit" value="zoeken" />
+                            </form>
+                        </div>
+                    </section>
+                    <div style="float:right" id="menu">
+                        <div style="float:left"><a href="@Url.Action("Winkelwagen", "Home") "> <img border="0" alt="Greenery" src="~/Images/winkelwagen.png" /></a></div>
+                        <div style="float:left">@Html.ActionLink("Home", "Index", "Home")</div>
+                        <div style="float:left">@Html.ActionLink("  Over Ons", "About", "Home")</div>
+                        <div style="float:left">@Html.ActionLink("  Contact", "Contact", "Home")</div>
+                        <div style="float:left">@Html.ActionLink("wagen", "BestellingOverzicht", "Winkelwagen")</div>
+                    </div>
+
+                </div>
             </div>
-        }
-        <hr width="100%" align="right" size="0" />
-    </nav>
+        </header>
+        <nav>
+            <hr width="100%" align="right" size="0" />
+            @using (Html.BeginForm())
+            {
+                <div id="menubalk" style="float:left">
+                    <div style="float:left">  <a href="@Url.Action("Index", "Home") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_aanbiedingen.png" /> </a></div>
+                    <div style="float:left">  <a href="@Url.Action("LentePage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_lente.png" /> </a></div>
+                    <div style="float:left">  <a href="@Url.Action("ZomerPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_zomer.png" /></a></div>
+                    <div style="float:left">  <a href="@Url.Action("HerfstPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_herfst.png" /> </a></div>
+                    <div style="float:left">  <a href="@Url.Action("WinterPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>
+                </div>
+            }
+            <hr width="100%" align="right" size="0" />
+        </nav>
 
     }
 
     else
     {
-        @Html.ActionLink("Register", "Registreer", "User")
+        @Html.ActionLink("Registreer", "Registreer", "User")
         <span> | </span>
         @Html.ActionLink("Log In", "Login", "User")
         <span> | </span>
         @Html.ActionLink("Personeel Log In", "PersoneelLogIn", "Personeel")
-        
-            <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Images/logo.png")" alt="Home" /></a>
-            </div>
-            <div class="float-right">
-                <section id="login">
-                    <div style="float:right">
-                        <form naam="input" action="@Url.Action("Showproduct", "Product")" method="post">
-                            <input type=text name="naam" placeholder="zoekproduct" />
-                            <input type="submit" value="zoeken" />
-                        </form>
-                    </div>
-                </section>
-                <div style="float:right" id="menu">
-                    <div style="float:left"><a href="@Url.Action("Winkelwagen", "Home") "> <img border="0" alt="Greenery" src="~/Images/winkelwagen.png" /></a></div>
-                    <div style="float:left">@Html.ActionLink("Home", "Index", "Home")</div>
-                    <div style="float:left">@Html.ActionLink("  Over Ons", "About", "Home")</div>
-                    <div style="float:left">@Html.ActionLink("  Contact", "Contact", "Home")</div>
-                    <div style="float:left">@Html.ActionLink("wagen", "BestellingOverzicht", "Winkelwagen")</div>
-                </div>
 
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <a href="@Url.Action("Index","Home")"><img src="@Url.Content("~/Images/logo.png")" alt="Home" /></a>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        <div style="float:right">
+                            <form naam="input" action="@Url.Action("Showproduct", "Product")" method="post">
+                                <input type=text name="naam" placeholder="zoekproduct" />
+                                <input type="submit" value="zoeken" />
+                            </form>
+                        </div>
+                    </section>
+                    <div style="float:right" id="menu">
+                        <div style="float:left"><a href="@Url.Action("Winkelwagen", "Home") "> <img border="0" alt="Greenery" src="~/Images/winkelwagen.png" /></a></div>
+                        <div style="float:left">@Html.ActionLink("Home", "Index", "Home")</div>
+                        <div style="float:left">@Html.ActionLink("  Over Ons", "About", "Home")</div>
+                        <div style="float:left">@Html.ActionLink("  Contact", "Contact", "Home")</div>
+                        <div style="float:left">@Html.ActionLink("wagen", "BestellingOverzicht", "Winkelwagen")</div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </header>
-    <nav>
-        <hr width="100%" align="right" size="0" />
-        @using (Html.BeginForm())
-        {
-            <div id="menubalk" style="float:left">
-                <div style="float:left">  <a href="@Url.Action("Index", "Home") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_aanbiedingen.png" /> </a></div>
-                <div style="float:left">  <a href="@Url.Action("LentePage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_lente.png" /> </a></div>
-                <div style="float:left">  <a href="@Url.Action("ZomerPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_zomer.png" /></a></div>
-                <div style="float:left">  <a href="@Url.Action("HerfstPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_herfst.png" /> </a></div>
-                <div style="float:left">  <a href="@Url.Action("WinterPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>
-            </div>
-        }
-        <hr width="100%" align="right" size="0" />
-    </nav>
+        </header>
+        <nav>
+            <hr width="100%" align="right" size="0" />
+            @using (Html.BeginForm())
+            {
+                <div id="menubalk" style="float:left">
+                    <div style="float:left">  <a href="@Url.Action("Index", "Home") "> <img width="160" height="40" img border="0" alt="Greenery" src="~/Images/button_aanbiedingen.png" /> </a></div>
+                    <div style="float:left">  <a href="@Url.Action("LentePage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_lente.png" /> </a></div>
+                    <div style="float:left">  <a href="@Url.Action("ZomerPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_zomer.png" /></a></div>
+                    <div style="float:left">  <a href="@Url.Action("HerfstPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_herfst.png" /> </a></div>
+                    <div style="float:left">  <a href="@Url.Action("WinterPage", "Product") "> <img width="90" height="40" img border="0" alt="Greenery" src="~/Images/button_winter.png" /> </a></div>
+                </div>
+            }
+            <hr width="100%" align="right" size="0" />
+        </nav>
 
     }
-    
+
     @RenderSection("featured", required: false)
     <section class="content-wrapper main-content clear-fix">
         @RenderBody()

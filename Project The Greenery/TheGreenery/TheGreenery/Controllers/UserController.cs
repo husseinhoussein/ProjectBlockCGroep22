@@ -127,31 +127,19 @@ namespace TheGreenery.Controllers
         {
             if (Session["LoggedIn"] != null)
             {
-<<<<<<< HEAD
-                Bestelling b = Session["LoggedIn"] as Bestelling;
-
-                return View(b);
-            }
-            else
-            {
-                String urlLogin = "/User/LogIn";
-                return Redirect(urlLogin);
-            }
-            //MijnBestellingenDBController sc = new MijnBestellingenDBController();
-            //List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
-            //return View(bestelling);
-=======
-                Klant klant = Session["LoggedIn"] as Klant;
+                         
+            
                 MijnBestellingenDBController sc = new MijnBestellingenDBController();
                 List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
                 return View(bestelling);
             }
+            
             else 
             {
                 String urlLogin = "/User/LogIn";
-                    return Redirect(urlLogin);
+                return Redirect(urlLogin);
             }
->>>>>>> origin/master
+
         }
     }
 }
