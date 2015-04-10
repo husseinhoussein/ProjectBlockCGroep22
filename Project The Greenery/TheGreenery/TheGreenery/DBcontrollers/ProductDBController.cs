@@ -90,7 +90,7 @@ namespace TheGreenery.DBcontrollers
                 MySqlParameter zomerParam = new MySqlParameter("@zomer", MySqlDbType.VarChar);
                 MySqlParameter herfstParam = new MySqlParameter("@herfst", MySqlDbType.VarChar);
                 MySqlParameter winterParam = new MySqlParameter("@winter", MySqlDbType.VarChar);
-                MySqlParameter prijsPerEenheidParam = new MySqlParameter("@prijsPerEenheid", MySqlDbType.Int32);
+                MySqlParameter prijsPerEenheidParam = new MySqlParameter("@prijsPerEenheid", MySqlDbType.Double);
                 MySqlParameter eenheidParam = new MySqlParameter("@eenheid", MySqlDbType.VarChar);
                 MySqlParameter omschrijvingParam = new MySqlParameter("@omschrijving", MySqlDbType.Text);
                 MySqlParameter voorraadPerEenheidParam = new MySqlParameter("@voorraadPerEenheid", MySqlDbType.Int32);

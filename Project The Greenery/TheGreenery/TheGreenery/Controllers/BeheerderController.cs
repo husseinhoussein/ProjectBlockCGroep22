@@ -19,8 +19,7 @@ namespace TheGreenery.Controllers
             return View();
         }
 
-        public ActionResult ProductenToevoegen(String naam, String type, String lente, String zomer, String herfst, String winter, int prijsPerEenheid,
-                                       String eenheid, String omschrijving, int voorraadPerEenheid, String imageNaam, String aanbieding)
+        public ActionResult ProductenToevoegen()
         {
             if (Session["LoggedInP"] != null)
             {
@@ -34,12 +33,12 @@ namespace TheGreenery.Controllers
             }
         }
 
-        public ActionResult ProductToegevoegd(String naam, String type, String lente, String zomer, String herfst, String winter, int prijsPerEenheid,
+        public ActionResult ProductToegevoegd(String naam, String type, String lente, String zomer, String herfst, String winter, double prijsPerEenheid,
                                        String eenheid, String omschrijving, int voorraadPerEenheid, String imageNaam, String aanbieding)
         {
             if (Session["LoggedInP"] != null)
             {
-                Product product = Session["LoggedInP"] as Product;
+            Product product = new Product();
             product.setNaam(naam);
             product.setType(type);
             product.setLente(lente);

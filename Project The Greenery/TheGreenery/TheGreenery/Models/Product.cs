@@ -14,7 +14,7 @@ namespace TheGreenery.Models
         public String zomer;
         public String herfst;
         public String winter;
-        public int prijsPerEenheid;
+        public double prijsPerEenheid;
         public String eenheid;
         public String omschrijving;
         public int voorraadPerEenheid;
@@ -27,7 +27,7 @@ namespace TheGreenery.Models
         public void setProductnr(int input)
         { productnr = input; }
 
-        public string getNaam()
+        public String getNaam()
         { return naam; }
 
         public void setNaam(String input)
@@ -63,10 +63,10 @@ namespace TheGreenery.Models
         public string getWinter()
         { return winter; }
 
-        public int getPrijsPerEenheid()
+        public double getPrijsPerEenheid()
         { return prijsPerEenheid; }
 
-        public void setPrijsPerEenheid(int input)
+        public void setPrijsPerEenheid(double input)
         { prijsPerEenheid = input; }  
 
         public string getEenheid()
