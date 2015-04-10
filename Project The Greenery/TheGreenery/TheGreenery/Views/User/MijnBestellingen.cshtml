@@ -23,14 +23,16 @@
      {
         <fieldset>
             <legend>Bestelling:</legend>
-            <div id="produce" style="float: left inherit">
-                <div>Bestellingnr:          @pro.bestellingnr</div>
-                <div>Klantnr:               @pro.klantnr</div>
-                <div>Totaalbedrag:€         @pro.totaalbedrag</div>
-            </div>
-            <p>
-                <input type="submit" value="Details" />
-            </p>
+            <form action="@Url.Action("StatusGewijzigd", "Beheerder")" method="post">
+                <div id="produce" style="float: left inherit">
+                    <div>Bestellingnr:          @pro.bestellingnr</div>
+                    <div>Klantnr:               @pro.klantnr</div>
+                    <div>Totaalbedrag:€         @pro.totaalbedrag</div>
+                </div>
+                <p>
+                    <input type="submit" value="Annuleren" />
+                </p>
+            </form>
         </fieldset>
      }
  }

@@ -142,8 +142,32 @@ namespace TheGreenery.Controllers
             }
           
         }
+        public ActionResult BestellingenBeheren(int? bestellingnr)
+        {
+            if (Session["LoggedInP"] != null)
+            {
+                MijnBestellingenDBController sc = new MijnBestellingenDBController();
+                List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
+                return View(bestelling);
+            }
+            else
+            {
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
+            }
+        }
 
-        
+
+
+        public ActionResult StatusGewijzigd(String status)
+        {
+            Bestelling bestelling = new Bestelling();
+            bestelling.setStatus(status);
+            BestellingenBeherenDBController abc = new BestellingenBeherenDBController();
+            abc.statusAanpassen(bestelling);
+
+            return View();
+        }
 
     }
 }

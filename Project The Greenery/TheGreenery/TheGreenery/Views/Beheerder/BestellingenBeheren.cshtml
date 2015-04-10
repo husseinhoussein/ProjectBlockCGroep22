@@ -1,0 +1,55 @@
+﻿@using TheGreenery.Controllers;
+@using TheGreenery.Models;
+@model List<Bestelling>
+@{
+    Layout = "~/Views/Shared/_Layout_Beheerder.cshtml";
+}
+
+@section featured {
+    <section class="zoek">
+        @*<div class="content-wrapper">*@
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </section>
+}
+
+
+<body>
+    <div class="two">
+        <div id="producetop" class="row">
+ @{ 
+     if ((@Model == null) || (Model.Count == 0))
+             {
+                <div>geen bestellingen gevonden</div>
+             }
+             else
+             {
+                <div><h1>Hieronder staan alle openstaande bestellingen</h1></div><br>
+                 foreach (Bestelling best in Model)
+                 {
+                    
+                    <div id="produce" style="float: left">
+                        <fieldset id="produce">
+
+                            <div>Bestellingnummer:      @best.bestellingnr</div>
+                            <div>Klantnummer:           @best.klantnr</div>
+                            <div>Totaalbedrag:          @best.bestellingnr</div>
+                            <div>status:                @best.status</div>
+
+                               <form name="inlogForm" action="@Url.Action("StatusGewijzigd", "Beheerder")" method="post">
+                                <label for="status">Status:</label><br />
+                                <input type="text" name="status" value="@best.status" /><br />
+                                <input type="submit" value="Wijzig status" />
+    </form>
+                    </fieldset>
+                    </div>
+     
+     
+                 }
+             }
+            }
+        </div>
+    </div>
+</body>

@@ -155,6 +155,7 @@
     <Compile Include="Controllers\BeheerderController.cs" />
     <Compile Include="Controllers\WinkelproductController.cs" />
     <Compile Include="Controllers\WinkelwagenController.cs" />
+    <Compile Include="DBcontrollers\BestellingenBeherenDBController.cs" />
     <Compile Include="DBcontrollers\GegevensAanpassenDBController.cs" />
     <Compile Include="DBcontrollers\LoginDBController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
@@ -192,6 +193,7 @@
     <Content Include="Images\bio-banner1.jpg" />
     <Content Include="Images\boskoop-glory.jpg" />
     <Content Include="Images\button_aanbiedingen.png" />
+    <Content Include="Images\button_BestellingBeheren.png" />
     <Content Include="Images\button_herfst.png" />
     <Content Include="Images\button_lente.png" />
     <Content Include="Images\button_PersoneelInzien.png" />
@@ -327,6 +329,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\LogOut.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Beheerder\BestellingenBeheren.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Beheerder\StatusGewijzigd.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

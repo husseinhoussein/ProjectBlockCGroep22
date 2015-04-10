@@ -14,5 +14,12 @@ namespace TheGreenery.Models
         public double totaalbedrag;
 
         public String status;
+
+        public void setStatus(String input)
+        { status = input; }
+
+        public string getStatus()
+        { return status; }
+
     }
 }
