@@ -34,7 +34,7 @@ namespace TheGreenery.DBcontrollers
                     insert into Bestelling 
                         (klantnr, totaalbedrag, status)
                         values 
-                        (@klantnr, 0, 'leeg')
+                        (@klantnr, 0, 'in behandeling')
                 ;";
                     
 
