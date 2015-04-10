@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\BestellingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersoneelController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -155,7 +156,11 @@
     <Compile Include="Controllers\BeheerderController.cs" />
     <Compile Include="Controllers\WinkelproductController.cs" />
     <Compile Include="Controllers\WinkelwagenController.cs" />
+<<<<<<< HEAD
     <Compile Include="DBcontrollers\BestellingenBeherenDBController.cs" />
+=======
+    <Compile Include="DBcontrollers\BestellenDBController.cs" />
+>>>>>>> origin/master
     <Compile Include="DBcontrollers\GegevensAanpassenDBController.cs" />
     <Compile Include="DBcontrollers\LoginDBController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
