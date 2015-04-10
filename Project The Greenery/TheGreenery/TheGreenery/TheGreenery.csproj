@@ -156,11 +156,11 @@
     <Compile Include="Controllers\BeheerderController.cs" />
     <Compile Include="Controllers\WinkelproductController.cs" />
     <Compile Include="Controllers\WinkelwagenController.cs" />
-<<<<<<< HEAD
+
     <Compile Include="DBcontrollers\BestellingenBeherenDBController.cs" />
-=======
+
     <Compile Include="DBcontrollers\BestellenDBController.cs" />
->>>>>>> origin/master
+
     <Compile Include="DBcontrollers\GegevensAanpassenDBController.cs" />
     <Compile Include="DBcontrollers\LoginDBController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />

@@ -19,36 +19,36 @@
 <body>
     <div class="two">
         <div id="producetop" class="row">
- @{ 
-     if ((@Model == null) || (Model.Count == 0))
-             {
-                <div>geen bestellingen gevonden</div>
-             }
-             else
-             {
-                <div><h1>Hieronder staan alle openstaande bestellingen</h1></div><br>
-                 foreach (Bestelling best in Model)
-                 {
-                    
-                    <div id="produce" style="float: left">
-                        <fieldset id="produce">
+            @{
+                if ((@Model == null) || (Model.Count == 0))
+                {
+                    <div>geen bestellingen gevonden</div>
+                }
+                else
+                {
+                    <div><h1>Hieronder staan alle openstaande bestellingen</h1></div><br>
+                    foreach (Bestelling best in Model)
+                    {
 
-                            <div>Bestellingnummer:      @best.bestellingnr</div>
-                            <div>Klantnummer:           @best.klantnr</div>
-                            <div>Totaalbedrag:          @best.bestellingnr</div>
-                            <div>status:                @best.status</div>
+                        <div id="produce" style="float: left">
+                            <fieldset id="produce">
 
-                               <form name="inlogForm" action="@Url.Action("StatusGewijzigd", "Beheerder")" method="post">
-                                <label for="status">Status:</label><br />
-                                <input type="text" name="status" value="@best.status" /><br />
-                                <input type="submit" value="Wijzig status" />
-    </form>
-                    </fieldset>
-                    </div>
-     
-     
-                 }
-             }
+                                <div>Bestellingnummer:      @best.bestellingnr</div>
+                                <div>Klantnummer:           @best.klantnr</div>
+                                <div>Totaalbedrag:          @best.bestellingnr</div>
+                                <div>status:                @best.status</div>
+
+                                <form name="inlogForm" action="@Url.Action("StatusGewijzigd", "Beheerder")" method="post">
+                                    <label for="status">Status:</label><br />
+                                    <input type="text" name="status" value="@best.status" /><br />
+                                    <input type="submit" value="Wijzig status" />
+                                </form>
+                            </fieldset>
+                        </div>
+
+
+                    }
+                }
             }
         </div>
     </div>
