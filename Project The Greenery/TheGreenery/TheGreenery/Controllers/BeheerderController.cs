@@ -56,7 +56,7 @@ namespace TheGreenery.Controllers
             ProductDBController productToevoegenController = new ProductDBController();
             productToevoegenController.InsertProduct(product);
 
-                return View(p);
+                return View(product);
 
             }
             else

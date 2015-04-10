@@ -28,11 +28,13 @@ namespace TheGreenery.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult LoginResult(String mail, String wachtwoord)
+        public ActionResult LoginResult(int? bestellingnr, String mail, String wachtwoord)
         {
+            MijnBestellingenDBController bestellingen = new MijnBestellingenDBController();
             LoginDBController gebruiker = new LoginDBController();
             Session["LoggedIn"] = null;
             Klant gUser = gebruiker.LogInSelect(mail, wachtwoord);
+            //Bestelling gBestelling = bestellingen.getAllBestellingenByDate(bestellingnr);
 
             try
             {
@@ -123,9 +125,20 @@ namespace TheGreenery.Controllers
 
         public ActionResult MijnBestellingen(int? bestellingnr)
         {
-            MijnBestellingenDBController sc = new MijnBestellingenDBController();
-            List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
-            return View(bestelling);
+            if (Session["LoggedIn"] != null)
+            {
+                Bestelling b = Session["LoggedIn"] as Bestelling;
+
+                return View(b);
+            }
+            else
+            {
+                String urlLogin = "/User/LogIn";
+                return Redirect(urlLogin);
+            }
+            //MijnBestellingenDBController sc = new MijnBestellingenDBController();
+            //List<Bestelling> bestelling = sc.getAllBestellingenByDate(bestellingnr);
+            //return View(bestelling);
         }
     }
 }
