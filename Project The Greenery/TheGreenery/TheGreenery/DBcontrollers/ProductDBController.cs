@@ -275,7 +275,71 @@ namespace TheGreenery.DBcontrollers
 
             return producten;
         }
+    
+    public void ProductAanpassen(Klant klant)
+        {
+            MySqlTransaction trans = null;
+            conn.Open();
+            trans = conn.BeginTransaction();
+            try
+            {
+                string insertString = @"
+                    UPDATE Product      
+                    SET  naam = @naam, tussenvoegsel = @tussenvoegsel, achternaam = @achternaam, 
+                         adres = @adres, postcode = @postcode, woonplaats = @woonplaats, telefoonnr = @telefoonnr, 
+                         mail = @mail           
+                    WHERE klantnr = 1 
+                    ;";
+
+                MySqlCommand cmd = new MySqlCommand(insertString, conn);
+                MySqlParameter voorlettersParam = new MySqlParameter("@voorletters", MySqlDbType.VarChar);
+                MySqlParameter tussenvoegselParam = new MySqlParameter("@tussenvoegsel", MySqlDbType.VarChar);
+                MySqlParameter achternaamParam = new MySqlParameter("@achternaam", MySqlDbType.VarChar);
+                MySqlParameter adresParam = new MySqlParameter("@adres", MySqlDbType.VarChar);
+                MySqlParameter postcodeParam = new MySqlParameter("@postcode", MySqlDbType.VarChar);
+                MySqlParameter woonplaatsParam = new MySqlParameter("@woonplaats", MySqlDbType.VarChar);
+                MySqlParameter telefoonnrParam = new MySqlParameter("@telefoonnr", MySqlDbType.VarChar);
+                MySqlParameter mailParam = new MySqlParameter("@mail", MySqlDbType.VarChar);
+
+                voorlettersParam.Value = klant.voorletters;
+                tussenvoegselParam.Value = klant.tussenvoegsel;
+                achternaamParam.Value = klant.achternaam;
+                adresParam.Value = klant.adres;
+                postcodeParam.Value = klant.postcode;
+                woonplaatsParam.Value = klant.woonplaats;
+                telefoonnrParam.Value = klant.telefoonnr;
+                mailParam.Value = klant.mail;
+
+                cmd.Parameters.Add(voorlettersParam);
+                cmd.Parameters.Add(tussenvoegselParam);
+                cmd.Parameters.Add(achternaamParam);
+                cmd.Parameters.Add(adresParam);
+                cmd.Parameters.Add(postcodeParam);
+                cmd.Parameters.Add(woonplaatsParam);
+                cmd.Parameters.Add(telefoonnrParam);
+                cmd.Parameters.Add(mailParam);
+
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+                trans.Commit();
+            }
+            catch (Exception e)
+            {
+                trans.Rollback();
+                throw new Exception("Klantgegevens niet aangepast: " + e);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
+}
+    
+    }
+
+
        
 }
 

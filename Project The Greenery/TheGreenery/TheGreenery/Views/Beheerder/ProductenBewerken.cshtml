@@ -1,40 +1,59 @@
 ﻿@using TheGreenery.Controllers;
 @using TheGreenery.Models;
-@model Product
+@model List<Product>
 @{
     Layout = "~/Views/Shared/_Layout_Beheerder.cshtml";
 }
 
-<fieldset>
-    <form name="ProductBewerkenForm" action="/Beheerder/ProductAangepast" method="post">
-        <label for="Naam">Naam:</label><br />
-        <input type="text" name="name" value="" /><br />
-        <label for="Type">Type:</label><br />
-        <input type="text" name="Type" value="" /><br />
-        <br />
-        <label for="seizoen">Seizoen:</label><br />
-        <label for="Lente">Lente:</label><br />
-        <input type="text" name="lente" value="" /><br />
-        <label for="Zomer">Zomer:</label><br />
-        <input type="text" name="zomer" value="" /><br />
-        <label for="Herfst">Herfst:</label><br />
-        <input type="text" name="herfst" value="" /><br />
-        <label for="Winter">Winter:</label><br />
-        <input type="text" name="winter" value="" /><br />
-        <br />
-        <label for="prijsPerEenheid">Prijs per eendheid:</label><br />
-        <input type="text" name="PrijsPerEenheid" value="" /><br />
-        <label for="eenheid">Eendheid:</label><br />
-        <input type="text" name="Eenheid" value="" /><br />
-        <label for="omschrijving">Omschrijving:</label><br />
-        <input type="text" name="omschrijving" value="" /><br />
-        <label for="voorraadPerEenheid">Voorraad per eenheid:</label><br />
-        <input type="text" name="voorraadPerEenheid" value="" /><br />
-        <label for="imageNaam">Afbeelding:</label><br />
-        <input type="text" name="imageNaam" value="" /><br />
-        <br />
-        <input type="checkbox" name="aanbieding" value="">Aanbieding<br>
-        <br />
-        <input type="submit" value="Toevoegen" />
-    </form>
-</fieldset>
+@section featured {
+    <section class="zoek">
+        @*<div class="content-wrapper">*@
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </section>
+}
+
+<h2>Overzicht Producten</h2>
+<html>
+<body>
+    <fieldset>
+        <div>
+            @{ if ((@Model == null) || (Model.Count == 0))
+             {
+                <div>geen producten gevonden</div>
+             }
+             else
+             {
+                <div>de volgende producten zijn gevonden</div><br>
+                 foreach (Product pro in Model)
+                 {
+                    <div id="produce" style="float: left inherit">
+                        <fieldset id="produce">
+                            <div>productnr:     @pro.productnr</div>
+                            <div>naam:          @pro.naam</div>
+                            <div>type:          @pro.type</div>
+                            <div>seizoen:       @pro.lente</div>
+                            <div>               @pro.zomer</div>
+                            <div>               @pro.herfst</div>
+                            <div>               @pro.winter</div>
+                            <div>Prijs:€        @pro.prijsPerEenheid</div>
+                            <div>voorraad:      @pro.voorraadPerEenheid</div>
+                            <div>omschrijving:  @pro.omschrijving</div>
+                            <div>eenheid:       @pro.eenheid</div>
+                            <div>aanbieding:    @pro.aanbieding</div>
+                            <div><img width="200" height="150" src="~/Images/@pro.imageNaam" /></div>
+                            <div>@Html.ActionLink("Aanpassen", "ProductAangepast", "Beheerder", new { productnr = pro.productnr }, null)</div>
+                        </fieldset>
+                    </div>
+                 }
+             }
+            }
+        </div>
+
+    </fieldset>
+</body>
+</html>
+
+

@@ -156,11 +156,8 @@
     <Compile Include="Controllers\BeheerderController.cs" />
     <Compile Include="Controllers\WinkelproductController.cs" />
     <Compile Include="Controllers\WinkelwagenController.cs" />
-
     <Compile Include="DBcontrollers\BestellingenBeherenDBController.cs" />
-
     <Compile Include="DBcontrollers\BestellenDBController.cs" />
-
     <Compile Include="DBcontrollers\GegevensAanpassenDBController.cs" />
     <Compile Include="DBcontrollers\LoginDBController.cs" />
     <Compile Include="DBcontrollers\AanbiedingDBController.cs" />
@@ -340,6 +337,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Beheerder\StatusGewijzigd.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Beheerder\ProductAangepast.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,50 @@
+﻿@model Product
+@using TheGreenery.Controllers;
+@using TheGreenery.Models;
+
+@{
+    Layout = "~/Views/Shared/_Layout_Beheerder.cshtml";
+}
+@{if (@Model == null)
+{
+    <div>geen producten gevonden</div>
+}
+
+else
+{
+      Product p = new Product();
+    <fieldset>
+        <form name="ProductBewerkenForm" action="/Beheerder/ProductAangepast" method="post">
+            <label for="Naam">Naam:</label><br />
+            <input type="text" name="name" value="@Model.naam" /><br />
+            <label for="Type">Type:</label><br />
+            <input type="text" name="Type" value="@Model.type" /><br />
+            <br />
+            <label for="seizoen">Seizoen:</label><br />
+            <label for="Lente">Lente:</label><br />
+            <input type="text" name="lente" value="@Model.lente" /><br />
+            <label for="Zomer">Zomer:</label><br />
+            <input type="text" name="zomer" value="@Model.zomer" /><br />
+            <label for="Herfst">Herfst:</label><br />
+            <input type="text" name="herfst" value="@Model.herfst" /><br />
+            <label for="Winter">Winter:</label><br />
+            <input type="text" name="winter" value="@Model.winter" /><br />
+            <br />
+            <label for="prijsPerEenheid">Prijs per eendheid:</label><br />
+            <input type="number" required step="0.01" name="prijsPerEenheid" value="@Model.prijsPerEenheid" /><br />
+            <label for="eenheid">Eendheid:</label><br />
+            <input type="text" name="eenheid" value="@Model.eenheid" /><br />
+            <label for="omschrijving">Omschrijving:</label><br />
+            <input type="text" name="omschrijving" value="@Model.omschrijving" /><br />
+            <label for="voorraadPerEenheid">Voorraad per eenheid:</label><br />
+            <input type="number" required name="voorraadPerEenheid" value="@Model.voorraadPerEenheid" /><br />
+            <label for="imageNaam">Afbeelding:</label><br />
+            <input type="text" name="imageNaam" value="@Model.imageNaam" /><br />
+            <br />
+            <input type="text" name="aanbieding" value="@Model.aanbieding">Aanbieding<br>
+            <br />
+            <input type="submit" value="Toevoegen" />
+        </form>
+    </fieldset>
+}
+}

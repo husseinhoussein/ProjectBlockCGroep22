@@ -53,7 +53,7 @@ namespace TheGreenery.Controllers
             }
             foreach (Product product in (List<Product>)Session["wagen"])
             {
-                double z = product.prijsPerEenheid;
+                double? z = product.prijsPerEenheid;
                 String m = Convert.ToString(z);
 
                 Session["prijspereenheid"] = (m);

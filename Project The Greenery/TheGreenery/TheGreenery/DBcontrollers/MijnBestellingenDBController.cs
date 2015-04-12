@@ -22,7 +22,7 @@ namespace TheGreenery.DBcontrollers
             try
 
             {
-                string selectQuery = @"select * from Bestelling where klantnr = 14;";
+                string selectQuery = @"select * from Bestelling;";
 
                 MySqlCommand cmd = new MySqlCommand(selectQuery, conn);
                 MySqlParameter bestellingnrParam = new MySqlParameter("@bestellingnr", MySqlDbType.Int32);

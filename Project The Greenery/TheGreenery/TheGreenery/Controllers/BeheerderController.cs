@@ -66,9 +66,53 @@ namespace TheGreenery.Controllers
 
         }
 
-        public ActionResult ProductenBewerken()
+        public ActionResult ProductenBewerken(String naam)
         {
-            return View();
+            if (Session["LoggedInP"] != null)
+            {
+                ProductDBController sc = new ProductDBController();
+                List<Product> producten = sc.getAllProducten(naam);
+                return View(producten);
+
+            }
+             
+            else
+            {
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
+            }
+        }
+
+        public ActionResult ProductAangepast(String naam, String type, String lente, String zomer, String herfst, String winter, double? prijsPerEenheid,
+                                       String eenheid, String omschrijving, int? voorraadPerEenheid, String imageNaam, String aanbieding)
+        {
+            if (Session["LoggedInP"] != null)
+            {
+                Product product = new Product();
+                product.setNaam(naam);
+                product.setType(type);
+                product.setLente(lente);
+                product.setZomer(zomer);
+                product.setHerfst(herfst);
+                product.setWinter(winter);
+                product.setPrijsPerEenheid(prijsPerEenheid);
+                product.setEenheid(eenheid);
+                product.setOmschrijving(omschrijving);
+                product.setVoorraadPerEenheid(voorraadPerEenheid);
+                product.setImageNaam(imageNaam);
+                product.setAanbieding(aanbieding);
+
+                //ProductDBController productToevoegenController = new ProductDBController();
+                //productToevoegenController.InsertProduct(product);
+
+                return View(product);
+
+            }
+            else
+            {
+                String urlLogin = "/Personeel/PersoneelLogIn";
+                return Redirect(urlLogin);
+            }
         }
 
         public ActionResult PersoneelToevoegen(String voorletters, String tussenvoegsel, String achternaam, String type, String wachtwoord)
